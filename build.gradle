@@ -1,0 +1,9 @@
+apply plugin: "wrapper"
+
+wrapper {
+  gradleVersion = "2.2"
+}
+
+allprojects {
+  apply plugin: "groovy"
+}

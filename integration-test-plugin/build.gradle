@@ -1,0 +1,23 @@
+plugins {
+  id "nu.studer.plugindev" version "1.0.3"
+}
+
+plugindev {
+  pluginId "com.ewerk.gradle.plugins.integration-test"
+  pluginImplementationClass "com.ewerk.gradle.plugins.IntegrationTestPlugin"
+  pluginDescription "Plugin for running integration tests."
+  pluginLicenses "Apache-2.0"
+  pluginTags "integration-test"
+  authorId "holgerstolzenberg"
+  authorName "Holger Stolzenberg"
+  authorEmail "h.stolzenberg@ewerk.com"
+  projectUrl "https://github.com/ewerk/gradle-plugins/integration-test-plugin"
+  projectInceptionYear "2014"
+  done() // do not omit
+}
+
+bintray {
+  user = "$BINTRAY_USER"
+  key = "$BINTRAY_API_KEY"
+  pkg.repo = "gradle-plugins"
+}
