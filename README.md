@@ -16,6 +16,8 @@ available through the Gradle plugin portal.
 
 [ ![Download](https://api.bintray.com/packages/holgerstolzenberg/gradle-plugins/integration-test-plugin/images/download.svg) ](https://bintray.com/holgerstolzenberg/gradle-plugins/integration-test-plugin/_latestVersion)
 
+__Description__
+
 The plugin can be used to execute integration tests from a sophisticated sourceSet. Just place
 your integration tests and resources under `src/integration/java` and `src/integration/resources`
 and run task `integrationTest`.
@@ -24,7 +26,9 @@ The plugin was inspired by the sources taken from [here](http://blog.lick-me.org
 
 The plugin applies the task `integration-test` to the project. This tasks extends from the default
 `test` task. Therefore all configuration properties from test task are available for integration 
-tests also. Please see [Gradle test config](http://www.gradle.org/docs/current/dsl/org.gradle.api.tasks.testing.Test.html) 
+tests also.
+
+Please see [Gradle test config](http://www.gradle.org/docs/current/dsl/org.gradle.api.tasks.testing.Test.html) 
 for details.
 
 __Example 1: Gradle plugin portal__
