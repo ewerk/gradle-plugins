@@ -2,7 +2,7 @@ language: java
 jdk:
   - oraclejdk8
 
-script: ./gradlew clean build
+script: ./gradlew clean check
 
 branches:
   only:
