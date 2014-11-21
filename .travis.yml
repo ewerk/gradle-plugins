@@ -2,7 +2,7 @@ language: java
 jdk:
   - oraclejdk8
 
-script: ./gradlew clean compile test
+script: ./gradlew clean compileGroovy
 
 branches:
   only:
