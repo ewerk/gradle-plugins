@@ -16,7 +16,7 @@ available through the Gradle plugin portal.
 
 [ ![Download](https://api.bintray.com/packages/holgerstolzenberg/gradle-plugins/integration-test-plugin/images/download.svg) ](https://bintray.com/holgerstolzenberg/gradle-plugins/integration-test-plugin/_latestVersion)
 
-__Description__
+#### Description
 
 The plugin can be used to execute integration tests from a sophisticated sourceSet. Just place
 your integration tests and resources under `src/integration/java` and `src/integration/resources`
@@ -30,6 +30,8 @@ tests also.
 
 Please see [Gradle test config](http://www.gradle.org/docs/current/dsl/org.gradle.api.tasks.testing.Test.html) 
 for details.
+
+#### Examples
 
 __Example 1: Gradle plugin portal__
 
