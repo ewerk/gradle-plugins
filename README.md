@@ -9,7 +9,7 @@ declaration syntax introduced in Gradle 2.1.
 The plugins are released using the [gradle-plugindev-plugin](https://github.com/etiennestuder/gradle-plugindev-plugin/blob/master/README.md).
 
 The plugins can also be downloaded from [bintray](http://www.bintray.com) as long as they are not
-available through the gradle plugin portal.
+available through the Gradle plugin portal.
 
 ## Plugins
 ### Integration test plugin
@@ -22,7 +22,31 @@ and run task `integrationTest`.
 
 The plugin was inspired by the sources taken from [here](http://blog.lick-me.org/2014/07/fun-with-gradle-plugins-integration-tests/).
 
-__Example__
+__Example 1: Gradle plugin portal__
 
 A full example will be provided after the plugin has been published to the 
 [Gradle Plugin Portal](http://plugins.gradle.org).
+
+__Example 2: Maven Central__
+
+```groovy
+buildscript {
+  repositories {
+    mavenCentral()
+  }
+
+  dependencies {
+    classpath "com.ewerk.gradle.plugins:integration-test-plugin:1.0.0"
+  }
+}
+
+apply plugin: "java"
+apply plugin: "com.ewerk.gradle.plugins.integration-test"
+
+integrationTest {
+  useTestNG()
+
+  minHeapSize = "128m"
+  maxHeapSize = "512m"
+}
+```
