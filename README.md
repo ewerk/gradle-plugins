@@ -14,7 +14,7 @@ available through the Gradle plugin portal.
 ## Plugins
 ### Integration test plugin
 
-[ ![Download](https://api.bintray.com/packages/holgerstolzenberg/gradle-plugins/integration-test-plugin/images/download.svg) ](https://bintray.com/holgerstolzenberg/gradle-plugins/integration-test-plugin/_latestVersion)
+[ ![Download](https://api.bintray.com/packages/ewerk/gradle-plugins/integration-test-plugin/images/download.svg) ](https://bintray.com/holgerstolzenberg/gradle-plugins/integration-test-plugin/_latestVersion)
 
 #### Description
 
