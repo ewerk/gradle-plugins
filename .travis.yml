@@ -2,6 +2,12 @@ language: java
 jdk:
   - oraclejdk8
 
+before_install:
+
+install:
+
+before_script:
+
 script: ./gradlew clean compileGroovy
 
 branches:
