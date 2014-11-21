@@ -21,7 +21,11 @@ import org.gradle.api.Project
 import org.gradle.api.tasks.testing.Test
 
 /**
- * TODO document
+ * The integration test plugin can be used to execute integration tests from a own sourceSet named
+ * 'integration'. Just place your integration tests and resources under
+ * 'src/integration/[java|resources]' and then run the 'integrationTest' task. This allows
+ * for running unit and integration test in separate without the need to make a specific
+ * configuration to each involved build script.
  */
 class IntegrationTestPlugin implements Plugin<Project> {
   @Override
