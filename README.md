@@ -33,12 +33,12 @@ for details.
 
 #### Examples
 
-__Example 1: Gradle plugin portal__
+__Use via Gradle plugin portal__
 
 A full example will be provided after the plugin has been published to the 
 [Gradle Plugin Portal](http://plugins.gradle.org).
 
-__Example 2: JCenter__
+__Use via JCenter__
 
 ```groovy
 buildscript {
