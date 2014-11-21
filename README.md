@@ -8,6 +8,9 @@ declaration syntax introduced in Gradle 2.1.
 
 The plugins are released using the [gradle-plugindev-plugin](https://github.com/etiennestuder/gradle-plugindev-plugin/blob/master/README.md).
 
+The plugins can also be downloaded from [bintray](http://www.bintray.com) as long as they are not
+available through the gradle plugin portal.
+
 ## Plugins
 ### Integration test plugin
 
