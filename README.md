@@ -10,6 +10,9 @@ The plugins are released using the [gradle-plugindev-plugin](https://github.com/
 
 ## Plugins
 ### Integration test plugin
+
+[ ![Download](https://api.bintray.com/packages/holgerstolzenberg/gradle-plugins/integration-test-plugin/images/download.svg) ](https://bintray.com/holgerstolzenberg/gradle-plugins/integration-test-plugin/_latestVersion)
+
 The plugin can be used to execute integration tests from a sophisticated sourceSet. Just place
 your integration tests and resources under `src/integration/java` and `src/integration/resources`
 and run task `integrationTest`.
@@ -17,5 +20,6 @@ and run task `integrationTest`.
 The plugin was inspired by the sources taken from [here](http://blog.lick-me.org/2014/07/fun-with-gradle-plugins-integration-tests/).
 
 __Example__
+
 A full example will be provided after the plugin has been published to the 
 [Gradle Plugin Portal](http://plugins.gradle.org).
