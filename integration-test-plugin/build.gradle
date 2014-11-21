@@ -16,7 +16,7 @@ plugindev {
   pluginDescription "Plugin for running integration tests."
   pluginLicenses "Apache-2.0"
   pluginTags "integration-test"
-  authorId "holgerstolzenberg"
+  authorId "ewerk"
   authorName "Holger Stolzenberg"
   authorEmail "h.stolzenberg@ewerk.com"
   projectUrl "https://github.com/ewerk/gradle-plugins/integration-test-plugin"
@@ -28,6 +28,7 @@ bintray {
   user = "$BINTRAY_USER"
   key = "$BINTRAY_API_KEY"
   pkg.repo = "gradle-plugins"
+  pkg.userOrg = "ewerk"
 }
 
 release {
