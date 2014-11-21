@@ -22,17 +22,22 @@ and run task `integrationTest`.
 
 The plugin was inspired by the sources taken from [here](http://blog.lick-me.org/2014/07/fun-with-gradle-plugins-integration-tests/).
 
+The plugin applies the task `integration-test` to the project. This tasks extends from the default
+`test` task. Therefore all configuration properties from test task are available for integration 
+tests also. Please see [Gradle test config](http://www.gradle.org/docs/current/dsl/org.gradle.api.tasks.testing.Test.html) 
+for details.
+
 __Example 1: Gradle plugin portal__
 
 A full example will be provided after the plugin has been published to the 
 [Gradle Plugin Portal](http://plugins.gradle.org).
 
-__Example 2: Maven Central__
+__Example 2: JCenter__
 
 ```groovy
 buildscript {
   repositories {
-    mavenCentral()
+    jcenter()
   }
 
   dependencies {
