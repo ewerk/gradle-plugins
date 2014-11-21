@@ -47,7 +47,7 @@ buildscript {
   }
 
   dependencies {
-    classpath "com.ewerk.gradle.plugins:integration-test-plugin:1.0.0"
+    classpath "com.ewerk.gradle.plugins:integration-test-plugin:1.0.1"
   }
 }
 
