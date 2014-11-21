@@ -1,6 +1,14 @@
+buildscript{
+  dependencies{
+    classpath "com.github.townsfolk:gradle-release:1.2"
+  }
+}
+
 plugins {
   id "nu.studer.plugindev" version "1.0.3"
 }
+
+apply plugin: "release"
 
 plugindev {
   pluginId "com.ewerk.gradle.plugins.integration-test"
@@ -21,3 +29,9 @@ bintray {
   key = "$BINTRAY_API_KEY"
   pkg.repo = "gradle-plugins"
 }
+
+release {
+  requireBranch = "release"
+}
+
+createReleaseTag.dependsOn("check")
