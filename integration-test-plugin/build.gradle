@@ -19,7 +19,7 @@ plugindev {
   authorId "ewerk"
   authorName "Holger Stolzenberg"
   authorEmail "h.stolzenberg@ewerk.com"
-  projectUrl "https://github.com/ewerk/gradle-plugins/integration-test-plugin"
+  projectUrl "https://github.com/ewerk/gradle-plugins"
   projectInceptionYear "2014"
   done() // do not omit
 }
@@ -29,6 +29,10 @@ bintray {
   key = "$BINTRAY_API_KEY"
   pkg.repo = "gradle-plugins"
   pkg.userOrg = "ewerk"
+  pkg.desc = "Plugin for running integration test for a separate sourceSet."
+  pkg.websiteUrl = "https://github.com/ewerk/gradle-plugins"
+  pkg.issueTrackerUrl = "https://github.com/bintray/gradle-bintray-plugin/issues"
+  pkg.vcsUrl = "https://github.com/ewerk/gradle-plugins"
 }
 
 release {
