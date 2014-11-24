@@ -20,7 +20,6 @@ plugindev {
   authorName "Holger Stolzenberg"
   authorEmail "h.stolzenberg@ewerk.com"
   projectUrl "https://github.com/ewerk/gradle-plugins"
-  projectIssuesUrl "https://github.com/bintray/gradle-bintray-plugin/issues"
   projectInceptionYear "2014"
   done() // do not omit
 }
