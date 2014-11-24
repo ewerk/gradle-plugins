@@ -16,12 +16,11 @@ plugindev {
   pluginDescription "Plugin for running integration tests."
   pluginLicenses "Apache-2.0"
   pluginTags "integration-test"
-  authorId "ewerk"
+  authorId "holgerstolzenberg"
   authorName "Holger Stolzenberg"
   authorEmail "h.stolzenberg@ewerk.com"
   projectUrl "https://github.com/ewerk/gradle-plugins"
   projectIssuesUrl "https://github.com/bintray/gradle-bintray-plugin/issues"
-  projectVcsUrl "https://github.com/ewerk/gradle-plugins"
   projectInceptionYear "2014"
   done() // do not omit
 }
