@@ -1,0 +1,9 @@
+language: java
+jdk:
+  - oraclejdk8
+
+script: ./gradlew test
+
+branches:
+  only:
+    - master
