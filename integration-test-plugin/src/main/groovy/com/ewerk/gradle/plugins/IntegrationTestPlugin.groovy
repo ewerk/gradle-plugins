@@ -22,19 +22,32 @@ import org.gradle.api.tasks.testing.Test
 
 /**
  * The integration test plugin can be used to execute integration tests from a own sourceSet named
- * 'integration'. Just place your integration tests and resources under
- * 'src/integration/[java|resources]' and then run the 'integrationTest' task. This allows
+ * "integration". Just place your integration tests and resources under
+ * "src/integration/[java|resources]" and then run the "integrationTest" task. This allows
  * for running unit and integration test in separate without the need to make a specific
  * configuration to each involved build script.
+ *
+ * The plugin will force the core 'java' plugin to be applied if not present. This is necessary
+ * for having sourceSets available.
+ *
+ * @since 1.0.0
+ * @author holgerstolzenberg
  */
 class IntegrationTestPlugin implements Plugin<Project> {
+
+  static final String GROUP = "Verification"
+
   @Override
   void apply(final Project project) {
 
+    if (!project.plugins.hasPlugin("java")) {
+      project.plugins.apply("java")
+    }
+
     project.sourceSets {
       integration {
-        java.srcDir project.file('src/integration/java')
-        resources.srcDir project.file('src/integration/resources')
+        java.srcDir project.file("src/integration/java")
+        resources.srcDir project.file("src/integration/resources")
       }
     }
 
@@ -46,14 +59,14 @@ class IntegrationTestPlugin implements Plugin<Project> {
       integrationCompile project.sourceSets.test.output
     }
 
-    project.task('integrationTest', type: Test, description: 'Runs the integration tests.',
-        group: 'Verification') {
+    project.task("integrationTest", type: Test, description: "Runs the integration tests.",
+        group: GROUP) {
       testClassesDir = project.sourceSets.integration.output.classesDir
       classpath = project.sourceSets.integration.runtimeClasspath
     }
 
-    project.task('allTests', dependsOn: [project.test, project.integrationTest],
-        description: 'Runs all tests.', group: 'Verification') {
+    project.task("allTests", dependsOn: [project.test, project.integrationTest],
+        description: "Runs all tests.", group: GROUP) {
     }
   }
 }
