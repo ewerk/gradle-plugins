@@ -35,8 +35,19 @@ for details.
 
 __Use via Gradle plugin portal__
 
-A full example will be provided after the plugin has been published to the 
-[Gradle Plugin Portal](http://plugins.gradle.org).
+```groovy
+plugins {
+  id "java"
+  id "com.ewerk.gradle.plugins.integration-test" version "1.0.5"
+}
+
+integrationTest {
+  useTestNG()
+
+  minHeapSize = "128m"
+  maxHeapSize = "512m"
+}
+```
 
 __Use via JCenter__
 
@@ -47,7 +58,7 @@ buildscript {
   }
 
   dependencies {
-    classpath "com.ewerk.gradle.plugins:integration-test-plugin:1.0.1"
+    classpath "com.ewerk.gradle.plugins:integration-test-plugin:1.0.5"
   }
 }
 
