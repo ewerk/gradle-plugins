@@ -5,6 +5,7 @@ buildscript {
 }
 
 plugins {
+  id "com.jfrog.bintray" version "0.6"
   id "nu.studer.plugindev" version "1.0.3"
 }
 
@@ -25,10 +26,27 @@ plugindev {
 }
 
 bintray {
+  if (!project.hasProperty("BINTRAY_USER")) {
+    project.ext.BINTRAY_USER = ""
+  }
+
+  if (!project.hasProperty("BINTRAY_API_KEY")) {
+    project.ext.BINTRAY_API_KEY = ""
+  }
+
   user = "$BINTRAY_USER"
   key = "$BINTRAY_API_KEY"
+  
   pkg.repo = "gradle-plugins"
   pkg.userOrg = "ewerk"
+  pkg.attributes =
+      ["gradle-plugin": "com.ewerk.gradle.plugins.integration-test:com.ewerk.gradle.plugins:integration-test-plugin"]
+}
+
+test {
+  useTestNG()
+  minHeapSize = "128m"
+  maxHeapSize = "512m"
 }
 
 release {
