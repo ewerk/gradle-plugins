@@ -38,7 +38,7 @@ __Use via Gradle plugin portal__
 ```groovy
 plugins {
   id "java"
-  id "com.ewerk.gradle.plugins.integration-test" version "1.0.5"
+  id "com.ewerk.gradle.plugins.integration-test" version "1.0.6"
 }
 
 integrationTest {
@@ -58,7 +58,7 @@ buildscript {
   }
 
   dependencies {
-    classpath "com.ewerk.gradle.plugins:integration-test-plugin:1.0.5"
+    classpath "com.ewerk.gradle.plugins:integration-test-plugin:1.0.6"
   }
 }
 
