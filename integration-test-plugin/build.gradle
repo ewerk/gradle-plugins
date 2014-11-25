@@ -36,7 +36,7 @@ bintray {
 
   user = "$BINTRAY_USER"
   key = "$BINTRAY_API_KEY"
-  
+
   pkg.repo = "gradle-plugins"
   pkg.userOrg = "ewerk"
   pkg.attributes =
@@ -50,6 +50,7 @@ test {
 }
 
 release {
+  tagPrefix = "integration-test-plugin"
   requireBranch = "release"
 }
 
