@@ -2,10 +2,6 @@ language: java
 jdk:
   - oraclejdk8
 
-env:
-  - BINTRAY_USER=
-  - BINTRAY_API_KEY=
-
 script: ./gradlew test
 
 branches:
