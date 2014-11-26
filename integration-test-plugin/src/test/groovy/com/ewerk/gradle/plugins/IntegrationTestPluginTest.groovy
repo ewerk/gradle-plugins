@@ -13,7 +13,7 @@ import static org.hamcrest.CoreMatchers.*
 import static org.hamcrest.MatcherAssert.assertThat
 
 /**
- * @author h.stolzenberg
+ * @author holgerstolzenberg
  * @since 1.0.6
  */
 class IntegrationTestPluginTest {
