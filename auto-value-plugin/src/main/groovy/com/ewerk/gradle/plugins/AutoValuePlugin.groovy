@@ -1,5 +1,6 @@
 package com.ewerk.gradle.plugins
 
+import com.ewerk.gradle.plugins.tasks.InitGeneratedSourceDir
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.api.logging.Logger
@@ -43,23 +44,21 @@ class AutoValuePlugin implements Plugin<Project> {
       project.plugins.apply(JavaPlugin.class)
     }
 
-    project.extensions.create("autoValue", AutoValuePluginExtension.class)
+    project.extensions.create("autoValue", AutoValuePluginExtension)
 
-    File generatedSourcesDir = project.autoValue.generatedSourcesDir
-    LOG.debug("Auto-value sources dir: {}", generatedSourcesDir.absolutePath);
+    project.task(type: InitGeneratedSourceDir, group: GROUP, description: DESCRIPTION,
+        "initAutoValueSourcesDir")
+    project.tasks.compileJava.dependsOn project.tasks.initAutoValueSourcesDir
 
-    project.sourceSets {
-      generated {
-        java.srcDir project.file(generatedSourcesDir)
+    project.afterEvaluate {
+      File generatedSourcesDir = project.extensions.autoValue.generatedSourcesDir
+      LOG.info("Auto-value sources dir: {}", generatedSourcesDir.absolutePath);
+
+      project.sourceSets {
+        generated {
+          java.srcDirs = [project.file(generatedSourcesDir)]
+        }
       }
     }
-
-    project.task(group: GROUP, description: DESCRIPTION, "initAutoValueSourcesDir") {
-      LOG.debug("Creating auto-value sources dir");
-
-      // TODO h.stolzenberg: impl task
-    }
-
-    project.tasks.compileJava.dependsOn project.tasks.initAutoValueSourcesDir
   }
 }
