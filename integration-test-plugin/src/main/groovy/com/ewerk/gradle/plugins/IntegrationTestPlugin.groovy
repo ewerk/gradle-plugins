@@ -18,6 +18,7 @@ package com.ewerk.gradle.plugins
 
 import org.gradle.api.Plugin
 import org.gradle.api.Project
+import org.gradle.api.plugins.JavaPlugin
 import org.gradle.api.tasks.testing.Test
 
 /**
@@ -30,6 +31,7 @@ import org.gradle.api.tasks.testing.Test
  * The plugin will force the core 'java' plugin to be applied if not present. This is necessary
  * for having sourceSets available.
  *
+ * @see JavaPlugin
  * @since 1.0.0
  * @author holgerstolzenberg
  */
@@ -40,8 +42,12 @@ class IntegrationTestPlugin implements Plugin<Project> {
   @Override
   void apply(final Project project) {
 
-    if (!project.plugins.hasPlugin("java")) {
-      project.plugins.apply("java")
+    if (project.plugins.hasPlugin(IntegrationTestPlugin.class)) {
+      return;
+    }
+
+    if (!project.plugins.hasPlugin(JavaPlugin.class)) {
+      project.plugins.apply(JavaPlugin.class)
     }
 
     project.sourceSets {

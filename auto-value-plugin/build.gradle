@@ -1,0 +1,57 @@
+buildscript {
+  dependencies {
+    classpath "com.github.townsfolk:gradle-release:1.2"
+  }
+}
+
+plugins {
+  id "com.jfrog.bintray" version "0.6"
+  id "nu.studer.plugindev" version "1.0.3"
+}
+
+apply plugin: "release"
+
+plugindev {
+  pluginId "com.ewerk.gradle.plugins.auto-value"
+  pluginImplementationClass "com.ewerk.gradle.plugins.AutoValuePlugin"
+  pluginDescription "Plugin for generating Google AutoValue source files."
+  pluginLicenses "Apache-2.0"
+  pluginTags "auto-value"
+  authorId "holgerstolzenberg"
+  authorName "Holger Stolzenberg"
+  authorEmail "h.stolzenberg@ewerk.com"
+  projectUrl "https://github.com/ewerk/gradle-plugins"
+  projectInceptionYear "2014"
+  done() // do not omit
+}
+
+bintray {
+  if (!project.hasProperty("BINTRAY_USER")) {
+    project.ext.BINTRAY_USER = ""
+  }
+
+  if (!project.hasProperty("BINTRAY_API_KEY")) {
+    project.ext.BINTRAY_API_KEY = ""
+  }
+
+  user = "$BINTRAY_USER"
+  key = "$BINTRAY_API_KEY"
+
+  pkg.repo = "gradle-plugins"
+  pkg.userOrg = "ewerk"
+  pkg.attributes =
+      ["gradle-plugin": "com.ewerk.gradle.plugins.auto-value:com.ewerk.gradle.plugins:auto-value-plugin"]
+}
+
+test {
+  useTestNG()
+  minHeapSize = "128m"
+  maxHeapSize = "512m"
+}
+
+release {
+  tagPrefix = "auto-value-plugin-"
+  requireBranch = "release"
+}
+
+createReleaseTag.dependsOn("check")
