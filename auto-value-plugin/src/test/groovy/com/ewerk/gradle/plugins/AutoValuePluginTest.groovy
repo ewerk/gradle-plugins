@@ -1,5 +1,6 @@
 package com.ewerk.gradle.plugins
 
+import org.gradle.api.DefaultTask
 import org.gradle.api.Project
 import org.gradle.api.Task
 import org.gradle.api.plugins.JavaPlugin
@@ -51,6 +52,6 @@ class AutoValuePluginTest {
   @Test
   public void testTaskTypes() {
     final Task initTask = project.tasks.initAutoValueSourcesDir
-    assertThat(initTask, instanceOf(Task.class))
+    assertThat(initTask, instanceOf(DefaultTask.class))
   }
 }

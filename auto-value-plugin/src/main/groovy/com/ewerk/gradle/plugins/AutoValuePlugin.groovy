@@ -28,6 +28,7 @@ import org.gradle.api.plugins.JavaPlugin
 class AutoValuePlugin implements Plugin<Project> {
 
   private static final String GROUP = "Code generation"
+  private static final String DESCRIPTION = "Creates the Auto-value sources dir."
 
   private static final Logger LOG = Logging.getLogger(AutoValuePlugin.class)
 
@@ -53,9 +54,7 @@ class AutoValuePlugin implements Plugin<Project> {
       }
     }
 
-    // TODO h.stolzenberg: fix depends on
-    project.task("initAutoValueSourcesDir", description: "Creates the Auto-value sources dir.",
-        group: GROUP) {
+    project.task(group: GROUP, description: DESCRIPTION, "initAutoValueSourcesDir") {
       LOG.debug("Creating auto-value sources dir");
 
       // TODO h.stolzenberg: impl task
