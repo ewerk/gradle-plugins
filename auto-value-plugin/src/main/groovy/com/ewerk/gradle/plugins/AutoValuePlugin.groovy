@@ -46,8 +46,13 @@ class AutoValuePlugin implements Plugin<Project> {
 
     project.extensions.create("autoValue", AutoValuePluginExtension)
 
+    project.dependencies {
+      compile group: "com.google.auto.value", name: "auto-value", version: "1.0-rc2"
+    }
+
     project.task(type: InitGeneratedSourceDir, group: GROUP, description: DESCRIPTION,
         "initAutoValueSourcesDir")
+
     project.tasks.compileJava.dependsOn project.tasks.initAutoValueSourcesDir
 
     project.afterEvaluate {
@@ -58,6 +63,10 @@ class AutoValuePlugin implements Plugin<Project> {
         generated {
           java.srcDirs = [project.file(generatedSourcesDir)]
         }
+      }
+
+      project.tasks.compileJava {
+        options.compilerArgs = ["-s", generatedSourcesDir.absolutePath]
       }
     }
   }
