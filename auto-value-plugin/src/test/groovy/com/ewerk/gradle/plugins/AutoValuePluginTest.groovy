@@ -1,8 +1,9 @@
 package com.ewerk.gradle.plugins
 
-import com.ewerk.gradle.plugins.tasks.InitGeneratedSourceDir
+import com.ewerk.gradle.plugins.tasks.InitAutoValueSourcesDir
 import org.gradle.api.Project
 import org.gradle.api.Task
+import org.gradle.api.internal.artifacts.dependencies.DefaultExternalModuleDependency
 import org.gradle.api.plugins.JavaPlugin
 import org.gradle.testfixtures.ProjectBuilder
 import org.testng.annotations.BeforeMethod
@@ -52,6 +53,21 @@ class AutoValuePluginTest {
   @Test
   public void testTaskTypes() {
     final Task initTask = project.tasks.initAutoValueSourcesDir
-    assertThat(initTask, instanceOf(InitGeneratedSourceDir.class))
+    assertThat(initTask, instanceOf(InitAutoValueSourcesDir.class))
+  }
+
+  @Test
+  public void testAfterEvaluate() {
+    project.evaluate()
+
+    DefaultExternalModuleDependency lib = project.configurations.compile.dependencies
+        .getAt(0) as DefaultExternalModuleDependency
+
+    String id = lib.group + ":" +
+        lib.name +
+        ":" +
+        lib.version
+
+    assertThat(id, equalTo(AutoValuePluginExtension.DEFAULT_LIBRARY));
   }
 }

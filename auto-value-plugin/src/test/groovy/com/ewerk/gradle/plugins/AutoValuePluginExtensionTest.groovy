@@ -41,4 +41,18 @@ class AutoValuePluginExtensionTest {
     assertThat(extension.generatedSourcesDir,
         equalTo(defaultDir));
   }
+
+  @Test
+  public void testDefaultLibraryIsSet() {
+    def defaultLibrary = AutoValuePluginExtension.DEFAULT_LIBRARY
+    assertThat(extension.library,
+        equalTo(defaultLibrary));
+  }
+
+  @Test
+  public void testDefaultPurge() {
+    def defaultPurge = AutoValuePluginExtension.DEFAULT_DELETE
+    assertThat(extension.delete,
+        equalTo(defaultPurge));
+  }
 }
