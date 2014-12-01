@@ -12,15 +12,13 @@ import org.gradle.api.plugins.JavaPlugin
  * classpath.<br/><br/>
  *
  * The plugin registers the extension 'autoValue' so that plugin specific configuration can
- * be overwritten we buildScript. Please see the readme doc on Github for details on that.
+ * be overwritten within the build sScript. Please see the readme doc on Github for details on that.
  * <br/><br/>
  *
  * The plugin will generate an additional source directory into where the auto-value
  * classes will be compiled, so that they can be ignored from SCM commits. Per default, this will
  * be {@link AutoValuePluginExtension#DEFAULT_GENERATED_SOURCES_DIR}.
  * <br/><br/>
- *
- * TODO h.stolzenberg: complete documentation
  *
  * @see AutoValuePluginExtension
  * @author holgerstolzenberg
@@ -64,7 +62,7 @@ class AutoValuePlugin implements Plugin<Project> {
 
   private void addCompilerOption(Project project, generatedSourcesDir) {
     project.tasks.compileJava {
-      options.compilerArgs = ["-s", generatedSourcesDir.absolutePath]
+      options.compilerArgs = options.compilerArgs + ["-s", generatedSourcesDir.absolutePath]
     }
   }
 

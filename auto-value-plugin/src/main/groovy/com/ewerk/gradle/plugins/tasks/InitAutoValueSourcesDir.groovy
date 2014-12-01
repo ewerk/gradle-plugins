@@ -6,7 +6,7 @@ import org.gradle.api.logging.Logging
 import org.gradle.api.tasks.TaskAction
 
 /**
- * TODO holgerstolzenberg: Document
+ * This task is responsible for removing and recreating the configured auto-value source roots.
  *
  * @author holgerstolzenberg
  * @since 1.0.0

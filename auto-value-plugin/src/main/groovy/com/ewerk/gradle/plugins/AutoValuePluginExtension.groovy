@@ -1,7 +1,7 @@
 package com.ewerk.gradle.plugins
 
 /**
- * TODO holgerstolzenberg: Document
+ * DLS extension for the auto-value plugin. Provides some convenient configuration options.
  *
  * @author holgerstolzenberg
  * @since 1.0.0
