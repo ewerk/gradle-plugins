@@ -84,7 +84,11 @@ classes within the project.
 
 __Use via Gradle plugin portal__
 
-An example will be published as soon as the plugin is available through Gradle plugin portal.  
+```groovy
+plugins {
+  id "com.ewerk.gradle.plugins.auto-value" version "1.0.0"
+}
+```
 
 __Use via JCenter__
 
