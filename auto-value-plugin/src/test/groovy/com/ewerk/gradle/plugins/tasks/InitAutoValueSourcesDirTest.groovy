@@ -35,7 +35,7 @@ class InitAutoValueSourcesDirTest {
     assertThat(project.sourceSets.generated, notNullValue())
 
     File javaDir = project.sourceSets.generated.java.srcDirs.getAt(0) as File
-    assertThat(javaDir.name, equalTo("java"))
+    assertThat(javaDir.name, equalTo("auto-value"))
   }
 
   @Test

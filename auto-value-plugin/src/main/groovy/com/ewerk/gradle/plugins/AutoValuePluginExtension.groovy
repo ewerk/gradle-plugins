@@ -10,7 +10,7 @@ class AutoValuePluginExtension {
 
   static final String NAME = "autoValue"
 
-  static final File DEFAULT_GENERATED_SOURCES_DIR = new File("src/generated/java")
+  static final File DEFAULT_GENERATED_SOURCES_DIR = new File("src/generated/auto-value")
   static final String DEFAULT_LIBRARY = "com.google.auto.value:auto-value:1.0-rc2"
   static final boolean DEFAULT_DELETE = true
 
