@@ -3,7 +3,7 @@ plugins {
 }
 
 wrapper {
-  gradleVersion = "2.2"
+  gradleVersion = "2.2.1"
 }
 
 allprojects {
