@@ -50,7 +50,7 @@ test {
 }
 
 release {
-  tagPrefix = "integration-test-plugin-"
+  tagPrefix = "integration-test-plugin"
   requireBranch = "release"
 }
 
