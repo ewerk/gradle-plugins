@@ -107,7 +107,7 @@ apply plugin: "com.ewerk.gradle.plugins.auto-value"
 
 // the following closure demonstrates the extension defaults and is not necessary
 autoValue {
-  remove = true
+  delete = true
   library = "com.google.auto.value:auto-value:1.0-rc2"
   generatedSourcesDir = "src/generated/auto-value"
 }
