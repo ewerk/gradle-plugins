@@ -1,11 +1,6 @@
-buildscript {
-  dependencies {
-    classpath project(":auto-value-plugin")
-  }
-}
-
 plugins {
   id "java"
+  id "com.ewerk.gradle.plugins.auto-value" version "1.0.1"
 }
 
 apply plugin: "com.ewerk.gradle.plugins.auto-value"
