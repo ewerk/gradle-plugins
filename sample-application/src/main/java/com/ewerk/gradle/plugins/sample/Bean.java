@@ -19,7 +19,7 @@ package com.ewerk.gradle.plugins.sample;
 import com.google.auto.value.AutoValue;
 
 /**
- * Simple bean demonstrating the auto-value usage.
+ * Simple construct demonstrating the auto-value usage.
  *
  * @author holgerstolzenberg
  * @since 1.0.0

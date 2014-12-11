@@ -16,21 +16,19 @@
 
 package com.ewerk.gradle.plugins.sample;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import static org.assertj.core.api.Assertions.assertThat;
+
+import org.testng.annotations.Test;
 
 /**
- * Dummy java code for sample application.
+ * A sample integration test. You may want to bootstrap your test framework here, e.g. spring-test.
  *
  * @author holgerstolzenberg
  * @since 1.0.0
  */
-public final class Sample {
-  private static final Logger LOG = LoggerFactory.getLogger(Sample.class);
-
-  public Bean construct() {
-    Bean bean = Bean.build("This is just a String!", 10);
-    LOG.info("Hello: {}", bean);
-    return bean;
+public class SampleIntegrationTest {
+  @Test
+  public void testBean() {
+    assertThat(Bean.build("hello", -1)).isNotNull();
   }
 }

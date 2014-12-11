@@ -23,9 +23,9 @@ import org.testng.annotations.Test;
 public class SampleTest {
 
   @Test
-  public void testSayHello() {
+  public void testConstruct() {
     Sample sample = new Sample();
-    Bean bean = sample.bean();
+    Bean bean = sample.construct();
     assertThat(bean.hello()).isEqualTo("This is just a String!");
     assertThat(bean.count()).isEqualTo(10);
   }

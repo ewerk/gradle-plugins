@@ -1,6 +1,7 @@
 plugins {
   id "java"
   id "com.ewerk.gradle.plugins.auto-value" version "1.0.1"
+  id "com.ewerk.gradle.plugins.integration-test" version "1.0.6"
 }
 
 apply plugin: "com.ewerk.gradle.plugins.auto-value"
@@ -18,5 +19,9 @@ dependencies {
 }
 
 test {
+  useTestNG()
+}
+
+integrationTest {
   useTestNG()
 }
