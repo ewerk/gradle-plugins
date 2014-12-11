@@ -16,7 +16,7 @@ __Use via Gradle plugin portal__
 
 ```groovy
 plugins {
-  id "com.ewerk.gradle.plugins.auto-value" version "1.0.0"
+  id "com.ewerk.gradle.plugins.auto-value" version "1.0.1"
 }
 ```
 
@@ -29,7 +29,7 @@ buildscript {
   }
 
   dependencies {
-    classpath "com.ewerk.gradle.plugins:auto-value-plugin:1.0.0"
+    classpath "com.ewerk.gradle.plugins:auto-value-plugin:1.0.1"
   }
 }
 
