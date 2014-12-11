@@ -20,6 +20,8 @@ set of the `test` task is also available to the integration test configuration
 Please see [Gradle test config](http://www.gradle.org/docs/current/dsl/org.gradle.api.tasks.testing.Test.html) 
 for details.
 
+The plugins change log can be found [here](change_log.md).
+
 #### Examples
 
 __Use via Gradle plugin portal__

@@ -8,7 +8,7 @@ This plugin makes it easy to generate [Google Auto-Value](https://github.com/goo
 classes within the project.
 
 Because of the early stage of the plugin, the configuration (and plugin DSL) has undergone some
-minor changes. This is documented in the [change log](change-log.md). 
+minor changes. This is documented in the [change log](change_log.md).
 
 #### Examples
 
