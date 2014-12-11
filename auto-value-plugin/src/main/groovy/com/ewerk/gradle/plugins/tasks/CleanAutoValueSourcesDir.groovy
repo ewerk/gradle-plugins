@@ -6,34 +6,32 @@ import org.gradle.api.logging.Logging
 import org.gradle.api.tasks.TaskAction
 
 /**
- * This task is responsible for removing and recreating the configured auto-value source roots.
+ * This task is responsible for purging the auto-value sources dir.
  *
  * @author holgerstolzenberg
- * @since 1.0.0
+ * @since 1.0.1
  */
-class InitAutoValueSourcesDir extends DefaultTask {
+class CleanAutoValueSourcesDir extends DefaultTask {
 
-  private static final Logger LOG = Logging.getLogger(InitAutoValueSourcesDir.class)
+  private static final Logger LOG = Logging.getLogger(CleanAutoValueSourcesDir.class)
 
   static final String GROUP = "Code generation"
-  static final String DESCRIPTION = "Creates the Auto-value sources dir."
+  static final String DESCRIPTION = "Cleans the Auto-value sources dir."
 
-  InitAutoValueSourcesDir() {
+  CleanAutoValueSourcesDir() {
     this.group = GROUP
     this.description = DESCRIPTION
   }
 
   @SuppressWarnings("GroovyUnusedDeclaration")
   @TaskAction
-  def createSourceFolders() {
+  def cleanSourceFolders() {
+    LOG.info("Clean Auto-Value source dir")
+
     project.sourceSets.autoValue.java.srcDirs.each { dir ->
       if (dir.exists()) {
-        LOG.info("Remove: {}", dir);
-        dir.delete()
+        dir.deleteDir()
       }
-
-      LOG.info("Create: {}", dir);
-      dir.mkdirs()
     }
   }
 }

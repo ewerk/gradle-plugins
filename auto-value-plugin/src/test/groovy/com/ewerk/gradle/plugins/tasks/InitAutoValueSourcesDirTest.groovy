@@ -18,7 +18,7 @@ class InitAutoValueSourcesDirTest {
 
   private Project project;
 
-  private InitAutoValueSourcesDir task;
+  private InitAutoValueSourcesDir createTask;
 
   @BeforeMethod
   public void setup() {
@@ -26,25 +26,25 @@ class InitAutoValueSourcesDirTest {
     project.plugins.apply(AutoValuePlugin.class)
     project.evaluate()
 
-    task = project.tasks.initAutoValueSourcesDir as InitAutoValueSourcesDir
+    createTask = project.tasks.initAutoValueSourcesDir as InitAutoValueSourcesDir
   }
 
   @Test
   void testCreateSourceFolders() {
-    task.createSourceFolders()
-    assertThat(project.sourceSets.generated, notNullValue())
+    createTask.createSourceFolders()
+    assertThat(project.sourceSets.autoValue, notNullValue())
 
-    File javaDir = project.sourceSets.generated.java.srcDirs.getAt(0) as File
-    assertThat(javaDir.name, equalTo("auto-value"))
+    File javaDir = project.sourceSets.autoValue.java.srcDirs.first() as File
+    assertThat(javaDir.name, equalTo("java"))
   }
 
   @Test
   public void testGroup() {
-    assertThat(task.group, equalTo(InitAutoValueSourcesDir.GROUP));
+    assertThat(createTask.group, equalTo(InitAutoValueSourcesDir.GROUP));
   }
 
   @Test
   public void testDescription() {
-    assertThat(task.description, equalTo(InitAutoValueSourcesDir.DESCRIPTION));
+    assertThat(createTask.description, equalTo(InitAutoValueSourcesDir.DESCRIPTION));
   }
 }

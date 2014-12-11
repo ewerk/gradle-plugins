@@ -1,5 +1,6 @@
 package com.ewerk.gradle.plugins
 
+import com.ewerk.gradle.plugins.tasks.CleanAutoValueSourcesDir
 import com.ewerk.gradle.plugins.tasks.InitAutoValueSourcesDir
 import org.gradle.api.Plugin
 import org.gradle.api.Project
@@ -17,7 +18,7 @@ import org.gradle.api.plugins.JavaPlugin
  *
  * The plugin will generate an additional source directory into where the auto-value
  * classes will be compiled, so that they can be ignored from SCM commits. Per default, this will
- * be {@link AutoValuePluginExtension#DEFAULT_GENERATED_SOURCES_DIR}.
+ * be {@link AutoValuePluginExtension#DEFAULT_AUTO_VALUE_SOURCES_DIR}.
  * <br/><br/>
  *
  * @see AutoValuePluginExtension
@@ -44,29 +45,31 @@ class AutoValuePlugin implements Plugin<Project> {
     // add 'autoValue' DSL extension
     project.extensions.create(AutoValuePluginExtension.NAME, AutoValuePluginExtension)
 
-    // add new task for creating the generated sources dir
+    // add new tasks for creating/cleaning the auto-value sources dir
+    project.task(type: CleanAutoValueSourcesDir, "cleanAutoValueSourcesDir")
     project.task(type: InitAutoValueSourcesDir, "initAutoValueSourcesDir")
 
     // make 'compileJava' require the new task, so that all sources are available
     project.tasks.compileJava.dependsOn project.tasks.initAutoValueSourcesDir
+    project.tasks.clean.dependsOn project.tasks.cleanAutoValueSourcesDir
 
     // make sure project configuration has finished
     project.afterEvaluate {
-      File generatedSourcesDir = generatedSourcesDir(project)
+      File autoValueSourcesDir = autoValueSourcesDir(project)
 
-      addAutoValueLibrary(project)
-      addSourceSet(project, generatedSourcesDir)
-      addCompilerOption(project, generatedSourcesDir)
+      addLibrary(project)
+      addSourceSet(project, autoValueSourcesDir)
+      addCompilerOption(project, autoValueSourcesDir)
     }
   }
 
-  private void addCompilerOption(Project project, generatedSourcesDir) {
+  private void addCompilerOption(Project project, sourcesDir) {
     project.tasks.compileJava {
-      options.compilerArgs = options.compilerArgs + ["-s", generatedSourcesDir.absolutePath]
+      options.compilerArgs = options.compilerArgs + ["-s", sourcesDir.absolutePath]
     }
   }
 
-  private void addAutoValueLibrary(Project project) {
+  private void addLibrary(Project project) {
     def library = project.extensions.autoValue.library
     LOG.info("Auto-Value library: {}", library)
     project.dependencies {
@@ -74,17 +77,20 @@ class AutoValuePlugin implements Plugin<Project> {
     }
   }
 
-  private void addSourceSet(Project project, File generatedSourcesDir) {
+  private void addSourceSet(Project project, File sourcesDir) {
+    LOG.info("Create source set 'auto-value'.");
+
     project.sourceSets {
-      generated {
-        java.srcDirs = [project.file(generatedSourcesDir)]
+      autoValue {
+        java.srcDirs = [sourcesDir]
       }
     }
   }
 
-  private static File generatedSourcesDir(Project project) {
-    File generatedSourcesDir = project.extensions.autoValue.generatedSourcesDir
-    LOG.info("Auto-value sources dir: {}", generatedSourcesDir.absolutePath);
-    return generatedSourcesDir
+  private static File autoValueSourcesDir(Project project) {
+    String path = project.extensions.autoValue.autoValueSourcesDir
+    File autoValueSourcesDir = project.file(path)
+    LOG.info("Auto-value sources dir: {}", autoValueSourcesDir.absolutePath);
+    return autoValueSourcesDir
   }
 }

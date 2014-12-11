@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration scan="true" scanPeriod="20 seconds">
+
+  <contextListener class="ch.qos.logback.classic.jul.LevelChangePropagator">
+    <resetJUL>true</resetJUL>
+  </contextListener>
+
+  <property name="CONSOLE_LOG_PATTERN"
+      value="%cyan(%d{HH:mm:ss.SSS}) | %magenta(%-15thread{12}) | %green(%-40logger{35}) | %-4L | %highlight(%-5level) | %X{label} | %X{uid} - %boldWhite(%m) %ex %n"/>
+
+  <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+    <encoder>
+      <pattern>${CONSOLE_LOG_PATTERN}</pattern>
+    </encoder>
+  </appender>
+
+  <logger name="com.ewerk.gradle.plugins.sample" additivity="false">
+    <level value="DEBUG"/>
+    <appender-ref ref="CONSOLE"/>
+  </logger>
+
+  <logger name="ch.qos.logback" additivity="false">
+    <level value="ERROR"/>
+    <appender-ref ref="CONSOLE"/>
+  </logger>
+
+  <root>
+    <level value="ERROR"/>
+    <appender-ref ref="CONSOLE"/>
+  </root>
+
+</configuration>

@@ -2,3 +2,5 @@
 **/build/
 **/*.iml
 **/.gradle/
+**/src/auto-value/**
+hs_err_*.log

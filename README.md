@@ -80,6 +80,9 @@ integrationTest {
 This plugin makes it easy to generate [Google Auto-Value](https://github.com/google/auto/tree/master/value) 
 classes within the project.
 
+Because of the early stage of the plugin, the configuration (and plugin DSL) has undergone some
+minor changes. This is documented in the [change log](https://github.com/ewerk/gradle-plugins/tree/master/auto-value-plugin/change-log.md). 
+
 #### Examples
 
 __Use via Gradle plugin portal__
@@ -107,8 +110,7 @@ apply plugin: "com.ewerk.gradle.plugins.auto-value"
 
 // the following closure demonstrates the extension defaults and is not necessary
 autoValue {
-  delete = true
   library = "com.google.auto.value:auto-value:1.0-rc2"
-  generatedSourcesDir = "src/generated/auto-value"
+  generatedSourcesDir = "src/auto-value/java"
 }
 ```

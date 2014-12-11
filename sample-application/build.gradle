@@ -1,0 +1,27 @@
+buildscript {
+  dependencies {
+    classpath project(":auto-value-plugin")
+  }
+}
+
+plugins {
+  id "java"
+}
+
+apply plugin: "com.ewerk.gradle.plugins.auto-value"
+
+repositories {
+  mavenLocal()
+  mavenCentral()
+}
+
+dependencies {
+  compile "org.slf4j:slf4j-api:$slf4jVersion"
+
+  testCompile "org.testng:testng:$testNgVersion"
+  testCompile "org.assertj:assertj-core:$assertjVersion"
+}
+
+test {
+  useTestNG()
+}
