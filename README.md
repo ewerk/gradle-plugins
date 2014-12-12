@@ -11,7 +11,7 @@ The plugins are released using the [gradle-plugindev-plugin](https://github.com/
 The plugins can also be downloaded from [bintray](http://www.bintray.com) as long as they are not
 available through the Gradle plugin portal.
 
-The plugins are based on Gradle ≥2.1.
+The plugins are based on Gradle ≥ 2.1.
 
 ## Plugins
 * [auto-value-plugin] (https://github.com/ewerk/gradle-plugins/tree/master/auto-value-plugin)
