@@ -18,8 +18,10 @@ package com.ewerk.gradle.plugins
 
 import org.gradle.api.Plugin
 import org.gradle.api.Project
+import org.gradle.api.logging.Logging
 import org.gradle.api.plugins.JavaPlugin
 import org.gradle.api.tasks.testing.Test
+import org.slf4j.Logger
 
 /**
  * The integration test plugin can be used to execute integration tests from a own sourceSet named
@@ -37,6 +39,8 @@ import org.gradle.api.tasks.testing.Test
  */
 class IntegrationTestPlugin implements Plugin<Project> {
 
+  private static final Logger LOG = Logging.getLogger(IntegrationTestPlugin.class)
+
   static final String GROUP = "Verification"
 
   @Override
@@ -45,6 +49,8 @@ class IntegrationTestPlugin implements Plugin<Project> {
     if (project.plugins.hasPlugin(IntegrationTestPlugin.class)) {
       return;
     }
+
+    LOG.info("Applying integration-test plugin");
 
     if (!project.plugins.hasPlugin(JavaPlugin.class)) {
       project.plugins.apply(JavaPlugin.class)
