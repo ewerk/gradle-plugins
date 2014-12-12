@@ -5,7 +5,7 @@
 #### Description
 
 This plugin makes it easy to generate [Google Auto-Value](https://github.com/google/auto/tree/master/value) 
-classes within the project.
+classes within a project.
 
 Because of the early stage of the plugin, the configuration (and plugin DSL) has undergone some
 minor changes. This is documented in the [change log](change_log.md).

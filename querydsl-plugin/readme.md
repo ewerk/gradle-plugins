@@ -1,4 +1,4 @@
-### Auto-Value plugin
+### Querydsl plugin
 
 <!--
 [ ![Download](https://api.bintray.com/packages/ewerk/gradle-plugins/auto-value-plugin/images/download.svg) ](https://bintray.com/ewerk/gradle-plugins/auto-value-plugin/_latestVersion)
@@ -7,7 +7,7 @@
 #### Description
 
 This plugin makes it easy to generate [Querydsl](http://www.querydsl.com/) 
-classes within the project.
+classes within a project.
 
 Please have a look at the plugins [change log](change_log.md).
 
