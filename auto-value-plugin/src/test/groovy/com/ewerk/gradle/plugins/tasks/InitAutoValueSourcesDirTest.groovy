@@ -40,7 +40,7 @@ class InitAutoValueSourcesDirTest {
 
   @Test
   public void testGroup() {
-    assertThat(createTask.group, equalTo(InitAutoValueSourcesDir.GROUP));
+    assertThat(createTask.group, equalTo(AutoValuePlugin.TASK_GROUP));
   }
 
   @Test

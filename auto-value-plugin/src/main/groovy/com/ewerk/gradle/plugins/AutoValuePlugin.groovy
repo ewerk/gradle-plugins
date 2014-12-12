@@ -27,6 +27,8 @@ import org.gradle.api.plugins.JavaPlugin
  */
 class AutoValuePlugin implements Plugin<Project> {
 
+  public static final String TASK_GROUP = "Auto-Value tasks"
+
   private static final Logger LOG = Logging.getLogger(AutoValuePlugin.class)
 
   @Override
@@ -36,6 +38,8 @@ class AutoValuePlugin implements Plugin<Project> {
     if (project.plugins.hasPlugin(AutoValuePlugin.class)) {
       return;
     }
+
+    LOG.info("Applying auto-value plugin")
 
     // apply core 'java' plugin if not present to make 'sourceSets' available
     if (!project.plugins.hasPlugin(JavaPlugin.class)) {

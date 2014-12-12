@@ -1,5 +1,6 @@
 package com.ewerk.gradle.plugins.tasks
 
+import com.ewerk.gradle.plugins.AutoValuePlugin
 import org.gradle.api.DefaultTask
 import org.gradle.api.logging.Logger
 import org.gradle.api.logging.Logging
@@ -15,11 +16,10 @@ class CleanAutoValueSourcesDir extends DefaultTask {
 
   private static final Logger LOG = Logging.getLogger(CleanAutoValueSourcesDir.class)
 
-  static final String GROUP = "Code generation"
   static final String DESCRIPTION = "Cleans the Auto-value sources dir."
 
   CleanAutoValueSourcesDir() {
-    this.group = GROUP
+    this.group = AutoValuePlugin.TASK_GROUP
     this.description = DESCRIPTION
   }
 
