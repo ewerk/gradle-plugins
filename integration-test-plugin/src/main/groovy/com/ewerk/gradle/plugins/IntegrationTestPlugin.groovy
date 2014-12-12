@@ -41,7 +41,7 @@ class IntegrationTestPlugin implements Plugin<Project> {
 
   private static final Logger LOG = Logging.getLogger(IntegrationTestPlugin.class)
 
-  static final String GROUP = "Verification"
+  static final String GROUP = "Integration test"
 
   @Override
   void apply(final Project project) {
