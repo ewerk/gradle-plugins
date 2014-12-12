@@ -1,2 +1,2 @@
 rootProject.name = "gradle-plugins"
-include "integration-test-plugin", "auto-value-plugin", "sample-application"
+include "integration-test-plugin", "auto-value-plugin", "querydsl-plugin", "sample-application"

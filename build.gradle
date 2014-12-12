@@ -6,6 +6,6 @@ wrapper {
   gradleVersion = "2.2.1"
 }
 
-allprojects {
+subprojects {
   apply plugin: "groovy"
 }
