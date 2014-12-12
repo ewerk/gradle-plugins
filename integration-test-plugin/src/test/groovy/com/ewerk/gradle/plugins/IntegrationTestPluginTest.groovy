@@ -53,7 +53,7 @@ class IntegrationTestPluginTest {
 
   @Test
   public void testAllTestsTaskGroup() {
-    assertThat(project.tasks.allTests.group, equalTo("Verification"))
+    assertThat(project.tasks.allTests.group, equalTo("Integration test"))
   }
 
   @Test
