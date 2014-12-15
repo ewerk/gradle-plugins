@@ -1,4 +1,7 @@
 # Change log
 
 ## 1.0.0
-* current SNAPSHOT
+* Initial release
+
+## 1.0.1
+* Current SNAPSHOT
