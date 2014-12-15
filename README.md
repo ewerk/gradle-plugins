@@ -16,4 +16,4 @@ The plugins are based on Gradle ≥ 2.1.
 ## Plugins
 * [auto-value-plugin] (https://github.com/ewerk/gradle-plugins/tree/master/auto-value-plugin)
 * [integration-test-plugin] (https://github.com/ewerk/gradle-plugins/tree/master/integration-test-plugin)
-* [querydsl-plugin] (https://github.com/ewerk/gradle-plugins/tree/plugins/querydsl/querydsl-plugin)
+* [querydsl-plugin] (https://github.com/ewerk/gradle-plugins/tree/master/querydsl-plugin)
