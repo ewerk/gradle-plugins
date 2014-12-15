@@ -26,9 +26,6 @@ class InitAutoValueSourcesDir extends DefaultTask {
   @SuppressWarnings("GroovyUnusedDeclaration")
   @TaskAction
   def createSourceFolders() {
-    project.sourceSets.autoValue.java.srcDirs.each { dir ->
-      LOG.info("Create: {}", dir);
-      dir.mkdirs()
-    }
+    project.file(project.autoValue.autoValueSourcesDir).mkdirs()
   }
 }
