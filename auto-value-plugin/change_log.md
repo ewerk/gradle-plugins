@@ -10,4 +10,7 @@
 * Changed default generated sources dir to `src/auto-value/java` for not interfering with other generated code
 
 ## 1.0.2
+* minor tweaks to the plugins cleaning logic
+
+## 1.0.3
 * current SNAPSHOT
