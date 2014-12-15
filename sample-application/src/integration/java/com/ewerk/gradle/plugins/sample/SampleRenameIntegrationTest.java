@@ -26,7 +26,7 @@ import org.testng.annotations.Test;
  * @author holgerstolzenberg
  * @since 1.0.0
  */
-public class SampleIntegrationTest {
+public class SampleRenameIntegrationTest {
   @Test
   public void testBean() {
     assertThat(Bean.build("hello", -1)).isNotNull();

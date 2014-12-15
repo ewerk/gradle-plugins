@@ -1,8 +1,6 @@
 ### Querydsl plugin
 
-<!--
-[ ![Download](https://api.bintray.com/packages/ewerk/gradle-plugins/auto-value-plugin/images/download.svg) ](https://bintray.com/ewerk/gradle-plugins/auto-value-plugin/_latestVersion)
--->
+[ ![Download](https://api.bintray.com/packages/ewerk/gradle-plugins/querydsl-plugin/images/download.svg) ](https://bintray.com/ewerk/gradle-plugins/querydsl-plugin/_latestVersion)
 
 #### Description
 
@@ -10,8 +8,6 @@ This plugin makes it easy to generate [Querydsl](http://www.querydsl.com/)
 classes within a project.
 
 Please have a look at the plugins [change log](change_log.md).
-
-The plugin is currently under development, usage examples will be available soon.
 
 #### Examples
 
@@ -29,10 +25,6 @@ plugins {
 
 __Use via JCenter__
 
-Coming soon.
-
-<!--
-
 ```groovy
 buildscript {
   repositories {
@@ -40,17 +32,15 @@ buildscript {
   }
 
   dependencies {
-    classpath "com.ewerk.gradle.plugins:auto-value-plugin:1.0.1"
+    classpath "com.ewerk.gradle.plugins:querydsl-plugin:1.0.0"
   }
 }
 
-apply plugin: "com.ewerk.gradle.plugins.auto-value"
+apply plugin: "com.ewerk.gradle.plugins.querydsl"
 
 // the following closure demonstrates the extension defaults and is not necessary
-autoValue {
-  library = "com.google.auto.value:auto-value:1.0-rc2"
-  generatedSourcesDir = "src/auto-value/java"
+querydsl {
+  library = "com.mysema:querydsl:querydsl-apt:3.6.0"
+  querydslSourcesDir = "src/querydsl/java"
 }
 ```
-
--->
