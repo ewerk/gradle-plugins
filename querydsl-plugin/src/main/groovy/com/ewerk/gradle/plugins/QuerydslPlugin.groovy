@@ -67,7 +67,13 @@ class QuerydslPlugin implements Plugin<Project> {
 
       addLibrary(project)
       addSourceSet(project, querydslSourcesDir)
-      //addCompilerOption(project)
+      registerSourceAtCompileJava(project, querydslSourcesDir)
+    }
+  }
+
+  private void registerSourceAtCompileJava(Project project, File querydslSourcesDir) {
+    project.compileJava {
+      source querydslSourcesDir
     }
   }
 
