@@ -1,22 +1,12 @@
-buildscript {
-  repositories {
-    mavenLocal()
-  }
-
-  dependencies {
-    classpath project(":auto-value-plugin")
-    classpath project(":integration-test-plugin")
-    classpath project(":querydsl-plugin")
-  }
-}
-
 plugins {
   id "java"
+  id "com.ewerk.gradle.plugins.auto-value" version "1.0.1"
+  id "com.ewerk.gradle.plugins.integration-test" version "1.0.6"
 }
 
 apply plugin: "com.ewerk.gradle.plugins.auto-value"
 apply plugin: "com.ewerk.gradle.plugins.integration-test"
-apply plugin: "com.ewerk.gradle.plugins.querydsl"
+// apply plugin: "com.ewerk.gradle.plugins.querydsl"
 
 repositories {
   mavenLocal()

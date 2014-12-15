@@ -20,20 +20,17 @@ import com.google.common.base.MoreObjects;
 
 import java.io.Serializable;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-
 /**
  * Simple JPA entity for demonstrating the creation of querydsl classes.
  *
  * @author holgerstolzenberg
  * @since 1.0.0
  */
-@Entity
+//@Entity
 public class DatabaseEntity implements Serializable {
   private static final long serialVersionUID = 1299480824149633678L;
 
-  @Id
+  //@Id
   private Long id;
 
   public Long getId() {
