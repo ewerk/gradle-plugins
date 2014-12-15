@@ -27,11 +27,6 @@ class InitAutoValueSourcesDir extends DefaultTask {
   @TaskAction
   def createSourceFolders() {
     project.sourceSets.autoValue.java.srcDirs.each { dir ->
-      if (dir.exists()) {
-        LOG.info("Remove: {}", dir);
-        dir.delete()
-      }
-
       LOG.info("Create: {}", dir);
       dir.mkdirs()
     }

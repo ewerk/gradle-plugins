@@ -8,7 +8,7 @@ package com.ewerk.gradle.plugins
  */
 class QuerydslPluginExtension {
 
-  static final String NAME = "queryDsl"
+  static final String NAME = "querydsl"
 
   static final String DEFAULT_QUERYDSL_SOURCES_DIR = new File("src/querydsl/java")
   static final String DEFAULT_LIBRARY = "com.mysema.querydsl:querydsl-apt:3.6.0"

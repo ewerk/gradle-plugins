@@ -25,6 +25,7 @@ repositories {
 
 dependencies {
   compile "org.slf4j:slf4j-api:$slf4jVersion"
+  compile "org.hibernate.javax.persistence:hibernate-jpa-2.1-api:$persistenceApiVersion"
 
   testCompile "org.testng:testng:$testNgVersion"
   testCompile "org.assertj:assertj-core:$assertjVersion"

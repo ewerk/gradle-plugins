@@ -3,4 +3,5 @@
 **/*.iml
 **/.gradle/
 **/src/auto-value/**
+**/src/querydsl/**
 hs_err_*.log
