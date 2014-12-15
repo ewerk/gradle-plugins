@@ -40,7 +40,7 @@ apply plugin: "com.ewerk.gradle.plugins.querydsl"
 
 // the following closure demonstrates the extension defaults and is not necessary
 querydsl {
-  library = "com.mysema:querydsl:querydsl-apt:3.6.0"
+  library = "com.mysema.querydsl:querydsl-apt:3.6.0"
   querydslSourcesDir = "src/querydsl/java"
 }
 ```
