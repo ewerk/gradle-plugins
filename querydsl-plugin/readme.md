@@ -13,15 +13,11 @@ Please have a look at the plugins [change log](change_log.md).
 
 __Use via Gradle plugin portal__
 
-Coming soon.
-
-<!--
 ```groovy
 plugins {
   id "com.ewerk.gradle.plugins.querydsl" version "1.0.0"
 }
 ```
--->
 
 __Use via JCenter__
 
