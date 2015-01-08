@@ -118,8 +118,11 @@ repositories {
 
 dependencies {
   […]
-  compile "org.springframework.data:spring-data-mongodb:1.6.1.RELEASE" // needed to make MongoDB annotation processor available at classpath
-  compile "com.mysema.querydsl:querydsl-mongodb:3.6.0" // needed to use Querydsl against MongoDB
+  // make MongoDB annotation processor available at classpath
+  compile "org.springframework.data:spring-data-mongodb:1.6.1.RELEASE"
+  
+  // use Querydsl against MongoDB
+  compile "com.mysema.querydsl:querydsl-mongodb:3.6.0"
   […]
 }
 
