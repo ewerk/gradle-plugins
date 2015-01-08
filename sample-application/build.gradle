@@ -1,10 +1,11 @@
 buildscript {
   repositories {
+    mavenLocal()
     jcenter()
   }
 
   dependencies {
-    classpath "com.ewerk.gradle.plugins:querydsl-plugin:1.0.0"
+    classpath "com.ewerk.gradle.plugins:querydsl-plugin:1.0.1-SNAPSHOT"
   }
 }
 
@@ -26,6 +27,7 @@ repositories {
 dependencies {
   compile "org.slf4j:slf4j-api:$slf4jVersion"
   compile "org.hibernate.javax.persistence:hibernate-jpa-2.1-api:$persistenceApiVersion"
+  compile "org.springframework.data:spring-data-mongodb:$springDataVersion"
 
   testCompile "org.testng:testng:$testNgVersion"
   testCompile "org.assertj:assertj-core:$assertjVersion"
@@ -34,6 +36,15 @@ dependencies {
 compileJava.dependsOn(":auto-value-plugin:publishToMavenLocal")
 compileJava.dependsOn(":integration-test-plugin:publishToMavenLocal")
 compileJava.dependsOn(":querydsl-plugin:publishToMavenLocal")
+
+querydsl {
+  jpa = true
+  jdo = false
+  hibernate = false
+  morphia = false
+  roo = false
+  springDataMongo = true
+}
 
 test {
   useTestNG()

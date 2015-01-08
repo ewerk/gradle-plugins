@@ -8,9 +8,9 @@ import org.gradle.api.tasks.compile.JavaCompile
  * @author holgerstolzenberg
  * @since 1.0.0
  */
-class CompileQuerydsl extends JavaCompile {
+abstract class AbstractCompileQuerydsl extends JavaCompile {
 
-  CompileQuerydsl() {
+  AbstractCompileQuerydsl() {
     setSource(project.sourceSets.main.java)
     setClasspath(project.configurations.compile)
 
@@ -19,7 +19,9 @@ class CompileQuerydsl extends JavaCompile {
 
     options.compilerArgs += [
         "-proc:only",
-        "-processor", "com.mysema.query.apt.jpa.JPAAnnotationProcessor"
+        "-processor", processor()
     ]
   }
+
+  abstract String processor()
 }

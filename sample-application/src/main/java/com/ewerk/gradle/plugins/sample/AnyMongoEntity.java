@@ -16,31 +16,29 @@
 
 package com.ewerk.gradle.plugins.sample;
 
-import com.google.common.base.MoreObjects;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.io.Serializable;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-
 /**
- * Simple JPA entity for demonstrating the creation of querydsl classes.
+ * Simple spring data mongo db entity.
  *
  * @author holgerstolzenberg
- * @since 1.0.0
+ * @since 1.0.1
  */
-@Entity
-public class DatabaseEntity implements Serializable {
-  private static final long serialVersionUID = 1299480824149633678L;
+@Document
+public class AnyMongoEntity implements Serializable {
+  private static final long serialVersionUID = 1317156958629689544L;
 
   @Id
-  private Long id;
+  public String id;
 
-  public Long getId() {
+  public String getId() {
     return id;
   }
 
-  public void setId(final Long id) {
+  public void setId(final String id) {
     this.id = id;
   }
 
@@ -53,17 +51,12 @@ public class DatabaseEntity implements Serializable {
       return false;
     }
 
-    final DatabaseEntity that = (DatabaseEntity) o;
+    final AnyMongoEntity that = (AnyMongoEntity) o;
     return id.equals(that.id);
   }
 
   @Override
   public int hashCode() {
     return id.hashCode();
-  }
-
-  @Override
-  public String toString() {
-    return MoreObjects.toStringHelper(this).add("id", id).toString();
   }
 }
