@@ -1,11 +1,10 @@
 buildscript {
   repositories {
-    mavenLocal()
     jcenter()
   }
 
   dependencies {
-    classpath "com.ewerk.gradle.plugins:querydsl-plugin:1.0.1-SNAPSHOT"
+    //classpath "com.ewerk.gradle.plugins:querydsl-plugin:1.0.1-SNAPSHOT"
   }
 }
 
@@ -17,7 +16,7 @@ plugins {
 
 apply plugin: "com.ewerk.gradle.plugins.auto-value"
 apply plugin: "com.ewerk.gradle.plugins.integration-test"
-apply plugin: "com.ewerk.gradle.plugins.querydsl"
+//apply plugin: "com.ewerk.gradle.plugins.querydsl"
 
 repositories {
   mavenLocal()
@@ -37,14 +36,14 @@ compileJava.dependsOn(":auto-value-plugin:publishToMavenLocal")
 compileJava.dependsOn(":integration-test-plugin:publishToMavenLocal")
 compileJava.dependsOn(":querydsl-plugin:publishToMavenLocal")
 
-querydsl {
-  jpa = true
-  jdo = false
-  hibernate = false
-  morphia = false
-  roo = false
-  springDataMongo = true
-}
+//querydsl {
+//  jpa = true
+//  jdo = false
+//  hibernate = false
+//  morphia = false
+//  roo = false
+//  springDataMongo = true
+//}
 
 test {
   useTestNG()
