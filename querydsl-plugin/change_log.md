@@ -7,4 +7,5 @@
 * The meta model can be created from different annotation processors
 
 ## 1.0.2
-* Current SNAPSHOT
+* added support for com.mysema.query.apt.QuerydslAnnotationProcessor
+* current SNAPSHOT
