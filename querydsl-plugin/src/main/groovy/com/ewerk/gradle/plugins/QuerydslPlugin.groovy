@@ -63,6 +63,7 @@ class QuerydslPlugin implements Plugin<Project> {
       morphiaTask(project)
       rooTask(project)
       springDataMongoTask(project)
+      querydslDefaultTask(project)
 
       File querydslSourcesDir = querydslSourcesDir(project)
 
@@ -117,6 +118,14 @@ class QuerydslPlugin implements Plugin<Project> {
       project.task(type: CompileQuerydslSpringDataMongo, "compileQuerydslSpringDataMongo")
       project.tasks.compileQuerydslSpringDataMongo.dependsOn project.tasks.initQuerydslSourcesDir
       project.tasks.compileJava.dependsOn project.tasks.compileQuerydslSpringDataMongo
+    }
+  }
+
+  private static void querydslDefaultTask(Project project) {
+    if (project.extensions.querydsl.querydslDefault) {
+      project.task(type: CompileQuerydslDefault, "compileQuerydslDefault")
+      project.tasks.compileQuerydslDefault.dependsOn project.tasks.initQuerydslSourcesDir
+      project.tasks.compileJava.dependsOn project.tasks.compileQuerydslDefault
     }
   }
 

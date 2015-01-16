@@ -30,6 +30,7 @@ class QuerydslPluginTest {
     project.extensions.querydsl.hibernate = true;
     project.extensions.querydsl.morphia = true;
     project.extensions.querydsl.springDataMongo = true;
+    project.extensions.querydsl.querydslDefault = true;
   }
 
   @Test
@@ -84,5 +85,6 @@ class QuerydslPluginTest {
     assertThat(project.tasks.compileQuerydslRoo, notNullValue())
     assertThat(project.tasks.compileQuerydslMorphia, notNullValue())
     assertThat(project.tasks.compileQuerydslSpringDataMongo, notNullValue())
+    assertThat(project.tasks.compileQuerydslDefault, notNullValue())
   }
 }

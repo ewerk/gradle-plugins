@@ -22,4 +22,6 @@ class QuerydslPluginExtension {
   boolean morphia = false;
   boolean roo = false;
   boolean springDataMongo = false;
+  boolean querydslDefault = false;
+
 }
