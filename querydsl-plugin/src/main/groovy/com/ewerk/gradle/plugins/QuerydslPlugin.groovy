@@ -107,7 +107,7 @@ class QuerydslPlugin implements Plugin<Project> {
 
   private static void jpaTask(Project project) {
     if (project.extensions.querydsl.jpa) {
-      project.task(type: CompileQuerydslJpa3, "compileQuerydslJpa")
+      project.task(type: CompileQuerydslJpa, "compileQuerydslJpa")
       project.tasks.compileQuerydslJpa.dependsOn project.tasks.initQuerydslSourcesDir
       project.tasks.compileJava.dependsOn project.tasks.compileQuerydslJpa
     }

@@ -6,7 +6,7 @@ package com.ewerk.gradle.plugins.tasks
  * @author holgerstolzenberg
  * @since 1.0.1
  */
-class CompileQuerydslJpa3 extends AbstractCompileQuerydsl {
+class CompileQuerydslJpa extends AbstractCompileQuerydsl {
 
   public static final String PROCESSOR = "com.mysema.query.apt.jpa.JPAAnnotationProcessor"
 
