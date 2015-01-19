@@ -4,9 +4,9 @@
 
 #### Description
 
-This plugin makes it easy to generate [Querydsl](http://www.querydsl.com/) 
+This plugin makes it easy to generate [Querydsl](http://www.querydsl.com/)
 classes within a project. Different annotation processors can be activated via the plugins
-configuration. The plugin will not manage 3rd party libraries. It is still up to the end user 
+configuration. The plugin will not manage 3rd party libraries. It is still up to the end user
 to add the required dependencies like Hibernate, Spring Data Mongo and the needed Querydsl libs.
 
 Please have a look at the plugins [change log](change_log.md).
@@ -14,61 +14,69 @@ Please have a look at the plugins [change log](change_log.md).
 #### Configuration
 
 ##### library
-The artifact coordinates of the Querydsl annotation processor library. 
+The artifact coordinates of the Querydsl annotation processor library.
 
 Defaults to `com.mysema.querydsl:querydsl-apt:3.6.0`.
 
 ##### querydslSourcesDir
-The project relative path to where the querydsl meta model sources are created in. It does not 
-matter which annotation processors are used, all meta model classes will be created within this 
+The project relative path to where the querydsl meta model sources are created in. It does not
+matter which annotation processors are used, all meta model classes will be created within this
 directory.
 
 Defaults to `src/querydsl/java`.
 
 ##### jpa
-Boolean flag to indicate if creation of meta model from JPA annotated sources 
+Boolean flag to indicate if creation of meta model from JPA annotated sources
 should be enabled.
-If so, a java compile task that enables the `com.mysema.query.apt.jpa.JPAAnnotationProcessor` will 
+If so, a java compile task that enables the `com.mysema.query.apt.jpa.JPAAnnotationProcessor` will
 be added and used within the project.
 
 Defaults to `false`.
 
 ##### jdo
-Boolean flag to indicate if creation of meta model from JDO annotated sources 
+Boolean flag to indicate if creation of meta model from JDO annotated sources
 should be enabled.
-If so, a java compile task that enables the `com.mysema.query.apt.jdo.JDOAnnotationProcessor` will 
+If so, a java compile task that enables the `com.mysema.query.apt.jdo.JDOAnnotationProcessor` will
 be added and used within the project.
 
 Defaults to `false`.
 
 ##### hibernate
-Boolean flag to indicate if creation of meta model from Hibernate annotated sources 
+Boolean flag to indicate if creation of meta model from Hibernate annotated sources
 should be enabled.
-If so, a java compile task that enables the `com.mysema.query.apt.hibernate.HibernateAnnotationProcessor` will 
+If so, a java compile task that enables the `com.mysema.query.apt.hibernate.HibernateAnnotationProcessor` will
 be added and used within the project.
 
 Defaults to `false`.
 
 ##### morphia
-Boolean flag to indicate if creation of meta model from Morphia annotated sources 
+Boolean flag to indicate if creation of meta model from Morphia annotated sources
 should be enabled.
-If so, a java compile task that enables the `com.mysema.query.apt.morphia.MorphiaAnnotationProcessor` 
+If so, a java compile task that enables the `com.mysema.query.apt.morphia.MorphiaAnnotationProcessor`
 will be added and used within the project.
 
 Defaults to `false`.
 
 ##### roo
-Boolean flag to indicate if creation of meta model from Spring Roo annotated sources 
+Boolean flag to indicate if creation of meta model from Spring Roo annotated sources
 should be enabled.
-If so, a java compile task that enables the `com.mysema.query.apt.roo.RooAnnotationProcessor` will 
+If so, a java compile task that enables the `com.mysema.query.apt.roo.RooAnnotationProcessor` will
 be added and used within the project.
 
 Defaults to `false`.
 
 ##### springDataMongo
-Boolean flag to indicate if creation of meta model from Spring Data Mongo annotated sources 
+Boolean flag to indicate if creation of meta model from Spring Data Mongo annotated sources
 should be enabled.
-If so, a java compile task that enables the `com.mysema.query.apt.roo.RooAnnotationProcessor` will 
+If so, a java compile task that enables the `com.mysema.query.apt.roo.RooAnnotationProcessor` will
+be added and used within the project.
+
+Defaults to `false`.
+
+##### querydslDefault
+Boolean flag to indicate if creation of meta model from Querydsl annotated sources
+should be enabled.
+If so, a java compile task that enables the `com.mysema.query.apt.QuerydslAnnotationProcessor` will
 be added and used within the project.
 
 Defaults to `false`.
@@ -120,7 +128,7 @@ dependencies {
   […]
   // make MongoDB annotation processor available at classpath
   compile "org.springframework.data:spring-data-mongodb:1.6.1.RELEASE"
-  
+
   // use Querydsl against MongoDB
   compile "com.mysema.querydsl:querydsl-mongodb:3.6.0"
   […]

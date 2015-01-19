@@ -8,4 +8,6 @@
 
 ## 1.0.2
 * added support for com.mysema.query.apt.QuerydslAnnotationProcessor
+
+## 1.0.3
 * current SNAPSHOT
