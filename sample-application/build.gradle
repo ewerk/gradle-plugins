@@ -2,7 +2,7 @@ plugins {
   id "java"
   id "com.ewerk.gradle.plugins.auto-value" version "1.0.1"
   id "com.ewerk.gradle.plugins.integration-test" version "1.0.6"
-  id "com.ewerk.gradle.plugins.querydsl" version "1.0.1"
+  id "com.ewerk.gradle.plugins.querydsl" version "1.0.2"
 }
 
 repositories {
@@ -30,6 +30,7 @@ querydsl {
   morphia = false
   roo = false
   springDataMongo = true
+  querydslDefault = false
 }
 
 test {
