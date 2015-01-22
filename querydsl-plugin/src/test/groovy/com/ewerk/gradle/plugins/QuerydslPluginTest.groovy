@@ -53,6 +53,11 @@ class QuerydslPluginTest {
     assertThat(project.extensions.querydsl, notNullValue())
   }
 
+ @Test
+  public void testPluginProcessorsFromQuerydslExtensions() {
+    assertThat(project.extensions.querydsl.processors(), notNullValue())
+  }
+
   @Test
   public void testPluginTasksAreAvailable() {
     assertThat(project.tasks.initQuerydslSourcesDir, notNullValue())
@@ -79,12 +84,7 @@ class QuerydslPluginTest {
 
     assertThat(id, equalTo(QuerydslPluginExtension.DEFAULT_LIBRARY));
 
-    assertThat(project.tasks.compileQuerydslJpa, notNullValue())
-    assertThat(project.tasks.compileQuerydslJdo, notNullValue())
-    assertThat(project.tasks.compileQuerydslHibernate, notNullValue())
-    assertThat(project.tasks.compileQuerydslRoo, notNullValue())
-    assertThat(project.tasks.compileQuerydslMorphia, notNullValue())
-    assertThat(project.tasks.compileQuerydslSpringDataMongo, notNullValue())
-    assertThat(project.tasks.compileQuerydslDefault, notNullValue())
+    assertThat(project.tasks.compileQuerydsl, notNullValue())
+
   }
 }
