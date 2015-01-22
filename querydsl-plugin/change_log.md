@@ -10,4 +10,7 @@
 * added support for com.mysema.query.apt.QuerydslAnnotationProcessor
 
 ## 1.0.3
+* Internal refactoring, only one task `QuerydslCompile` is added to the project that configures all annotation processors
+
+## 1.0.4
 * current SNAPSHOT

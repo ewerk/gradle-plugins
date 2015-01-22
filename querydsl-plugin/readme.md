@@ -87,7 +87,7 @@ __Use via Gradle plugin portal__
 
 ```groovy
 plugins {
-  id "com.ewerk.gradle.plugins.querydsl" version "1.0.0"
+  id "com.ewerk.gradle.plugins.querydsl" version "1.0.3"
 }
 ```
 
@@ -100,7 +100,7 @@ buildscript {
   }
 
   dependencies {
-    classpath "com.ewerk.gradle.plugins:querydsl-plugin:1.0.1"
+    classpath "com.ewerk.gradle.plugins:querydsl-plugin:1.0.3"
   }
 }
 
@@ -117,7 +117,7 @@ __Mongo example__
 
 ```groovy
 plugins {
-  id "com.ewerk.gradle.plugins.querydsl" version "1.0.1"
+  id "com.ewerk.gradle.plugins.querydsl" version "1.0.3"
 }
 
 repositories {
