@@ -57,75 +57,15 @@ class QuerydslPlugin implements Plugin<Project> {
 
     project.afterEvaluate {
 
-      jpaTask(project)
-      jdoTask(project)
-      hibernateTask(project)
-      morphiaTask(project)
-      rooTask(project)
-      springDataMongoTask(project)
-      querydslDefaultTask(project)
+      project.task(type: QuerydslCompile, "compileQuerydsl")
+      project.tasks.compileQuerydsl.dependsOn project.tasks.initQuerydslSourcesDir
+      project.tasks.compileJava.dependsOn project.tasks.compileQuerydsl
 
       File querydslSourcesDir = querydslSourcesDir(project)
 
       addLibrary(project)
       addSourceSet(project, querydslSourcesDir)
       registerSourceAtCompileJava(project, querydslSourcesDir)
-    }
-  }
-
-  private static void rooTask(Project project) {
-    if (project.extensions.querydsl.roo) {
-      project.task(type: CompileQuerydslRoo, "compileQuerydslRoo")
-      project.tasks.compileQuerydslRoo.dependsOn project.tasks.initQuerydslSourcesDir
-      project.tasks.compileJava.dependsOn project.tasks.compileQuerydslRoo
-    }
-  }
-
-  private static void morphiaTask(Project project) {
-    if (project.extensions.querydsl.morphia) {
-      project.task(type: CompileQuerydslMorphia, "compileQuerydslMorphia")
-      project.tasks.compileQuerydslMorphia.dependsOn project.tasks.initQuerydslSourcesDir
-      project.tasks.compileJava.dependsOn project.tasks.compileQuerydslMorphia
-    }
-  }
-
-  private static void hibernateTask(Project project) {
-    if (project.extensions.querydsl.hibernate) {
-      project.task(type: CompileQuerydslHibernate, "compileQuerydslHibernate")
-      project.tasks.compileQuerydslHibernate.dependsOn project.tasks.initQuerydslSourcesDir
-      project.tasks.compileJava.dependsOn project.tasks.compileQuerydslHibernate
-    }
-  }
-
-  private static void jdoTask(Project project) {
-    if (project.extensions.querydsl.jdo) {
-      project.task(type: CompileQuerydslJdo, "compileQuerydslJdo")
-      project.tasks.compileQuerydslJdo.dependsOn project.tasks.initQuerydslSourcesDir
-      project.tasks.compileJava.dependsOn project.tasks.compileQuerydslJdo
-    }
-  }
-
-  private static void jpaTask(Project project) {
-    if (project.extensions.querydsl.jpa) {
-      project.task(type: CompileQuerydslJpa, "compileQuerydslJpa")
-      project.tasks.compileQuerydslJpa.dependsOn project.tasks.initQuerydslSourcesDir
-      project.tasks.compileJava.dependsOn project.tasks.compileQuerydslJpa
-    }
-  }
-
-  private static void springDataMongoTask(Project project) {
-    if (project.extensions.querydsl.springDataMongo) {
-      project.task(type: CompileQuerydslSpringDataMongo, "compileQuerydslSpringDataMongo")
-      project.tasks.compileQuerydslSpringDataMongo.dependsOn project.tasks.initQuerydslSourcesDir
-      project.tasks.compileJava.dependsOn project.tasks.compileQuerydslSpringDataMongo
-    }
-  }
-
-  private static void querydslDefaultTask(Project project) {
-    if (project.extensions.querydsl.querydslDefault) {
-      project.task(type: CompileQuerydslDefault, "compileQuerydslDefault")
-      project.tasks.compileQuerydslDefault.dependsOn project.tasks.initQuerydslSourcesDir
-      project.tasks.compileJava.dependsOn project.tasks.compileQuerydslDefault
     }
   }
 
