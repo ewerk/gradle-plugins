@@ -5,7 +5,7 @@ package com.ewerk.gradle.plugins
  *
  * The processor configuration and processor classes are defined in this location.
  *
- * @author holgerstolzenberg, griffio
+ * @author holgerstolzenberg , griffio
  * @since 1.0.0
  */
 class QuerydslPluginExtension {
@@ -16,7 +16,7 @@ class QuerydslPluginExtension {
   static String MORPHIA_PROC = "com.mysema.query.apt.morphia.MorphiaAnnotationProcessor"
   static String QUERYDSL_PROC = "com.mysema.query.apt.QuerydslAnnotationProcessor"
   static String ROO_PROC = "com.mysema.query.apt.roo.RooAnnotationProcessor"
-  static String SPRINGDATAMONGO_PROC = "org.springframework.data.mongodb.repository.support.MongoAnnotationProcessor"
+  static String SPRING_DATA_MONGO_PROC = "org.springframework.data.mongodb.repository.support.MongoAnnotationProcessor"
 
   static final String NAME = "querydsl"
   static final String DEFAULT_QUERYDSL_SOURCES_DIR = new File("src/querydsl/java")
@@ -62,11 +62,9 @@ class QuerydslPluginExtension {
     }
 
     if (springDataMongo) {
-      processors << SPRINGDATAMONGO_PROC
+      processors << SPRING_DATA_MONGO_PROC
     }
 
     return processors.join(",")
-
   }
-
 }
