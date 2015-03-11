@@ -13,4 +13,5 @@
 * minor tweaks to the plugins cleaning logic
 
 ## 1.0.3
+* updated default auto-value library used to 1.0
 * current SNAPSHOT
