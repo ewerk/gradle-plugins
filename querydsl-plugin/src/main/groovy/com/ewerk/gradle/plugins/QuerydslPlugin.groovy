@@ -55,12 +55,11 @@ class QuerydslPlugin implements Plugin<Project> {
     // make 'clean' depend clean ing querydsl sources
     project.tasks.clean.dependsOn project.tasks.cleanQuerydslSourcesDir
 
+    project.task(type: QuerydslCompile, "compileQuerydsl")
+    project.tasks.compileQuerydsl.dependsOn project.tasks.initQuerydslSourcesDir
+    project.tasks.compileJava.dependsOn project.tasks.compileQuerydsl
+
     project.afterEvaluate {
-
-      project.task(type: QuerydslCompile, "compileQuerydsl")
-      project.tasks.compileQuerydsl.dependsOn project.tasks.initQuerydslSourcesDir
-      project.tasks.compileJava.dependsOn project.tasks.compileQuerydsl
-
       File querydslSourcesDir = querydslSourcesDir(project)
 
       addLibrary(project)
