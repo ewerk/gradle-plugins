@@ -16,3 +16,6 @@
 * updated default auto-value library used to 1.0
 * The plugin publication process changed, moved away from bintray, only plugin portal is supported
 * current SNAPSHOT
+
+## 1.0.4-SNAPSHOT
+* Current snapshot
