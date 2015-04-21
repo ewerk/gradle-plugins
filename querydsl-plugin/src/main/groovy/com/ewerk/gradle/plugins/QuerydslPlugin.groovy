@@ -20,7 +20,7 @@ import org.gradle.api.plugins.JavaPlugin
  * be {@link QuerydslPluginExtension#DEFAULT_QUERYDSL_SOURCES_DIR}.
  * <br/><br/>
  *
- * @author holgerstolzenberg
+ * @author holgerstolzenberg, iboyko
  * @since 1.0.0
  */
 class QuerydslPlugin implements Plugin<Project> {
