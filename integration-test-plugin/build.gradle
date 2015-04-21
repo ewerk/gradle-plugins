@@ -1,14 +1,7 @@
-buildscript {
-  dependencies {
-    classpath "com.github.townsfolk:gradle-release:1.2"
-  }
-}
-
 plugins {
   id "nu.studer.plugindev" version "1.0.3"
+  id "net.researchgate.release" version "2.0.2"
 }
-
-apply plugin: "release"
 
 plugindev {
   pluginId "com.ewerk.gradle.plugins.integration-test"
