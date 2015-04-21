@@ -8,6 +8,9 @@ classes within a project.
 Because of the early stage of the plugin, the configuration (and plugin DSL) has undergone some
 minor changes. This is documented in the [change log](change_log.md).
 
+Version 1.0.3 of the plugin was accidentally build and published with JDK-8 which breaks 
+compatibility to JDK-7. This was fixed in version 1.0.4.
+
 #### Examples
 
 __Use via Gradle plugin portal__
