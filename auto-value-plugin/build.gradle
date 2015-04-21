@@ -17,6 +17,11 @@ pluginBundle {
   }
 }
 
+dependencies {
+  compile gradleApi()
+  compile localGroovy()
+}
+
 test {
   useTestNG()
   minHeapSize = "128m"
