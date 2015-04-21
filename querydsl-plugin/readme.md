@@ -1,7 +1,5 @@
 ### Querydsl plugin
 
-[ ![Download](https://api.bintray.com/packages/ewerk/gradle-plugins/querydsl-plugin/images/download.svg) ](https://bintray.com/ewerk/gradle-plugins/querydsl-plugin/_latestVersion)
-
 #### Description
 
 This plugin makes it easy to generate [Querydsl](http://www.querydsl.com/)

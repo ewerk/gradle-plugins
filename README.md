@@ -2,14 +2,11 @@
 
 # EWERK Gradle Plugins
 ## Introduction
-This repository was introduced in order to use the Github/Bintray/Gradle Plugin Portal
+This repository was introduced in order to use the Github/Gradle Plugin Portal
 capabilities for publishing open source Gradle plugins and using them with the new plugin
 declaration syntax introduced in Gradle 2.1.
 
 The plugins are released using the [gradle-plugindev-plugin](https://github.com/etiennestuder/gradle-plugindev-plugin/blob/master/README.md).
-
-The plugins can also be downloaded from [bintray](http://www.bintray.com) as long as they are not
-available through the Gradle plugin portal.
 
 The plugins are based on Gradle ≥ 2.1.
 

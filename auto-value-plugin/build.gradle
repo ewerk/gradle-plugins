@@ -5,7 +5,6 @@ buildscript {
 }
 
 plugins {
-  id "com.jfrog.bintray" version "0.6"
   id "nu.studer.plugindev" version "1.0.3"
 }
 
@@ -23,24 +22,6 @@ plugindev {
   projectUrl "https://github.com/ewerk/gradle-plugins"
   projectInceptionYear "2014"
   done() // do not omit
-}
-
-bintray {
-  if (!project.hasProperty("BINTRAY_USER")) {
-    project.ext.BINTRAY_USER = ""
-  }
-
-  if (!project.hasProperty("BINTRAY_API_KEY")) {
-    project.ext.BINTRAY_API_KEY = ""
-  }
-
-  user = "$BINTRAY_USER"
-  key = "$BINTRAY_API_KEY"
-
-  pkg.repo = "gradle-plugins"
-  pkg.userOrg = "ewerk"
-  pkg.attributes =
-      ["gradle-plugin": "com.ewerk.gradle.plugins.auto-value:com.ewerk.gradle.plugins:auto-value-plugin"]
 }
 
 test {

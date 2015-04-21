@@ -1,7 +1,5 @@
 ### Integration test plugin
 
-[ ![Download](https://api.bintray.com/packages/ewerk/gradle-plugins/integration-test-plugin/images/download.svg) ](https://bintray.com/ewerk/gradle-plugins/integration-test-plugin/_latestVersion)
-
 #### Description
 
 The plugin can be used to execute integration tests from a sophisticated sourceSet. Just place

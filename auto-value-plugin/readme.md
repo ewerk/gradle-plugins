@@ -1,7 +1,5 @@
 ### Auto-Value plugin
 
-[ ![Download](https://api.bintray.com/packages/ewerk/gradle-plugins/auto-value-plugin/images/download.svg) ](https://bintray.com/ewerk/gradle-plugins/auto-value-plugin/_latestVersion)
-
 #### Description
 
 This plugin makes it easy to generate [Google Auto-Value](https://github.com/google/auto/tree/master/value) 
