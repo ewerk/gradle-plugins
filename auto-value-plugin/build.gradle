@@ -4,13 +4,13 @@ plugins {
 }
 
 pluginBundle {
-  website = 'http://www.ewerk.com/'
+  website = 'http://www.ewerk.com'
   vcsUrl = 'https://github.com/ewerk/gradle-plugins'
   description = 'Plugin for generating Google AutoValue source files.'
   tags = ['auto-value']
 
   plugins {
-    greetingsPlugin {
+    autoValuePlugin {
       id = 'com.ewerk.gradle.plugins.auto-value'
       displayName = 'Gradle Auto-Value plugin'
     }
