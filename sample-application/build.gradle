@@ -19,10 +19,6 @@ dependencies {
   testCompile "org.assertj:assertj-core:$assertjVersion"
 }
 
-compileJava.dependsOn(":auto-value-plugin:publishToMavenLocal")
-compileJava.dependsOn(":integration-test-plugin:publishToMavenLocal")
-compileJava.dependsOn(":querydsl-plugin:publishToMavenLocal")
-
 querydsl {
   jpa = true
   jdo = false
