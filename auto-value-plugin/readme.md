@@ -27,7 +27,7 @@ buildscript {
   }
 
   dependencies {
-    classpath "com.ewerk.gradle.plugins:auto-value-plugin:1.0.1"
+    classpath "com.ewerk.gradle.plugins:auto-value-plugin:1.0.3"
   }
 }
 
@@ -35,7 +35,7 @@ apply plugin: "com.ewerk.gradle.plugins.auto-value"
 
 // the following closure demonstrates the extension defaults and is not necessary
 autoValue {
-  library = "com.google.auto.value:auto-value:1.0-rc2"
+  library = "com.google.auto.value:auto-value:1.0"
   autoValueSourcesDir = "src/auto-value/java"
 }
 ```
