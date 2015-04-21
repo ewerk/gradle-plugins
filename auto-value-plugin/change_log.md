@@ -17,5 +17,8 @@
 * The plugin publication process changed, moved away from bintray, only plugin portal is supported
 * current SNAPSHOT
 
+## 1.0.4
+* Previous version was accidentally compiled and published with JDK-8 which may break some apps, 1.0.4 uses JDK-7 again
+
 ## 1.0.4-SNAPSHOT
 * Current snapshot
