@@ -7,4 +7,5 @@
 * Minor tweaks of the Bintray publication data until everything worked flawlessly.
 
 ## 1.0.7-SNAPSHOT
+* Gradle plugin publication process changed
 * current SNAPSHOT

@@ -1,20 +1,25 @@
 plugins {
-  id "nu.studer.plugindev" version "1.0.3"
   id "net.researchgate.release" version "2.0.2"
+  id "com.gradle.plugin-publish" version "0.9.0"
 }
 
-plugindev {
-  pluginId "com.ewerk.gradle.plugins.integration-test"
-  pluginImplementationClass "com.ewerk.gradle.plugins.IntegrationTestPlugin"
-  pluginDescription "Plugin for running integration tests."
-  pluginLicenses "Apache-2.0"
-  pluginTags "integration-test"
-  authorId "holgerstolzenberg"
-  authorName "Holger Stolzenberg"
-  authorEmail "h.stolzenberg@ewerk.com"
-  projectUrl "https://github.com/ewerk/gradle-plugins"
-  projectInceptionYear "2014"
-  done() // do not omit
+pluginBundle {
+  website = 'http://www.ewerk.com'
+  vcsUrl = 'https://github.com/ewerk/gradle-plugins'
+  description = 'Plugin for running integration tests from a own sourceset.'
+  tags = ['integration-test']
+
+  plugins {
+    integrationTestPlugin {
+      id = 'com.ewerk.gradle.plugins.integration-test'
+      displayName = 'Gradle Integration-Test plugin'
+    }
+  }
+}
+
+dependencies {
+  compile gradleApi()
+  compile localGroovy()
 }
 
 test {
