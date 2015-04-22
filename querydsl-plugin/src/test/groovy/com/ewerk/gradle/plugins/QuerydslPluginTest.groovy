@@ -5,6 +5,7 @@ import org.gradle.api.Project
 import org.gradle.api.Task
 import org.gradle.api.internal.artifacts.dependencies.DefaultExternalModuleDependency
 import org.gradle.api.plugins.JavaPlugin
+import org.gradle.api.plugins.WarPlugin
 import org.gradle.testfixtures.ProjectBuilder
 import org.testng.annotations.BeforeMethod
 import org.testng.annotations.Test
@@ -23,6 +24,7 @@ class QuerydslPluginTest {
   public void setup() {
     project = ProjectBuilder.builder().build()
     project.plugins.apply(QuerydslPlugin.class)
+    project.plugins.apply(WarPlugin.class)
 
     project.extensions.querydsl.jpa = true;
     project.extensions.querydsl.jdo = true;
@@ -53,7 +55,7 @@ class QuerydslPluginTest {
     assertThat(project.extensions.querydsl, notNullValue())
   }
 
- @Test
+  @Test
   public void testPluginProcessorsFromQuerydslExtensions() {
     assertThat(project.extensions.querydsl.processors(), notNullValue())
   }
@@ -85,6 +87,5 @@ class QuerydslPluginTest {
     assertThat(id, equalTo(QuerydslPluginExtension.DEFAULT_LIBRARY));
 
     assertThat(project.tasks.compileQuerydsl, notNullValue())
-
   }
 }

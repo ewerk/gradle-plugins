@@ -1,11 +1,14 @@
 package com.ewerk.gradle.plugins
 
-import com.ewerk.gradle.plugins.tasks.*
+import com.ewerk.gradle.plugins.tasks.CleanQuerydslSourcesDir
+import com.ewerk.gradle.plugins.tasks.InitQuerydslSourcesDir
+import com.ewerk.gradle.plugins.tasks.QuerydslCompile
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.api.logging.Logger
 import org.gradle.api.logging.Logging
 import org.gradle.api.plugins.JavaPlugin
+import org.gradle.api.plugins.WarPlugin
 
 /**
  * This plugin can be used to easily create Mysema querydsl classes and attach them to the project
@@ -20,7 +23,7 @@ import org.gradle.api.plugins.JavaPlugin
  * be {@link QuerydslPluginExtension#DEFAULT_QUERYDSL_SOURCES_DIR}.
  * <br/><br/>
  *
- * @author holgerstolzenberg, iboyko
+ * @author holgerstolzenberg , iboyko
  * @since 1.0.0
  */
 class QuerydslPlugin implements Plugin<Project> {
@@ -65,7 +68,15 @@ class QuerydslPlugin implements Plugin<Project> {
       addLibrary(project)
       addSourceSet(project, querydslSourcesDir)
       registerSourceAtCompileJava(project, querydslSourcesDir)
+      applyCompilerOptions(project)
     }
+  }
+
+  private void applyCompilerOptions(Project project) {
+    project.tasks.compileQuerydsl.options.compilerArgs += [
+        "-proc:only",
+        "-processor", project.querydsl.processors()
+    ]
   }
 
   private void registerSourceAtCompileJava(Project project, File querydslSourcesDir) {
