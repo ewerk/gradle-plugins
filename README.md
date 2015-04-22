@@ -6,7 +6,7 @@ This repository was introduced in order to use the Github/Gradle Plugin Portal
 capabilities for publishing open source Gradle plugins and using them with the new plugin
 declaration syntax introduced in Gradle 2.1.
 
-The plugins are released using the [gradle-plugindev-plugin](https://github.com/etiennestuder/gradle-plugindev-plugin/blob/master/README.md).
+The plugins are released using the [plugin-publish](https://plugins.gradle.org/plugin/com.gradle.plugin-publish) plugin.
 
 The plugins are based on Gradle ≥ 2.1.
 
