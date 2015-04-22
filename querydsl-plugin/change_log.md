@@ -13,4 +13,8 @@
 * Internal refactoring, only one task `QuerydslCompile` is added to the project that configures all annotation processors
 
 ## 1.0.4
+* Plugin portal release process changed
+* Support for `providedCompile` and `providedRuntime` dependencies
+
+## 1.0.5
 * current SNAPSHOT
