@@ -1,9 +1,22 @@
+buildscript {
+  repositories {
+    mavenLocal()
+  }
+
+  dependencies {
+    classpath "com.ewerk.gradle.plugins:querydsl-plugin:1.0.4-SNAPSHOT"
+  }
+}
+
 plugins {
   id "java"
+  id "war"
   id "com.ewerk.gradle.plugins.auto-value" version "1.0.4"
   id "com.ewerk.gradle.plugins.integration-test" version "1.0.7"
-  id "com.ewerk.gradle.plugins.querydsl" version "1.0.3"
+  //  id "com.ewerk.gradle.plugins.querydsl" version "1.0.3"
 }
+
+apply plugin: 'com.ewerk.gradle.plugins.querydsl'
 
 repositories {
   mavenLocal()
@@ -17,6 +30,8 @@ dependencies {
 
   testCompile "org.testng:testng:$testNgVersion"
   testCompile "org.assertj:assertj-core:$assertjVersion"
+
+  providedRuntime "javax.validation:validation-api:1.1.0.Final"
 }
 
 querydsl {

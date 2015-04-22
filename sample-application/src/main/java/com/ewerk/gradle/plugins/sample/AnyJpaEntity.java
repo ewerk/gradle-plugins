@@ -20,6 +20,7 @@ import com.google.common.base.MoreObjects;
 
 import java.io.Serializable;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
@@ -36,12 +37,24 @@ public class AnyJpaEntity implements Serializable {
   @Id
   private Long id;
 
+  @Column
+  //@Max(10)
+  private Integer counter;
+
   public Long getId() {
     return id;
   }
 
   public void setId(final Long id) {
     this.id = id;
+  }
+
+  public Integer getCounter() {
+    return counter;
+  }
+
+  public void setCounter(final Integer counter) {
+    this.counter = counter;
   }
 
   @Override
