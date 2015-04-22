@@ -1,5 +1,10 @@
 plugins {
   id "wrapper"
+  id "com.fizzpod.sweeney" version "1.0.1"
+}
+
+sweeney {
+  enforce type: 'jdk', expect: '[1.7, 1.7]'
 }
 
 wrapper {
