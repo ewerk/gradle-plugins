@@ -17,6 +17,7 @@ The plugins are based on Gradle ≥ 2.1.
 * [auto-value-plugin] (https://github.com/ewerk/gradle-plugins/tree/master/auto-value-plugin)
 * [integration-test-plugin] (https://github.com/ewerk/gradle-plugins/tree/master/integration-test-plugin)
 * [querydsl-plugin] (https://github.com/ewerk/gradle-plugins/tree/master/querydsl-plugin)
+* [dagger-plugin] (Incubating, pull request in preparation)
 
 Please have a look at the `sample-application` module providing a code example on how to use the
 plugins.
