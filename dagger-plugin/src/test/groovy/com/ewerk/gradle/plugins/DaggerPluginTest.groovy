@@ -8,6 +8,7 @@ import org.gradle.testfixtures.ProjectBuilder;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test
 
+import static org.hamcrest.CoreMatchers.equalTo
 import static org.hamcrest.CoreMatchers.hasItem
 import static org.hamcrest.CoreMatchers.hasItems;
 import static org.hamcrest.CoreMatchers.is;
@@ -57,8 +58,25 @@ public class DaggerPluginTest {
   @Test
   public void testPluginEvaluatesCompileOptions() {
     project.evaluate()
-    def args = project.tasks.compileJava.options.compilerArgs
-    assertThat(args, hasItems('-s', new File(project.projectDir, DaggerPluginExtension.DEFAULT_DAGGER_SOURCES_DIR).path))
+    def args = project.tasks.compileDagger.options.compilerArgs as List
+    assertThat(args, hasItems('-proc:only', '-s', '-processor', DaggerPluginExtension.PROCESSOR,
+        new File(project.projectDir, DaggerPluginExtension.DEFAULT_DAGGER_SOURCES_DIR).path))
   }
+
+  @Test
+  public void testDefaultGeneratedSourcesDirIsSet() {
+    assertThat(project.extensions.dagger.daggerSourcesDir as String, equalTo(DaggerPluginExtension.DEFAULT_DAGGER_SOURCES_DIR))
+  }
+
+  @Test
+  public void testDefaultLibraryIsSet() {
+    assertThat(project.extensions.dagger.library as String, equalTo(DaggerPluginExtension.DEFAULT_LIBRARY))
+  }
+
+  @Test
+  public void testDefaultProcessorIsSet() {
+    assertThat(project.extensions.dagger.processorLibrary as String, equalTo(DaggerPluginExtension.DEFAULT_PROCESSOR_LIBRARY))
+  }
+
 
 }

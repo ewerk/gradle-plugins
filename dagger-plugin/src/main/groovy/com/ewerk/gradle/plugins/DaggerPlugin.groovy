@@ -1,24 +1,28 @@
 package com.ewerk.gradle.plugins
 
+import com.ewerk.gradle.tasks.CleanDaggerSourcesDir
+import com.ewerk.gradle.tasks.DaggerCompile
+import com.ewerk.gradle.tasks.InitDaggerSourcesDir
 import org.gradle.api.Plugin;
 import org.gradle.api.Project
 import org.gradle.api.logging.Logger
 import org.gradle.api.logging.Logging
 import org.gradle.api.plugins.JavaPlugin
-import org.gradle.api.plugins.JavaPluginConvention
 import org.gradle.api.plugins.WarPlugin
-import org.gradle.api.tasks.SourceSet
-import org.gradle.api.tasks.compile.JavaCompile;
 
 /**
- * Dagger2 compiler plugin (http://google.github.io/dagger/) is a library with a processor dependency and a
- * compile transitive dependency for the generated code.
- *
- * The processor dependency is added to the main JavaCompile task and is executed by classpath discovery.
- *
  * @author griffio
+ *
+ * Dagger2 (http://google.github.io/dagger/) is a library with a processor dependency (com.google.dagger:dagger-compiler)
+ * and compile transitive dependency (com.google.dagger:dagger) that is required for the generated code.
+ *
+ * The processor dependency is added to a separate JavaCompile task.
+ * Tasks in this plugin : compileDagger, cleanDaggerSourcesDir, initDaggerSourcesDir
+ *
  */
 public class DaggerPlugin implements Plugin<Project> {
+
+  public static final String TASK_GROUP = "daggerTasks"
 
   private static final Logger LOG = Logging.getLogger(DaggerPlugin.class)
 
@@ -47,24 +51,13 @@ public class DaggerPlugin implements Plugin<Project> {
 
     project.extensions.create(DaggerPluginExtension.NAME, DaggerPluginExtension)
 
-    project.plugins.withType(JavaPlugin) {
+    project.task(type: CleanDaggerSourcesDir, "cleanDaggerSourcesDir")
+    project.task(type: InitDaggerSourcesDir, "initDaggerSourcesDir")
+    project.task(type: DaggerCompile, "compileDagger")
 
-      def javaConvention = project.convention.plugins.get("java") as JavaPluginConvention
-
-      javaConvention.sourceSets.getByName(SourceSet.MAIN_SOURCE_SET_NAME) { SourceSet sourceSet ->
-        LOG.info("task:" + sourceSet.getCompileJavaTaskName())
-        def compileTask = project.tasks.withType(JavaCompile).getByName(sourceSet.getCompileJavaTaskName())
-        compileTask.classpath += project.configurations.dagger
-        compileTask.options.compilerArgs += [
-            "-s", project.file(project.extensions.dagger.daggerSourcesDir).absolutePath
-        ]
-      }
-
-      javaConvention.sourceSets.getByName(SourceSet.TEST_SOURCE_SET_NAME) { SourceSet sourceSet ->
-        LOG.info("task:" + sourceSet.getCompileJavaTaskName())
-      }
-
-    }
+    project.tasks.clean.dependsOn project.tasks.cleanDaggerSourcesDir
+    project.tasks.compileDagger.dependsOn project.tasks.initDaggerSourcesDir
+    project.tasks.compileJava.dependsOn project.tasks.compileDagger
 
     project.afterEvaluate {
 

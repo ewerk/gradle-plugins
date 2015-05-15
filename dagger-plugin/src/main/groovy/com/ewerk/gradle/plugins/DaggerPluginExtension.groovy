@@ -2,6 +2,8 @@ package com.ewerk.gradle.plugins;
 
 /**
  * @author griffio
+ *
+ * Defines the default configuration parameters in the Plugin
  */
 public class DaggerPluginExtension {
 
@@ -9,6 +11,7 @@ public class DaggerPluginExtension {
   static final String DEFAULT_DAGGER_SOURCES_DIR = "src/dagger/java"
   static final String DEFAULT_PROCESSOR_LIBRARY = "com.google.dagger:dagger-compiler:2.0"
   static final String DEFAULT_LIBRARY = "com.google.dagger:dagger:2.0"
+  static final String PROCESSOR = "dagger.internal.codegen.ComponentProcessor"
 
   String daggerSourcesDir = DEFAULT_DAGGER_SOURCES_DIR
   String library = DEFAULT_LIBRARY
