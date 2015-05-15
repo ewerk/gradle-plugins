@@ -4,7 +4,7 @@
 
 "Dagger2 dependency injection - The guiding principle is to generate code that mimics the code that a user might have hand-written."
 
-This plugin uses the [Dagger2](http://google.github.io/dagger/) compiler.
+This plugin uses the [Dagger2](http://google.github.io/dagger/) compiler to process annotations that are compatible with JSR-330.
 
 [This plugins change log](change_log.md).
 
@@ -12,7 +12,8 @@ This plugin uses the [Dagger2](http://google.github.io/dagger/) compiler.
 
 ##### daggerSourcesDir
 
-The destination directory for the generated Dagger java source
+The destination directory for the generated Dagger java source.
+
 Defaults to 'src/dagger/java'.
 
 ##### library
@@ -25,6 +26,7 @@ Defaults to 'com.google.dagger:dagger:2.0'.
 ##### processorLibrary
 
 The dependency artifact for the compile/runtime usage of Dagger.
+
 Defaults to 'com.google.dagger:dagger-compiler:2.0'.
 
 #### Examples
