@@ -72,6 +72,10 @@ public class DaggerPlugin implements Plugin<Project> {
         }
       }
 
+      project.compileJava {
+        source project.extensions.dagger.daggerSourcesDir
+      }
+
     }
 
   }
