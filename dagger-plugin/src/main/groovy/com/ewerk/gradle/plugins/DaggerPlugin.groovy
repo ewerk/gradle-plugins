@@ -3,7 +3,7 @@ package com.ewerk.gradle.plugins
 import com.ewerk.gradle.tasks.CleanDaggerSourcesDir
 import com.ewerk.gradle.tasks.DaggerCompile
 import com.ewerk.gradle.tasks.InitDaggerSourcesDir
-import org.gradle.api.Plugin;
+import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.api.logging.Logger
 import org.gradle.api.logging.Logging
@@ -75,9 +75,6 @@ public class DaggerPlugin implements Plugin<Project> {
       project.compileJava {
         source project.extensions.dagger.daggerSourcesDir
       }
-
     }
-
   }
-
 }

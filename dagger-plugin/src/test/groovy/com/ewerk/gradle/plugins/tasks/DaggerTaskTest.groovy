@@ -44,5 +44,4 @@ class DaggerTaskTest {
     assertThat(cleanTask.group, equalTo(DaggerPlugin.TASK_GROUP));
     assertThat(initTask.group, equalTo(DaggerPlugin.TASK_GROUP));
   }
-
 }

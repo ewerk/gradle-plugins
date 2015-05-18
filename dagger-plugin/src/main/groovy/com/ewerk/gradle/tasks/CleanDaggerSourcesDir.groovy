@@ -28,5 +28,4 @@ class CleanDaggerSourcesDir extends DefaultTask {
       }
     }
   }
-
 }

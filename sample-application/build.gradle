@@ -1,5 +1,4 @@
 buildscript {
-
   repositories {
     mavenLocal()
   }
@@ -7,7 +6,6 @@ buildscript {
   dependencies {
     classpath group: 'com.ewerk.gradle.plugins', name: 'dagger-plugin', version: '1.0.0-SNAPSHOT'
   }
-
 }
 
 plugins {
@@ -45,8 +43,6 @@ querydsl {
   springDataMongo = true
   querydslDefault = true
 }
-
-
 
 test {
   useTestNG()

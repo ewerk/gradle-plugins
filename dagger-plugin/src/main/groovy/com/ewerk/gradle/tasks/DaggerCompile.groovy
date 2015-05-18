@@ -34,5 +34,4 @@ class DaggerCompile extends JavaCompile {
 
     setDestinationDir(file)
   }
-
 }

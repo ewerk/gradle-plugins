@@ -24,5 +24,4 @@ class InitDaggerSourcesDir extends DefaultTask {
     LOG.info("create source")
     project.file(project.dagger.daggerSourcesDir).mkdirs()
   }
-
 }

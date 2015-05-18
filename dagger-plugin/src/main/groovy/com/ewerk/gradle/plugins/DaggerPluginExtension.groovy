@@ -16,5 +16,4 @@ public class DaggerPluginExtension {
   String daggerSourcesDir = DEFAULT_DAGGER_SOURCES_DIR
   String library = DEFAULT_LIBRARY
   String processorLibrary = DEFAULT_PROCESSOR_LIBRARY
-
 }
