@@ -3,5 +3,7 @@
 **/*.iml
 **/.gradle/
 **/src/auto-value/**
+**/src/dagger/**
 **/src/querydsl/**
 hs_err_*.log
+classes
