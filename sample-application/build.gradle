@@ -1,22 +1,11 @@
-buildscript {
-  repositories {
-    mavenLocal()
-  }
-
-  dependencies {
-    classpath group: 'com.ewerk.gradle.plugins', name: 'dagger-plugin', version: '1.0.0-SNAPSHOT'
-  }
-}
-
 plugins {
   id "java"
   id "war"
   id "com.ewerk.gradle.plugins.auto-value" version "1.0.4"
   id "com.ewerk.gradle.plugins.integration-test" version "1.0.7"
   id "com.ewerk.gradle.plugins.querydsl" version "1.0.4"
+  id "com.ewerk.gradle.plugins.dagger" version "1.0.0"
 }
-
-apply plugin: 'com.ewerk.gradle.plugins.dagger'
 
 repositories {
   mavenLocal()
@@ -42,6 +31,10 @@ querydsl {
   roo = false
   springDataMongo = true
   querydslDefault = true
+}
+
+dagger {
+  library = "com.google.dagger:dagger:2.0"
 }
 
 test {
