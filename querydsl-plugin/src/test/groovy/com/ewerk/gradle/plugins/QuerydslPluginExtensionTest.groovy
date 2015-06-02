@@ -19,6 +19,7 @@ package com.ewerk.gradle.plugins
 import org.testng.annotations.BeforeMethod
 import org.testng.annotations.Test
 
+import static org.hamcrest.CoreMatchers.containsString
 import static org.hamcrest.CoreMatchers.equalTo
 import static org.hamcrest.MatcherAssert.assertThat
 
@@ -46,5 +47,12 @@ class QuerydslPluginExtensionTest {
     def defaultLibrary = QuerydslPluginExtension.DEFAULT_LIBRARY
     assertThat(extension.library,
         equalTo(defaultLibrary));
+  }
+
+  @Test
+  public void testCustomProcessorIsContained() {
+    String customProcessorName = "customProcessor";
+    extension.customProcessor = customProcessorName;
+    assertThat(extension.processors(), containsString(customProcessorName));
   }
 }
