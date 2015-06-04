@@ -27,7 +27,7 @@ import org.gradle.api.plugins.JavaPlugin
  */
 class AutoValuePlugin implements Plugin<Project> {
 
-  public static final String TASK_GROUP = "Auto-Value tasks"
+  public static final String TASK_GROUP = "Auto-Value"
 
   private static final Logger LOG = Logging.getLogger(AutoValuePlugin.class)
 

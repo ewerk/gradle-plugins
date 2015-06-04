@@ -28,7 +28,7 @@ import org.gradle.api.plugins.WarPlugin
  */
 class QuerydslPlugin implements Plugin<Project> {
 
-  public static final String TASK_GROUP = "Querydsl tasks"
+  public static final String TASK_GROUP = "Querydsl"
 
   private static final Logger LOG = Logging.getLogger(QuerydslPlugin.class)
 
