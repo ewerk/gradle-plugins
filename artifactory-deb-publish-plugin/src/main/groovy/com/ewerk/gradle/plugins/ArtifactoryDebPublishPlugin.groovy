@@ -1,7 +1,6 @@
 package com.ewerk.gradle.plugins
 
 import com.squareup.okhttp.MediaType
-import com.squareup.okhttp.OkHttpClient
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.api.logging.Logger
@@ -21,8 +20,8 @@ class ArtifactoryDebPublishPlugin implements Plugin<Project> {
   private static final Logger LOG = Logging.getLogger(ArtifactoryDebPublishPlugin.class)
 
   public static final MediaType JSON = MediaType.parse("application/json; charset=utf-8")
-
-  private final OkHttpClient client = new OkHttpClient()
+  //
+  //  private final OkHttpClient client = new OkHttpClient()
 
   @Override
   void apply(final Project project) {
