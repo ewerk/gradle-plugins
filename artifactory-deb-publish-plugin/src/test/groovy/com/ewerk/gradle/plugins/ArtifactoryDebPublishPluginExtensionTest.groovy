@@ -19,7 +19,7 @@ package com.ewerk.gradle.plugins
 import org.testng.annotations.BeforeMethod
 import org.testng.annotations.Test
 
-import static org.hamcrest.CoreMatchers.equalTo
+import static org.hamcrest.CoreMatchers.notNullValue
 import static org.hamcrest.MatcherAssert.assertThat
 
 /**
@@ -33,12 +33,35 @@ class ArtifactoryDebPublishPluginExtensionTest {
   @BeforeMethod
   public void setup() {
     extension = new ArtifactoryDebPublishPluginExtension()
+    extension.baseUrl = 'https://artifactory.com'
+    extension.repoKey = "debian_repo";
+    extension.distribution = "jessie";
+    extension.component = "non-free";
+    extension.arch = "amd64";
   }
 
-//  @Test
-//  public void testDefaultLibraryIsSet() {
-//    def defaultLibrary = ArtifactoryDebPublishPluginExtension.DEFAULT_LIBRARY
-//    assertThat(extension.library,
-//        equalTo(defaultLibrary));
-//  }
+  @Test
+  public void testBaseUrlMustNotBeNull() {
+    assertThat(extension.baseUrl, notNullValue());
+  }
+
+  @Test
+  public void testRepoKeyMustNotBeNull() {
+    assertThat(extension.repoKey, notNullValue());
+  }
+
+  @Test
+  public void testDistributionMustNotBeNull() {
+    assertThat(extension.distribution, notNullValue());
+  }
+
+  @Test
+  public void testComponentMustNotBeNull() {
+    assertThat(extension.component, notNullValue());
+  }
+
+  @Test
+  public void testArchMustNotBeNull() {
+    assertThat(extension.arch, notNullValue());
+  }
 }

@@ -1,9 +1,11 @@
 package com.ewerk.gradle.plugins.tasks
 
 import com.ewerk.gradle.plugins.ArtifactoryDebPublishPlugin
-import com.squareup.okhttp.MediaType
-import com.squareup.okhttp.OkHttpClient
+import com.ewerk.gradle.plugins.ArtifactoryDebPublishPluginExtension
+import com.ewerk.gradle.plugins.util.ArtifactoryHttpClient
 import org.gradle.api.DefaultTask
+import org.gradle.api.logging.Logger
+import org.gradle.api.logging.Logging
 import org.gradle.api.tasks.TaskAction
 
 /**
@@ -16,19 +18,31 @@ import org.gradle.api.tasks.TaskAction
 class PushDebToArtifactory extends DefaultTask {
   static final String DESCRIPTION = "Publishes the .deb archive to Artifactory."
 
-  private static final MediaType JSON = MediaType.parse("application/json; charset=utf-8")
-  private final OkHttpClient client;
+  private static final Logger LOG = Logging.getLogger(PushDebToArtifactory.class)
 
   PushDebToArtifactory() {
     this.group = ArtifactoryDebPublishPlugin.TASK_GROUP
     this.description = DESCRIPTION
-
-    client = new OkHttpClient();
   }
 
   @SuppressWarnings("GroovyUnusedDeclaration")
   @TaskAction
   def publishToArtifactory() {
-    println "---------------> "
+    LOG.info("Pushing .deb to Artifactory")
+
+    ArtifactoryHttpClient client = new ArtifactoryHttpClient(extension().baseUrl(),
+        extension().user(),
+        extension().password(),
+        extension().repoKey(),
+        extension().archiveFile().name,
+        extension().component(),
+        extension().distribution(),
+        extension().arch());
+
+    client.publish(extension().archiveFile())
+  }
+
+  private ArtifactoryDebPublishPluginExtension extension() {
+    project.extensions.artifactoryDebPublish
   }
 }

@@ -21,8 +21,11 @@ class ArtifactoryDebPushDebToArtifactoryPluginTest {
     project = ProjectBuilder.builder().build()
     project.plugins.apply(ArtifactoryDebPublishPlugin.class)
 
-    // TODO holgerstolzenberg: config
-    project.extensions.artifactoryDebPublish.url = "http://debian.any.host.com";
+    project.extensions.artifactoryDebPublish.baseUrl = "http://debian.any.host.com";
+    project.extensions.artifactoryDebPublish.repoKey = "debian_repo";
+    project.extensions.artifactoryDebPublish.distribution = "jessie";
+    project.extensions.artifactoryDebPublish.component = "non-free";
+    project.extensions.artifactoryDebPublish.arch = "amd64";
   }
 
   @Test

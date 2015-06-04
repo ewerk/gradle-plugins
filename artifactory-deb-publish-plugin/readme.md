@@ -9,11 +9,33 @@ Deploying .deb archives to artifactory is possible through its HTTP API. This pl
 for publishing .deb archives with the relevant meta data to Artifactory, using the aforementioned
 HTTP API.
 
-Please have a look at the plugins [change log](change_log.md).
+The plugin relies on the [OkHttp](change_log.md) library for pushing the .deb archive to Artifactory
+via HTTP PUT.
+
+Please have a look at the plugins [change log](http://square.github.io/okhttp/).
 
 #### Configuration
 
-TODO holgerstolzenberg: document
+##### baseUrl
+The Artifactory servers base url
+
+##### user (optional)
+The user for authenticating at Artifactory if anonymous access is disabled
+
+##### password (optional)
+The password for authenticating at Artifactory if anonymous access is disabled
+
+##### repoKey
+The Artifactory repository ID to publish to
+
+##### distribution
+The Debian distribution to publish for (wheezy, jessie, ...)
+
+##### distribution
+The Debian component to publish for (main, contrib, non-free, ...)
+
+##### arch
+The Debian architecture to publish for (i386, amd64, ...)
 
 #### Examples
 
@@ -26,6 +48,13 @@ plugins {
 
 // the following closure demonstrates some of the configuration defaults and is not necessary
 artifactoryDebPublish {
-  TODO holgerstolzenberg: document
+  baseUrl = 'https://artifactory.it.ewerk.com'
+  user = 'my.user'
+  password = '***'
+  repoKey = 'debian_snapshots'
+  distribution = 'jessie'
+  component = 'non-free'
+  arch = 'amd64'
+  archive = file('src/main/resources/helloworld_1.0_amd64.deb')
 }
 ```
