@@ -1,0 +1,39 @@
+plugins {
+  id "maven"
+  id "net.researchgate.release" version "2.1.1"
+  id "com.gradle.plugin-publish" version "0.9.0"
+}
+
+pluginBundle {
+  website = 'http://www.ewerk.com'
+  vcsUrl = 'https://github.com/ewerk/gradle-plugins'
+  description = 'Plugin for publishing .deb archives to artifactory.'
+  tags = ['artifactory', 'debian', 'deb', 'publish', 'publication']
+
+  plugins {
+    artifactoryDebPublishPlugin {
+      id = 'com.ewerk.gradle.plugins.artifactory-deb-publish'
+      displayName = 'Artifactory .deb publish plugin'
+    }
+  }
+}
+
+dependencies {
+  compile gradleApi()
+  compile localGroovy()
+}
+
+test {
+  useTestNG()
+  minHeapSize = "128m"
+  maxHeapSize = "512m"
+}
+
+release {
+  tagPrefix = "artifactory-deb-publish-plugin"
+  git {
+    requireBranch = "release"
+  }
+}
+
+createReleaseTag.dependsOn("check")

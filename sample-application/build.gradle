@@ -1,3 +1,12 @@
+buildscript {
+  repositories {
+    flatDir dirs: '../artifactory-deb-publish-plugin/build/libs'
+  }
+  dependencies {
+    classpath "com.ewerk.gradle.plugins:artifactory-deb-publish-plugin:1.0.0-SNAPSHOT"
+  }
+}
+
 plugins {
   id "java"
   id "war"
@@ -6,6 +15,8 @@ plugins {
   id "com.ewerk.gradle.plugins.querydsl" version "1.0.4"
   id "com.ewerk.gradle.plugins.dagger" version "1.0.0"
 }
+
+apply plugin: 'com.ewerk.gradle.plugins.artifactory-deb-publish'
 
 repositories {
   mavenLocal()
