@@ -14,7 +14,7 @@ are now directly hosted at the plugin portal itself.
 The plugins are based on Gradle ≥ 2.1.
 
 ## Plugins
-* [artifactory-deb-publish-plugin] (Incubating)
+* artifactory-deb-publish-plugin (Incubating)
 * [auto-value-plugin] (https://github.com/ewerk/gradle-plugins/tree/master/auto-value-plugin)
 * [integration-test-plugin] (https://github.com/ewerk/gradle-plugins/tree/master/integration-test-plugin)
 * [querydsl-plugin] (https://github.com/ewerk/gradle-plugins/tree/master/querydsl-plugin)
