@@ -16,7 +16,7 @@ plugins {
   id "com.ewerk.gradle.plugins.dagger" version "1.0.0"
 }
 
-apply plugin: 'com.ewerk.gradle.plugins.artifactory-deb-publish'
+//apply plugin: 'com.ewerk.gradle.plugins.artifactory-deb-publish'
 
 repositories {
   mavenLocal()
