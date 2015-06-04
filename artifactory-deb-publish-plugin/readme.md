@@ -48,7 +48,7 @@ plugins {
 
 // the following closure demonstrates some of the configuration defaults and is not necessary
 artifactoryDebPublish {
-  baseUrl = 'https://artifactory.it.ewerk.com'
+  baseUrl = 'https://artifactory.company.com'
   user = 'my.user'
   password = '***'
   repoKey = 'debian_snapshots'
