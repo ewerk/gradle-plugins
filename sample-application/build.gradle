@@ -1,3 +1,12 @@
+buildscript {
+  repositories {
+    mavenLocal()
+  }
+  dependencies {
+    classpath group: 'com.ewerk.gradle.plugins', name: 'annotation-processor-plugin', version: '1.0.0-SNAPSHOT'
+  }
+}
+
 plugins {
   id "java"
   id "war"
@@ -6,6 +15,8 @@ plugins {
   id "com.ewerk.gradle.plugins.querydsl" version "1.0.4"
   id "com.ewerk.gradle.plugins.dagger" version "1.0.0"
 }
+
+apply plugin: 'com.ewerk.gradle.plugins.annotation-processor'
 
 repositories {
   mavenLocal()
@@ -16,6 +27,8 @@ dependencies {
   compile "org.slf4j:slf4j-api:$slf4jVersion"
   compile "org.hibernate.javax.persistence:hibernate-jpa-2.1-api:$persistenceApiVersion"
   compile "org.springframework.data:spring-data-mongodb:$springDataVersion"
+  compile "org.mongodb.morphia:morphia:$morphiaVersion"
+  compile "com.mysema.querydsl:querydsl-mongodb:${querydslVersion}"
 
   testCompile "org.testng:testng:$testNgVersion"
   testCompile "org.assertj:assertj-core:$assertjVersion"
@@ -35,6 +48,12 @@ querydsl {
 
 dagger {
   library = "com.google.dagger:dagger:2.0"
+}
+
+annotationProcessor {
+ library "com.mysema.querydsl:querydsl-apt:${querydslVersion}"
+ processor "com.mysema.query.apt.morphia.MorphiaAnnotationProcessor"
+ sourcesDir "src/morphia/java"
 }
 
 test {
