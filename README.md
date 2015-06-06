@@ -18,6 +18,7 @@ The plugins are based on Gradle ≥ 2.1.
 * [integration-test-plugin] (https://github.com/ewerk/gradle-plugins/tree/master/integration-test-plugin)
 * [querydsl-plugin] (https://github.com/ewerk/gradle-plugins/tree/master/querydsl-plugin)
 * [dagger-plugin] (https://github.com/ewerk/gradle-plugins/tree/master/dagger-plugin)
+* [annotation-processor-plugin] (https://github.com/ewerk/gradle-plugins/tree/master/annotation-processor-plugin)
 
 Please have a look at the `sample-application` module providing a code example on how to use the
 plugins.
