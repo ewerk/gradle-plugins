@@ -1,6 +1,7 @@
 plugins {
   id "java"
   id "war"
+  id "com.ewerk.gradle.plugins.annotation-processor" version "1.0.0"
   id "com.ewerk.gradle.plugins.artifactory-deb-publish" version "1.0.0"
   id "com.ewerk.gradle.plugins.auto-value" version "1.0.4"
   id "com.ewerk.gradle.plugins.integration-test" version "1.0.7"
@@ -23,6 +24,12 @@ dependencies {
   testCompile "org.assertj:assertj-core:$assertjVersion"
 
   providedRuntime "javax.validation:validation-api:1.1.0.Final"
+}
+
+annotationProcessor {
+  library "com.mysema.querydsl:querydsl-apt:3.6.0"
+  processor "com.mysema.query.apt.morphia.MorphiaAnnotationProcessor"
+  sourcesDir "src/morphia/java"
 }
 
 querydsl {
