@@ -16,6 +16,8 @@ dependencies {
   compile "org.slf4j:slf4j-api:$slf4jVersion"
   compile "org.hibernate.javax.persistence:hibernate-jpa-2.1-api:$persistenceApiVersion"
   compile "org.springframework.data:spring-data-mongodb:$springDataVersion"
+  compile "org.mongodb.morphia:morphia:$morphiaVersion"
+  compile "com.mysema.querydsl:querydsl-mongodb:$querydslVersion"
 
   testCompile "org.testng:testng:$testNgVersion"
   testCompile "org.assertj:assertj-core:$assertjVersion"
