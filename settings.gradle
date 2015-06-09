@@ -1,2 +1,8 @@
 rootProject.name = "gradle-plugins"
-include  "annotation-processor-plugin", "auto-value-plugin", "dagger-plugin", "integration-test-plugin", "querydsl-plugin", "sample-application"
+
+include "artifactory-deb-publish-plugin"
+include "auto-value-plugin"
+include "dagger-plugin"
+include "integration-test-plugin"
+include "querydsl-plugin"
+include "sample-application"

@@ -22,7 +22,7 @@ import org.gradle.api.plugins.WarPlugin
  */
 public class DaggerPlugin implements Plugin<Project> {
 
-  public static final String TASK_GROUP = "daggerTasks"
+  public static final String TASK_GROUP = "Dagger"
 
   private static final Logger LOG = Logging.getLogger(DaggerPlugin.class)
 
