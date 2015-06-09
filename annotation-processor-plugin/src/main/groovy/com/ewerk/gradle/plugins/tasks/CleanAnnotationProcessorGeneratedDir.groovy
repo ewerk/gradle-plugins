@@ -1,4 +1,4 @@
-package com.ewerk.gradle.tasks
+package com.ewerk.gradle.plugins.tasks
 
 import com.ewerk.gradle.plugins.AnnotationProcessorPlugin
 import org.gradle.api.DefaultTask

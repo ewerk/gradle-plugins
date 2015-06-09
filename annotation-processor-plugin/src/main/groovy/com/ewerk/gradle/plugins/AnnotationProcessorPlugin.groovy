@@ -1,8 +1,8 @@
 package com.ewerk.gradle.plugins
 
-import com.ewerk.gradle.tasks.AnnotationProcessorCompile
-import com.ewerk.gradle.tasks.CleanAnnotationProcessorGeneratedDir
-import com.ewerk.gradle.tasks.InitAnnotationProcessorGeneratedDir
+import com.ewerk.gradle.plugins.tasks.AnnotationProcessorCompile
+import com.ewerk.gradle.plugins.tasks.CleanAnnotationProcessorGeneratedDir
+import com.ewerk.gradle.plugins.tasks.InitAnnotationProcessorGeneratedDir
 import org.gradle.api.GradleException
 import org.gradle.api.Plugin
 import org.gradle.api.Project
@@ -12,13 +12,12 @@ import org.gradle.api.plugins.JavaPlugin
 import org.gradle.api.plugins.WarPlugin
 
 /**
- * @author griffio
- *
  * This plugin provides a simple integration point for an Annotation Processor capable of generating Java source.
  * A separate task [compileAnnotationProcessor] runs the annotation processor during build phase.
  *
  * A value for processor and library must be supplied to the extenstion task from the buildscript configuration.
  *
+ * @author griffio
  */
 class AnnotationProcessorPlugin implements Plugin<Project> {
 
@@ -49,7 +48,8 @@ class AnnotationProcessorPlugin implements Plugin<Project> {
       }
     }
 
-    project.extensions.create(AnnotationProcessorPluginExtension.NAME, AnnotationProcessorPluginExtension)
+    project.extensions.create(AnnotationProcessorPluginExtension.NAME,
+        AnnotationProcessorPluginExtension)
 
     project.task(type: CleanAnnotationProcessorGeneratedDir, "cleanAnnotationProcessorSourcesDir")
     project.task(type: InitAnnotationProcessorGeneratedDir, "initAnnotationProcessorSourcesDir")
@@ -66,7 +66,8 @@ class AnnotationProcessorPlugin implements Plugin<Project> {
       }
 
       if (project.extensions.annotationProcessor.library == "") {
-        throw new GradleException("library - provide the dependency reference containing a processor.")
+        throw new GradleException(
+            "library - provide the dependency reference containing a processor.")
       }
 
       project.dependencies {

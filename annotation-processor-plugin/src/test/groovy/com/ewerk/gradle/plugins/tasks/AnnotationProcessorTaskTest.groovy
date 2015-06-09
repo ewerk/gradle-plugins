@@ -1,8 +1,6 @@
 package com.ewerk.gradle.plugins.tasks
 
 import com.ewerk.gradle.plugins.AnnotationProcessorPlugin
-import com.ewerk.gradle.tasks.CleanAnnotationProcessorGeneratedDir
-import com.ewerk.gradle.tasks.InitAnnotationProcessorGeneratedDir
 import org.gradle.api.Project
 import org.gradle.testfixtures.ProjectBuilder
 import org.testng.annotations.BeforeMethod
