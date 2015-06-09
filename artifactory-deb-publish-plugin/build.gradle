@@ -18,6 +18,10 @@ pluginBundle {
   }
 }
 
+repositories {
+  mavenCentral()
+}
+
 dependencies {
   compile gradleApi()
   compile localGroovy()
