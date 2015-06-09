@@ -22,7 +22,7 @@ import org.gradle.api.plugins.WarPlugin
  */
 class AnnotationProcessorPlugin implements Plugin<Project> {
 
-  public static final String TASK_GROUP = "annotationProcessorTasks"
+  public static final String TASK_GROUP = "Annotation-Processor"
 
   private static final Logger LOG = Logging.getLogger(AnnotationProcessorPlugin.class)
 
