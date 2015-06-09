@@ -48,6 +48,17 @@ dagger {
   library = "com.google.dagger:dagger:2.0"
 }
 
+artifactoryDebPublish {
+  baseUrl = 'https://artifactory.company.com'
+  user = 'a.user'
+  password = '***'
+  repoKey = 'debian-snapshots'
+  distribution = 'jessie'
+  component = 'non-free'
+  arch = 'amd64'
+  archive = file('src/main/resources/helloworld_1.0_amd64.deb')
+}
+
 test {
   useTestNG()
   maxHeapSize = "128m"
