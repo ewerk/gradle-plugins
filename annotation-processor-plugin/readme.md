@@ -37,25 +37,7 @@ __Use via Gradle plugin portal__
 plugins {
   id "com.ewerk.gradle.plugins.annotation-processor" version "1.0.0"
 }
-```
 
-__Use via JCenter__
-
-```groovy
-buildscript {
-  repositories {
-    jcenter()
-  }
-
-  dependencies {
-    classpath "com.ewerk.gradle.plugins:annotation-processor-plugin:1.0.0"
-  }
-}
-
-apply plugin: 'com.ewerk.gradle.plugins.annotation-processor'
-```
-
-```groovy
 // the following closure demonstrates a configuration
 annotationProcessor {
   library "com.querydsl:querydsl-apt:4.0.0"
