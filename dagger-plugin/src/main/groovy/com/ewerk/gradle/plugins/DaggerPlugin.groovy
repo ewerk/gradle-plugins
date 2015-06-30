@@ -3,12 +3,14 @@ package com.ewerk.gradle.plugins
 import com.ewerk.gradle.tasks.CleanDaggerSourcesDir
 import com.ewerk.gradle.tasks.DaggerCompile
 import com.ewerk.gradle.tasks.InitDaggerSourcesDir
+import org.gradle.api.GradleException
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.api.logging.Logger
 import org.gradle.api.logging.Logging
 import org.gradle.api.plugins.JavaPlugin
 import org.gradle.api.plugins.WarPlugin
+import org.gradle.api.tasks.Delete
 
 /**
  * @author griffio
@@ -16,8 +18,10 @@ import org.gradle.api.plugins.WarPlugin
  * Dagger2 (http://google.github.io/dagger/) is a library with a processor dependency (com.google.dagger:dagger-compiler)
  * and compile transitive dependency (com.google.dagger:dagger) that is required for the generated code.
  *
- * The processor dependency is added to a separate JavaCompile task.
- * Tasks in this plugin : compileDagger, cleanDaggerSourcesDir, initDaggerSourcesDir
+ * apply configuration to JavaPlugin project
+ *
+ * apply configuration to Android project
+ *  The source is ${project.buildDir}/generated/source/dagger/<variant>
  *
  */
 public class DaggerPlugin implements Plugin<Project> {
@@ -33,7 +37,18 @@ public class DaggerPlugin implements Plugin<Project> {
       return;
     }
 
-    LOG.info("Applying Dagger plugin")
+    project.extensions.create(DaggerPluginExtension.NAME, DaggerPluginExtension)
+
+    if (hasAndroidProject(project)) {
+      androidApply(project)
+    } else {
+      javaApply(project)
+    }
+  }
+
+  def javaApply(project) {
+
+    LOG.info("Apply Java Dagger plugin")
 
     if (!project.plugins.hasPlugin(JavaPlugin.class)) {
       project.plugins.apply(JavaPlugin.class)
@@ -48,8 +63,6 @@ public class DaggerPlugin implements Plugin<Project> {
         dagger.extendsFrom compile
       }
     }
-
-    project.extensions.create(DaggerPluginExtension.NAME, DaggerPluginExtension)
 
     project.task(type: CleanDaggerSourcesDir, "cleanDaggerSourcesDir")
     project.task(type: InitDaggerSourcesDir, "initDaggerSourcesDir")
@@ -77,4 +90,70 @@ public class DaggerPlugin implements Plugin<Project> {
       }
     }
   }
+
+  def androidApply(project) {
+
+    LOG.info("Apply Android Dagger plugin")
+
+    project.configurations {
+      dagger.extendsFrom compile
+    }
+
+    // needed for Android Studio to show dependencies
+    project.dependencies {
+      compile project.dagger.library
+      dagger project.dagger.processorLibrary
+    }
+
+    project.afterEvaluate {
+
+      def generatedOutputDir = new File(project.buildDir as File, "generated/source/dagger")
+
+      project.tasks.create(name: 'cleanDaggerSourcesDir', type: Delete) {
+        delete generatedOutputDir
+      }
+
+      project.tasks.clean.dependsOn project.tasks.cleanDaggerSourcesDir
+
+      def android = project.extensions.android
+
+      def variants = projectAndroidVariants(project)
+
+      android.sourceSets.main.java.srcDirs += [generatedOutputDir]
+
+      variants.all { variant ->
+
+        def variantOutputDir = new File(generatedOutputDir as File, variant.dirName as String)
+
+        variant.javaCompile.classpath += project.configurations.dagger
+
+        variant.javaCompile.doFirst() {
+          variantOutputDir.mkdirs()
+        }
+
+        variant.javaCompile.options.compilerArgs += [
+            "-s", variantOutputDir.absolutePath,
+            "-processor", project.dagger.PROCESSOR
+        ]
+
+        //Makes the generated/source folder visible in Android Studio
+        variant.addJavaSourceFoldersToModel(variantOutputDir)
+      }
+    }
+  }
+
+  static def hasAndroidProject(Project project) {
+    return project.plugins.hasPlugin('com.android.application') || project.plugins.hasPlugin('com.android.library')
+  }
+
+  static def projectAndroidVariants(project) {
+    if (project.android.hasProperty('applicationVariants')) {
+      return project.android.applicationVariants
+    } else if (project.android.hasProperty('libraryVariants')) {
+      return project.android.libraryVariants
+    } else {
+      throw new GradleException('Android project must contain application variants or library variants')
+    }
+  }
+
 }
