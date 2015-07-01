@@ -18,9 +18,16 @@ pluginBundle {
   }
 }
 
+repositories {
+  mavenCentral()
+}
+
 dependencies {
   compile gradleApi()
   compile localGroovy()
+  testCompile 'com.android.tools.build:gradle:1.2.3'
+  testCompile 'com.jakewharton.sdkmanager:gradle-plugin:0.12.+'
+
 }
 
 test {
