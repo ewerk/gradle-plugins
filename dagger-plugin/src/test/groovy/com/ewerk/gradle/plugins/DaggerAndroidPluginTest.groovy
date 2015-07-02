@@ -8,17 +8,19 @@ import org.testng.annotations.BeforeMethod
 import org.testng.annotations.Test
 
 import static org.hamcrest.CoreMatchers.hasItem
+import static org.hamcrest.CoreMatchers.hasItems
 import static org.hamcrest.CoreMatchers.is
 import static org.hamcrest.MatcherAssert.assertThat
 
 /**
  * @author griffio
  *
- *
+ * android-sdk-manager will download the specified sdk
  */
 public class DaggerAndroidPluginTest {
 
   private Project project
+  private File generatedDir
 
   @BeforeMethod
   public void androidProject() {
@@ -27,7 +29,6 @@ public class DaggerAndroidPluginTest {
     project.plugins.apply('android-sdk-manager')
     project.plugins.apply('android')
     project.plugins.apply(DaggerPlugin.class)
-    //BasePlugin,init SdkHandler
     project.android {
       compileSdkVersion "android-21"
       buildToolsVersion "21.1.2"
@@ -42,6 +43,8 @@ public class DaggerAndroidPluginTest {
     project.repositories {
       mavenCentral()
     }
+
+    generatedDir = new File(project.projectDir, "/build/generated/source/dagger")
 
   }
 
@@ -61,9 +64,13 @@ public class DaggerAndroidPluginTest {
   @Test
   public void testVariant() {
     project.evaluate()
-    project.android.applicationVariants.all { v ->
-      println(v.dirName)
+    project.android.applicationVariants.all { variant ->
+      def args = variant.javaCompile.options.compilerArgs as List
+      assertThat(args, hasItems('-s', '-processor', DaggerPluginExtension.PROCESSOR,
+          new File(generatedDir, variant.dirName as String).path))
     }
+
   }
+
 
 }
