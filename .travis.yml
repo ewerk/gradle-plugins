@@ -7,4 +7,3 @@ script: ./gradlew build
 branches:
   only:
     - master
-    - android-sdk
