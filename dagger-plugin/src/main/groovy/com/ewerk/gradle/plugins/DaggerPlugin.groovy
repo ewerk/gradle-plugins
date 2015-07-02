@@ -18,11 +18,12 @@ import org.gradle.api.tasks.Delete
  * Dagger2 (http://google.github.io/dagger/) is a library with a processor dependency (com.google.dagger:dagger-compiler)
  * and compile transitive dependency (com.google.dagger:dagger) that is required for the generated code.
  *
- * apply configuration to JavaPlugin project
+ * Apply configuration to JavaPlugin project.
+ *   A separate DaggerCompile task is executed with the annotation processor
  *
- * apply configuration to Android project
- *  The source is ${project.buildDir}/generated/source/dagger/<variant>
- *
+ * Apply configuration to Android project.
+ *   The source is ${project.buildDir}/generated/source/dagger/<variant>
+ *   The variant.javaCompile compile task is executed with the annotation processor
  */
 public class DaggerPlugin implements Plugin<Project> {
 

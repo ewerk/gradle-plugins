@@ -4,4 +4,4 @@
 * Initial release
 
 ## 1.0.1
-* current snapshot
+* Add basic Android project support for Android Studio projects
