@@ -8,7 +8,7 @@ sweeney {
 }
 
 wrapper {
-  gradleVersion = "2.4"
+  gradleVersion = "2.5"
 }
 
 subprojects {
