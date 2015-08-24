@@ -14,7 +14,7 @@ import static org.hamcrest.MatcherAssert.assertThat
 /**
  * @author griffio
  */
-public class DaggerPluginTest {
+public class DaggerJavaPluginTest {
 
   private Project project
 

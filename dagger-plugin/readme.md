@@ -6,6 +6,8 @@
 
 This plugin uses the [Dagger2](http://google.github.io/dagger/) compiler to process annotations that are compatible with JSR-330.
 
+Gradle Java/Android plugin support (imported into Intellij/Android Studio).
+
 [This plugins change log](change_log.md).
 
 #### Configuration
@@ -14,7 +16,9 @@ This plugin uses the [Dagger2](http://google.github.io/dagger/) compiler to proc
 
 The destination directory for the generated Dagger java source.
 
-Defaults to 'src/dagger/java'.
+Defaults to 'src/dagger/java' for Java Plugin projects.
+
+Android projects always use '${buildDir}/generated/source/dagger/<variant>' to maintain Android convention.
 
 ##### library
 
@@ -35,7 +39,7 @@ __Use via Gradle plugin portal__
 
 ```groovy
 plugins {
-  id "com.ewerk.gradle.plugins.dagger" version "1.0.0"
+  id "com.ewerk.gradle.plugins.dagger" version "1.0.1"
 }
 ```
 
@@ -48,7 +52,7 @@ buildscript {
   }
 
   dependencies {
-    classpath "com.ewerk.gradle.plugins:dagger-plugin:1.0.0"
+    classpath "gradle.plugin.com.ewerk.gradle.plugins:dagger-plugin:1.0.1"
   }
 }
 
