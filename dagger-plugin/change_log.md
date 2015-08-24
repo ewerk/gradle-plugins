@@ -5,3 +5,6 @@
 
 ## 1.0.1
 * Add basic Android project support for Android Studio projects
+
+## 1.0.2-SNAPSHOT
+* Current development version
