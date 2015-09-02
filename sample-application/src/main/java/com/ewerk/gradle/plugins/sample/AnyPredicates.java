@@ -7,9 +7,7 @@ import com.mysema.query.types.expr.BooleanExpression;
  * @since 1.0.3
  */
 public class AnyPredicates {
-
-    public BooleanExpression findId(Long id) {
-        return QAnyJpaEntity.anyJpaEntity.id.eq(id);
-    }
-
+  public BooleanExpression findId(Long id) {
+    return QAnyJpaEntity.anyJpaEntity.id.eq(id);
+  }
 }
