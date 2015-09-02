@@ -79,13 +79,9 @@ class QuerydslPluginTest {
     DefaultExternalModuleDependency lib = project.configurations.compile.dependencies
         .getAt(0) as DefaultExternalModuleDependency
 
-    String id = lib.group + ":" +
-        lib.name +
-        ":" +
-        lib.version
+    String id = lib.group + ":" + lib.name + ":" + lib.version
 
     assertThat(id, equalTo(QuerydslPluginExtension.DEFAULT_LIBRARY));
-
     assertThat(project.tasks.compileQuerydsl, notNullValue())
   }
 }

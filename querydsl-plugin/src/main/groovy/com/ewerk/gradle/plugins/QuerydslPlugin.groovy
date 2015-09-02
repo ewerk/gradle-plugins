@@ -8,7 +8,6 @@ import org.gradle.api.Project
 import org.gradle.api.logging.Logger
 import org.gradle.api.logging.Logging
 import org.gradle.api.plugins.JavaPlugin
-import org.gradle.api.plugins.WarPlugin
 
 /**
  * This plugin can be used to easily create Mysema querydsl classes and attach them to the project

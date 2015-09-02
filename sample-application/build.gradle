@@ -1,6 +1,6 @@
 plugins {
-  id 'java'
-  id 'war'
+  id 'org.gradle.java'
+  id 'org.gradle.war'
   id 'com.ewerk.gradle.plugins.annotation-processor' version '1.0.0'
   id 'com.ewerk.gradle.plugins.artifactory-deb-publish' version '1.0.0'
   id 'com.ewerk.gradle.plugins.auto-value' version '1.0.4'
