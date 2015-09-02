@@ -1,8 +1,8 @@
 package com.ewerk.gradle.plugins
 
-import com.ewerk.gradle.tasks.CleanDaggerSourcesDir
-import com.ewerk.gradle.tasks.DaggerCompile
-import com.ewerk.gradle.tasks.InitDaggerSourcesDir
+import com.ewerk.gradle.plugins.tasks.CleanDaggerSourcesDir
+import com.ewerk.gradle.plugins.tasks.DaggerCompile
+import com.ewerk.gradle.plugins.tasks.InitDaggerSourcesDir
 import org.gradle.api.GradleException
 import org.gradle.api.Plugin
 import org.gradle.api.Project

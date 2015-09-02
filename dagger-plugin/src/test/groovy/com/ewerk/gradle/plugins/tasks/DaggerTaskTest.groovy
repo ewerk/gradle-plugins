@@ -1,8 +1,6 @@
 package com.ewerk.gradle.plugins.tasks
 
 import com.ewerk.gradle.plugins.DaggerPlugin
-import com.ewerk.gradle.tasks.CleanDaggerSourcesDir
-import com.ewerk.gradle.tasks.InitDaggerSourcesDir
 import org.gradle.api.Project
 import org.gradle.testfixtures.ProjectBuilder
 import org.testng.annotations.BeforeMethod

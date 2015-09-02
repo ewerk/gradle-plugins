@@ -7,9 +7,7 @@ import org.gradle.testfixtures.ProjectBuilder
 import org.testng.annotations.BeforeMethod
 import org.testng.annotations.Test
 
-import static org.hamcrest.CoreMatchers.hasItem
-import static org.hamcrest.CoreMatchers.hasItems
-import static org.hamcrest.CoreMatchers.is
+import static org.hamcrest.CoreMatchers.*
 import static org.hamcrest.MatcherAssert.assertThat
 
 /**

@@ -1,4 +1,4 @@
-package com.ewerk.gradle.tasks
+package com.ewerk.gradle.plugins.tasks
 
 import org.gradle.api.plugins.WarPlugin
 import org.gradle.api.tasks.compile.JavaCompile
