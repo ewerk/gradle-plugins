@@ -4,4 +4,4 @@
 * Initial release
 
 ## 1.0.1
-* current snapshot
+* Gradle 2.6 compatibility

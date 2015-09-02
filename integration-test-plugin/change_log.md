@@ -9,5 +9,5 @@
 ## 1.0.7
 * Gradle plugin publication process changed
 
-## 1.0.8-SNAPSHOT
-* current SNAPSHOT
+## 1.0.8
+* Gradle 2.6 compatibility

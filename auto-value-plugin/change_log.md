@@ -20,5 +20,5 @@
 ## 1.0.4
 * Previous version was accidentally compiled and published with JDK-8 which may break some apps, 1.0.4 uses JDK-7 again
 
-## 1.0.4-SNAPSHOT
-* Current snapshot
+## 1.0.4
+* Gradle 2.6 compatibility

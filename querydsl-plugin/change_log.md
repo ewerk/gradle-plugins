@@ -17,4 +17,4 @@
 * Support for `providedCompile` and `providedRuntime` dependencies
 
 ## 1.0.5
-* current SNAPSHOT
+* Gradle 2.6 compatibility
