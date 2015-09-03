@@ -14,12 +14,12 @@ are now directly hosted at the plugin portal itself.
 The plugins are based on Gradle ≥ 2.1.
 
 ## Plugins
-* [annotation-processor-plugin] (https://github.com/ewerk/gradle-plugins/tree/master/annotation-processor-plugin)
-* [artifactory-deb-publish-plugin] (https://github.com/ewerk/gradle-plugins/tree/master/artifactory-deb-publish-plugin)
-* [auto-value-plugin] (https://github.com/ewerk/gradle-plugins/tree/master/auto-value-plugin)
-* [dagger-plugin] (https://github.com/ewerk/gradle-plugins/tree/master/dagger-plugin)
-* [integration-test-plugin] (https://github.com/ewerk/gradle-plugins/tree/master/integration-test-plugin)
-* [querydsl-plugin] (https://github.com/ewerk/gradle-plugins/tree/master/querydsl-plugin)
+* [annotation-processor-plugin] (https://github.com/ewerk/gradle-plugins/tree/master/plugins/annotation-processor-plugin)
+* [artifactory-deb-publish-plugin] (https://github.com/ewerk/gradle-plugins/tree/master/plugins/artifactory-deb-publish-plugin)
+* [auto-value-plugin] (https://github.com/ewerk/gradle-plugins/tree/master/plugins/auto-value-plugin)
+* [dagger-plugin] (https://github.com/ewerk/gradle-plugins/tree/master/plugins/dagger-plugin)
+* [integration-test-plugin] (https://github.com/ewerk/gradle-plugins/tree/master/plugins/integration-test-plugin)
+* [querydsl-plugin] (https://github.com/ewerk/gradle-plugins/tree/master/plugins/querydsl-plugin)
 
 Please have a look at the `sample-application` module providing a code example on how to use the
 plugins.
