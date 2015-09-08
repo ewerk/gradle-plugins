@@ -18,7 +18,7 @@ Defaults to 'src/generated/java'.
 
 ##### library
 
-This specifies dependency artifact co-ordinates containing the annotation processor.
+This specifies dependency artifact co-ordinates or a project dependency module containing the annotation processor.
 It will only be added to the classpath of the annotation process compile task
 
 Required value.
@@ -35,13 +35,21 @@ __Use via Gradle plugin portal__
 
 ```groovy
 plugins {
-  id "com.ewerk.gradle.plugins.annotation-processor" version "1.0.0"
+  id "com.ewerk.gradle.plugins.annotation-processor" version "1.0.2"
 }
 
-// the following closure demonstrates a configuration
+// the following closure demonstrates a configuration with artifact co-ordinates
 annotationProcessor {
   library "com.querydsl:querydsl-apt:4.0.0"
   processor "com.querydsl.apt.morphia.MorphiaAnnotationProcessor"
   sourcesDir "src/morphia/java"
 }
+
+// the following closure demonstrates a configuration with project module dependency 
+annotationProcessor {
+  library project(":myproc")
+  processor "com.querydsl.apt.morphia.MorphiaAnnotationProcessor"
+  sourcesDir "src/morphia/java"
+}
+
 ```

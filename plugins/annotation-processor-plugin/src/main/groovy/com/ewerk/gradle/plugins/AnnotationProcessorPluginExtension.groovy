@@ -9,6 +9,6 @@ class AnnotationProcessorPluginExtension {
   static final String DEFAULT_SOURCES_DIR = "src/generated/java"
 
   String sourcesDir = DEFAULT_SOURCES_DIR
-  String library = ""
+  Object library = ""
   String processor = ""
 }
