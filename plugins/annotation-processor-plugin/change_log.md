@@ -5,3 +5,6 @@
 
 ## 1.0.1
 * Gradle 2.6 compatibility
+
+## 1.0.2
+* Support project dependency module (See issue 23)
