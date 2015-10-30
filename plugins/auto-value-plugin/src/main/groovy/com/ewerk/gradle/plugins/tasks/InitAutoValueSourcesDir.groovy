@@ -2,6 +2,7 @@ package com.ewerk.gradle.plugins.tasks
 
 import com.ewerk.gradle.plugins.AutoValuePlugin
 import org.gradle.api.DefaultTask
+import org.gradle.api.GradleException
 import org.gradle.api.logging.Logger
 import org.gradle.api.logging.Logging
 import org.gradle.api.tasks.TaskAction
@@ -26,6 +27,17 @@ class InitAutoValueSourcesDir extends DefaultTask {
   @SuppressWarnings("GroovyUnusedDeclaration")
   @TaskAction
   def createSourceFolders() {
+
+    def autoValueSourcesDir = project.file(project.autoValue.autoValueSourcesDir)
+
+    LOG.info("Create source set ${autoValueSourcesDir}.");
+
+    project.sourceSets.main.java.srcDirs.each { d ->
+      if (d.absolutePath.equals(autoValueSourcesDir.absolutePath)) {
+        throw new GradleException("The configured autoValueSourcesDir must specify a separate location to existing source code.")
+      }
+    }
+
     project.file(project.autoValue.autoValueSourcesDir).mkdirs()
   }
 }
