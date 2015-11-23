@@ -122,4 +122,25 @@ jaxb2 {
     }
   }
 }
+
+```
+
+__Minimal configuration example__
+```groovy
+plugins {
+  id 'com.ewerk.gradle.plugins.jaxb2' version '1.0.0'
+}
+
+repositories {
+  mavenCentral()
+}
+
+jaxb2 {
+  xjc {
+    'request-classes' {
+      basePackage = 'com.any.app.model.request'
+      schema = 'src/main/xsd/request.xsd'
+    }
+  }
+}
 ```
