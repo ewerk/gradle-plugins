@@ -4,11 +4,11 @@ plugins {
 }
 
 sweeney {
-  enforce type: 'jdk', expect: '[1.7, 1.7]'
+  enforce type: 'jdk', expect: '[1.8, 1.8]'
 }
 
 wrapper {
-  gradleVersion = "2.6"
+  gradleVersion = "2.9"
 }
 
 subprojects {
