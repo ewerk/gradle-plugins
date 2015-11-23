@@ -7,7 +7,8 @@ import org.gradle.api.logging.Logger
 import org.gradle.api.logging.Logging
 
 /**
- * TODO holgerstolzenberg: document
+ * A plugin for publishing .deb archives with the according meta-data to Artifactory via HTTP(S)
+ * REST API.
  *
  * @see ArtifactoryDebPublishPluginExtension
  * @author holgerstolzenberg

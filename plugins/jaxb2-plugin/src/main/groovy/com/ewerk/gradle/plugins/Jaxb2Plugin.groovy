@@ -13,6 +13,8 @@ import org.slf4j.Logger
 import org.slf4j.LoggerFactory
 
 /**
+ * A plugin for generating Java source code from XSD files backed by JAXB2 ant task.
+ *
  * @author holgerstolzenberg
  * @since 1.0.0
  */

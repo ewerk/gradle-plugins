@@ -5,6 +5,9 @@ import org.gradle.api.DefaultTask
 import org.gradle.api.tasks.TaskAction
 
 /**
+ * Task that does the actual generation stuff. Declares the Ant task and then runs it for all
+ * configured {@link XjcTaskConfig} objects.
+ *
  * @author holgerstolzenberg
  * @since 1.0.0
  */

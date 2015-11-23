@@ -1,7 +1,9 @@
 package com.ewerk.gradle.plugins.tasks
 
 /**
- * TODO holgerstolzenberg: Document
+ * Simple extension bean. Is used within the plugins extension a wrapper for the 'xjc' container.
+ * This extension is declared in the plugins main extension itself, it is created on-the-fly
+ * on plugin apply. See the plugin class for that.
  *
  * @author holgerstolzenberg
  * @since 1.0.0

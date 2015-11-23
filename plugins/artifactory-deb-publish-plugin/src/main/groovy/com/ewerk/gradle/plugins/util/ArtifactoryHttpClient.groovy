@@ -7,7 +7,7 @@ import org.gradle.api.logging.Logger
 import org.gradle.api.logging.Logging
 
 /**
- * TODO holgerstolzenberg: Document
+ * Service class that provides HTTP(S) connectivity to a configured Artifactory REST API endpoint.
  *
  * @author holgerstolzenberg
  * @since 1.0.0
