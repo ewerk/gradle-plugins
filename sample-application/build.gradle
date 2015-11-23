@@ -7,6 +7,7 @@ plugins {
   id 'com.ewerk.gradle.plugins.integration-test' version '1.0.8'
   id 'com.ewerk.gradle.plugins.querydsl' version '1.0.5'
   id 'com.ewerk.gradle.plugins.dagger' version '1.0.2'
+  id 'com.ewerk.gradle.plugins.jaxb2' version '1.0.0'
 }
 
 repositories {
@@ -15,6 +16,7 @@ repositories {
 
 dependencies {
   compile "org.slf4j:slf4j-api:$slf4jVersion"
+  compile "org.slf4j:slf4j-simple:$slf4jVersion"
   compile "org.hibernate.javax.persistence:hibernate-jpa-2.1-api:$persistenceApiVersion"
   compile "org.springframework.data:spring-data-mongodb:$springDataVersion"
   compile "org.mongodb.morphia:morphia:$morphiaVersion"
@@ -55,6 +57,15 @@ artifactoryDebPublish {
   component = 'non-free'
   arch = 'amd64'
   archive = file('src/main/resources/helloworld_1.0_amd64.deb')
+}
+
+jaxb2 {
+  xjc {
+    'model-classes' {
+      basePackage = 'com.ewerk.gradle.plugins.sample'
+      schema = 'src/main/xsd/model.xsd'
+    }
+  }
 }
 
 test {
