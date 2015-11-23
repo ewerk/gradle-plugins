@@ -2,14 +2,41 @@
 
 #### Description
 
-This plugin makes it easy to … TODO
+This plugin makes it easy to generate Java source code from XML schema files (.xsd). Internally
+the plugin relies on the JAXB2 ant task for generating the code. The examples below show how 
+the plugin can be used.
+
+At the moment the plugin is simplistic and just supports creating Java code from XSD. JAXB2
+specific special stuff like binding files are currently not supported but can surely make it
+into the plugin in future. 
 
 Please have a look at the plugins [change log](change_log.md).
 
 #### Configuration
 
-##### library
-TODO
+##### taskName
+The full qualified name of the JAXB2 ant task the does the real work. 
+Defaults to `org.jvnet.jaxb2_commons.xjc.XJC2Task`. 
+Normally there will be need to change this.
+
+##### xjc
+This is the container for configuring the distinct generation steps. It can be repeated as needed
+within the `jaxb2` extension. The container structure is as follows:
+
+```groovy
+xjc {
+  'generation-step-name' {
+    // optional, defaults to src/generated/java
+    generatedSourcesDir = 'any/relative/path'
+    
+    // full qualified base package for the classes to be generated
+    basePackage = 'com.any.app'
+    
+    // relative path the XSD file to generate the code from
+    schema = 'src/main/xsd/any-file.xsd'
+  }
+}
+```
 
 #### Examples
 
