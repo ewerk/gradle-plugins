@@ -1,0 +1,40 @@
+plugins {
+  id "org.gradle.maven"
+  id "net.researchgate.release" version "2.3.4"
+  id "com.gradle.plugin-publish" version "0.9.1"
+}
+
+pluginBundle {
+  website = 'https://github.com/ewerk/gradle-plugins'
+  vcsUrl = 'https://github.com/ewerk/gradle-plugins'
+  description = 'Plugin for generating Java sources from XML schemas files.'
+  tags = ['jaxb2', 'jaxb']
+
+  plugins {
+    jaxb2Plugin {
+      id = 'com.ewerk.gradle.plugins.jaxb2'
+      displayName = 'Gradle JAXB2 plugin'
+    }
+  }
+}
+
+dependencies {
+  compile gradleApi()
+  compile localGroovy()
+}
+
+test {
+  useTestNG()
+  minHeapSize = "128m"
+  maxHeapSize = "512m"
+}
+
+release {
+  tagTemplate = '$name-$version'
+
+  git {
+    requireBranch = "release"
+  }
+}
+
+createReleaseTag.dependsOn("check")

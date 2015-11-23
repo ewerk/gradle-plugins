@@ -15,6 +15,9 @@ project(':plugins/dagger-plugin').name = 'dagger-plugin'
 include 'plugins/integration-test-plugin'
 project(':plugins/integration-test-plugin').name = 'integration-test-plugin'
 
+include 'plugins/jaxb2-plugin'
+project(':plugins/jaxb2-plugin').name = 'jaxb2-plugin'
+
 include 'plugins/querydsl-plugin'
 project(':plugins/querydsl-plugin').name = 'querydsl-plugin'
 
