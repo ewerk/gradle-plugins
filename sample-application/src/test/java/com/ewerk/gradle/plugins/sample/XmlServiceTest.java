@@ -15,6 +15,7 @@
  */
 package com.ewerk.gradle.plugins.sample;
 
+import static org.assertj.core.api.Assertions.assertThat;
 import static org.slf4j.LoggerFactory.getLogger;
 
 import org.slf4j.Logger;
@@ -32,9 +33,9 @@ public class XmlServiceTest {
   @Test
   public void testCreateRequest() throws JAXBException {
     final XmlService xmlService = new XmlService();
-    //    final String request = xmlService.createRequest();
+    final String request = xmlService.createRequest();
 
-    //    LOG.info("Request-XML: {}", request);
-    //    assertThat(request).isNotEmpty();
+    LOG.info("Request-XML: {}", request);
+    assertThat(request).isNotEmpty();
   }
 }
