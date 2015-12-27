@@ -147,7 +147,7 @@ public class DaggerPlugin implements Plugin<Project> {
     return project.plugins.hasPlugin('com.android.application') || project.plugins.hasPlugin('com.android.library')
   }
 
-  static def projectAndroidVariants(project) {
+  static def projectAndroidVariants(Project project) {
     if (project.android.hasProperty('applicationVariants')) {
       return project.android.applicationVariants
     } else if (project.android.hasProperty('libraryVariants')) {
@@ -157,4 +157,13 @@ public class DaggerPlugin implements Plugin<Project> {
     }
   }
 
+  static def verifyNotWithinMainBuildSrc(Project project) {
+    def daggerSourcesDir = project.file(project.dagger.daggerSourcesDir) as File
+    project.sourceSets.main.java.srcDirs.each { d ->
+      if (d.absolutePath.equals(daggerSourcesDir.absolutePath)) {
+        throw new GradleException("The configured daggerSourcesDir must specify a separate location to existing source code.")
+      }
+    }
+    return daggerSourcesDir
+  }
 }

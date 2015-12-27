@@ -18,6 +18,9 @@ The destination directory for the generated Dagger java source.
 
 Defaults to 'src/dagger/java' for Java Plugin projects.
 
+The daggerSourcesDir is deleted when executing the clean task; for this reason, a BuildException will be thrown if
+daggerSourcesDir is located as your main java sources.
+
 Android projects always use '${buildDir}/generated/source/dagger/<variant>' to maintain Android convention.
 
 ##### library

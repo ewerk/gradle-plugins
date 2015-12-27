@@ -22,6 +22,7 @@ class InitDaggerSourcesDir extends DefaultTask {
   @TaskAction
   def createSourceFolders() {
     LOG.info("create source")
-    project.file(project.dagger.daggerSourcesDir).mkdirs()
+    def daggerSourcesDir = DaggerPlugin.verifyNotWithinMainBuildSrc(project)
+    daggerSourcesDir.mkdirs()
   }
 }
