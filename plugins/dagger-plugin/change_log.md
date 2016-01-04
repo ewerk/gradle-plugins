@@ -8,3 +8,6 @@
 
 ## 1.0.2
 * Gradle 2.6 compatibility
+
+## 1.0.3
+* Make sure clean task does not delete any main source set
