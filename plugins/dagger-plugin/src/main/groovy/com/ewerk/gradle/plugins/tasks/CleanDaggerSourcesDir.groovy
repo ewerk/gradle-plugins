@@ -22,10 +22,9 @@ class CleanDaggerSourcesDir extends DefaultTask {
   @TaskAction
   def cleanSourceFolders() {
     LOG.info("clean Source")
-    project.sourceSets.dagger.java.srcDirs.each { dir ->
-      if (dir.exists()) {
-        dir.deleteDir()
-      }
+    def daggerSourcesDir = DaggerPlugin.verifyNotWithinMainBuildSrc(project)
+    if (daggerSourcesDir.exists()) {
+      daggerSourcesDir.deleteDir()
     }
   }
 }
