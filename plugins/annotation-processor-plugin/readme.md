@@ -6,6 +6,9 @@ This plugin provides a simple integration point for an Annotation Processor capa
 
 A separate compile task that only runs the annotation processor is executed during build phase.
 
+If the configured processor library is a required compile dependency then add '-proc:none' to your
+'compileJava.options.compilerArgs', this will stop javac executing the processor using classpath discovery.
+
 [This plugins change log](change_log.md).
 
 #### Configuration
@@ -51,5 +54,17 @@ annotationProcessor {
   processor "com.querydsl.apt.morphia.MorphiaAnnotationProcessor"
   sourcesDir "src/morphia/java"
 }
+
+// the following processor is also required on the compile classpath
+annotationProcessor {
+  library "com.beust:version-processor:0.2"
+  processor "com.beust.version.VersionProcessor"
+}
+
+// processor dependency for compile
+compile("com.beust:version-processor:0.2")
+
+// must disable classpath processor
+compileJava.options.compilerArgs << '-proc:none'
 
 ```
