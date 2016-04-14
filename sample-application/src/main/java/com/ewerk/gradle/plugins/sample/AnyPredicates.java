@@ -1,6 +1,6 @@
 package com.ewerk.gradle.plugins.sample;
 
-import com.mysema.query.types.expr.BooleanExpression;
+import com.querydsl.core.types.dsl.BooleanExpression;
 
 /**
  * @author griffio
