@@ -1,3 +1,13 @@
+buildscript {
+  repositories {
+    mavenLocal()
+  }
+
+  dependencies {
+    classpath("com.ewerk.gradle.plugins:querydsl-plugin:1.0.6-SNAPSHOT") // remove buildscript for release
+  }
+}
+
 plugins {
   id 'org.gradle.java'
   id 'org.gradle.war'
@@ -5,10 +15,12 @@ plugins {
   id 'com.ewerk.gradle.plugins.artifactory-deb-publish' version '1.0.1'
   id 'com.ewerk.gradle.plugins.auto-value' version '1.0.5'
   id 'com.ewerk.gradle.plugins.integration-test' version '1.0.8'
-  id 'com.ewerk.gradle.plugins.querydsl' version '1.0.5'
+  //id 'com.ewerk.gradle.plugins.querydsl' version '1.0.6' // uncomment for release
   id 'com.ewerk.gradle.plugins.dagger' version '1.0.3'
   id 'com.ewerk.gradle.plugins.jaxb2' version '1.0.1'
 }
+
+apply plugin: "com.ewerk.gradle.plugins.querydsl" // remove for release
 
 repositories {
   mavenCentral()
@@ -18,9 +30,9 @@ dependencies {
   compile "org.slf4j:slf4j-api:$slf4jVersion"
   compile "org.slf4j:slf4j-simple:$slf4jVersion"
   compile "org.hibernate.javax.persistence:hibernate-jpa-2.1-api:$persistenceApiVersion"
-  compile "org.springframework.data:spring-data-mongodb:$springDataVersion"
+  compile "org.springframework.data:spring-data-mongodb:$springDataMongoVersion"
   compile "org.mongodb.morphia:morphia:$morphiaVersion"
-  compile "com.mysema.querydsl:querydsl-mongodb:$querydslVersion"
+  compile "com.querydsl:querydsl-mongodb:$querydslVersion"
 
   testCompile "org.testng:testng:$testNgVersion"
   testCompile "org.assertj:assertj-core:$assertjVersion"
@@ -29,8 +41,8 @@ dependencies {
 }
 
 annotationProcessor {
-  library 'com.mysema.querydsl:querydsl-apt:3.6.0'
-  processor 'com.mysema.query.apt.morphia.MorphiaAnnotationProcessor'
+  library 'com.querydsl:querydsl-apt:4.0.9'
+  processor 'com.querydsl.apt.morphia.MorphiaAnnotationProcessor'
   sourcesDir 'src/morphia/java'
 }
 

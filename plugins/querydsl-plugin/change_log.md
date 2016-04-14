@@ -18,3 +18,7 @@
 
 ## 1.0.5
 * Gradle 2.6 compatibility
+
+## 1.0.6
+* Querydsl 4 library dependency is now required for this plugin.
+* Querydsl 4 is required for SpringData "Hopper" JPA generation.

@@ -1,6 +1,6 @@
 package com.ewerk.gradle.plugins.sample;
 
-import com.mysema.query.annotations.QueryEntity;
+import com.querydsl.core.annotations.QueryEntity;
 
 /**
  * Uses the querydsl annotation processor

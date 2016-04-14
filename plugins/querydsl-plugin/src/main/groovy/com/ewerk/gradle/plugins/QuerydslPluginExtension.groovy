@@ -10,17 +10,17 @@ package com.ewerk.gradle.plugins
  */
 class QuerydslPluginExtension {
 
-  static String HIBERNATE_PROC = "com.mysema.query.apt.hibernate.HibernateAnnotationProcessor"
-  static String JDO_PROC = "com.mysema.query.apt.jdo.JDOAnnotationProcessor"
-  static String JPA_PROC = "com.mysema.query.apt.jpa.JPAAnnotationProcessor"
-  static String MORPHIA_PROC = "com.mysema.query.apt.morphia.MorphiaAnnotationProcessor"
-  static String QUERYDSL_PROC = "com.mysema.query.apt.QuerydslAnnotationProcessor"
-  static String ROO_PROC = "com.mysema.query.apt.roo.RooAnnotationProcessor"
+  static String HIBERNATE_PROC = "com.querydsl.apt.hibernate.HibernateAnnotationProcessor"
+  static String JDO_PROC = "com.querydsl.apt.jdo.JDOAnnotationProcessor"
+  static String JPA_PROC = "com.querydsl.apt.jpa.JPAAnnotationProcessor"
+  static String MORPHIA_PROC = "com.querydsl.apt.morphia.MorphiaAnnotationProcessor"
+  static String QUERYDSL_PROC = "com.querydsl.apt.QuerydslAnnotationProcessor"
+  static String ROO_PROC = "com.querydsl.apt.roo.RooAnnotationProcessor"
   static String SPRING_DATA_MONGO_PROC = "org.springframework.data.mongodb.repository.support.MongoAnnotationProcessor"
 
   static final String NAME = "querydsl"
   static final String DEFAULT_QUERYDSL_SOURCES_DIR = new File("src/querydsl/java")
-  static final String DEFAULT_LIBRARY = "com.mysema.querydsl:querydsl-apt:3.6.0"
+  static final String DEFAULT_LIBRARY = "com.querydsl:querydsl-apt:4.0.9"
 
   String querydslSourcesDir = DEFAULT_QUERYDSL_SOURCES_DIR
   String library = DEFAULT_LIBRARY
