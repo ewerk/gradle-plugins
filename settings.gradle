@@ -20,5 +20,3 @@ project(':plugins/jaxb2-plugin').name = 'jaxb2-plugin'
 
 include 'plugins/querydsl-plugin'
 project(':plugins/querydsl-plugin').name = 'querydsl-plugin'
-
-include 'sample-application'
