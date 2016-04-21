@@ -85,36 +85,6 @@ Defaults to `false`.
 
 #### Examples
 
-__Use via Gradle plugin portal__
-
-```groovy
-plugins {
-  id "com.ewerk.gradle.plugins.querydsl" version "1.0.6"
-}
-```
-
-__Use via JCenter__
-
-```groovy
-buildscript {
-  repositories {
-    jcenter()
-  }
-
-  dependencies {
-    classpath "com.ewerk.gradle.plugins:querydsl-plugin:1.0.6"
-  }
-}
-
-apply plugin: "com.ewerk.gradle.plugins.querydsl"
-
-// the following closure demonstrates some of the configuration defaults and is not necessary
-querydsl {
-  library = "com.querydsl.apt:querydsl-apt:4.0.9"
-  querydslSourcesDir = "src/querydsl/java"
-}
-```
-
 __Mongo example__
 
 ```groovy

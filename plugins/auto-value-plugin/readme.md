@@ -37,22 +37,6 @@ __Use via Gradle plugin portal__
 plugins {
   id "com.ewerk.gradle.plugins.auto-value" version "1.0.5"
 }
-```
-
-__Use via JCenter__
-
-```groovy
-buildscript {
-  repositories {
-    jcenter()
-  }
-
-  dependencies {
-    classpath "com.ewerk.gradle.plugins:auto-value-plugin:1.0.5"
-  }
-}
-
-apply plugin: "com.ewerk.gradle.plugins.auto-value"
 
 // the following closure demonstrates the extension defaults and is not necessary
 autoValue {

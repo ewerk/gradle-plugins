@@ -44,25 +44,7 @@ __Use via Gradle plugin portal__
 plugins {
   id "com.ewerk.gradle.plugins.dagger" version "1.0.1"
 }
-```
 
-__Use via JCenter__
-
-```groovy
-buildscript {
-  repositories {
-    jcenter()
-  }
-
-  dependencies {
-    classpath "gradle.plugin.com.ewerk.gradle.plugins:dagger-plugin:1.0.1"
-  }
-}
-
-apply plugin: 'com.ewerk.gradle.plugins.dagger'
-```
-
-```groovy
 // the following closure demonstrates some of the configuration defaults and is not necessary
 dagger {
   library = "com.google.dagger:dagger:2.0"

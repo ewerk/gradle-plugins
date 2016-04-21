@@ -36,23 +36,3 @@ integrationTest {
   maxHeapSize = "512m"
 }
 ```
-
-__Use via JCenter__
-
-```groovy
-buildscript {
-  repositories {
-    jcenter()
-  }
-
-  dependencies {
-    classpath "com.ewerk.gradle.plugins:integration-test-plugin:1.0.6"
-  }
-}
-
-apply plugin: "com.ewerk.gradle.plugins.integration-test"
-
-integrationTest {
-  useTestNG()
-}
-```

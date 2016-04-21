@@ -54,32 +54,6 @@ plugins {
 }
 ```
 
-__Use via JCenter__
-
-```groovy
-buildscript {
-  repositories {
-    jcenter()
-  }
-
-  dependencies {
-    classpath 'com.ewerk.gradle.plugins:jaxb2-plugin:1.0.0'
-  }
-}
-
-apply plugin: 'com.ewerk.gradle.plugins.jaxb2'
-
-jaxb2 {
-  xjc {
-    "some-name" {
-      generatedSourcesDir = 'src/generated/java'
-      basePackage = 'org.any.app.model'
-      schema = 'relative/path/to/schema.xsd'
-    }
-  }
-}
-```
-
 __Full configuration example__
 
 ```groovy
