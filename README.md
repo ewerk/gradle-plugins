@@ -14,12 +14,12 @@ are now directly hosted at the plugin portal itself.
 The plugins are based on Gradle ≥ 2.1.
 
 ## Plugins
-* [annotation-processor-plugin] (https://github.com/ewerk/gradle-plugins/tree/master/plugins/annotation-processor-plugin)
-* [artifactory-deb-publish-plugin] (https://github.com/ewerk/gradle-plugins/tree/master/plugins/artifactory-deb-publish-plugin)
-* [auto-value-plugin] (https://github.com/ewerk/gradle-plugins/tree/master/plugins/auto-value-plugin)
-* [dagger-plugin] (https://github.com/ewerk/gradle-plugins/tree/master/plugins/dagger-plugin)
-* [integration-test-plugin] (https://github.com/ewerk/gradle-plugins/tree/master/plugins/integration-test-plugin)
-* [jaxb2-plugin] (https://github.com/ewerk/gradle-plugins/tree/master/plugins/jaxb2-plugin)
-* [querydsl-plugin] (https://github.com/ewerk/gradle-plugins/tree/master/plugins/querydsl-plugin)
+* [annotation-processor-plugin] (https://github.com/ewerk/gradle-plugins/tree/master/annotation-processor-plugin)
+* [artifactory-deb-publish-plugin] (https://github.com/ewerk/gradle-plugins/tree/master/artifactory-deb-publish-plugin)
+* [auto-value-plugin] (https://github.com/ewerk/gradle-plugins/tree/master/auto-value-plugin)
+* [dagger-plugin] (https://github.com/ewerk/gradle-plugins/tree/master/dagger-plugin)
+* [integration-test-plugin] (https://github.com/ewerk/gradle-plugins/tree/master/integration-test-plugin)
+* [jaxb2-plugin] (https://github.com/ewerk/gradle-plugins/tree/master/jaxb2-plugin)
+* [querydsl-plugin] (https://github.com/ewerk/gradle-plugins/tree/master/querydsl-plugin)
 
 Please have a look at the [Samples](https://github.com/ewerk/gradle-plugins-samples) providing code examples on how to use the plugins.
