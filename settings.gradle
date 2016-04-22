@@ -1,22 +1,9 @@
 rootProject.name = 'gradle-plugins'
 
-include 'plugins/annotation-processor-plugin'
-project(':plugins/annotation-processor-plugin').name = 'annotation-processor-plugin'
-
-include 'plugins/artifactory-deb-publish-plugin'
-project(':plugins/artifactory-deb-publish-plugin').name = 'artifactory-deb-publish-plugin'
-
-include 'plugins/auto-value-plugin'
-project(':plugins/auto-value-plugin').name = 'auto-value-plugin'
-
-include 'plugins/dagger-plugin'
-project(':plugins/dagger-plugin').name = 'dagger-plugin'
-
-include 'plugins/integration-test-plugin'
-project(':plugins/integration-test-plugin').name = 'integration-test-plugin'
-
-include 'plugins/jaxb2-plugin'
-project(':plugins/jaxb2-plugin').name = 'jaxb2-plugin'
-
-include 'plugins/querydsl-plugin'
-project(':plugins/querydsl-plugin').name = 'querydsl-plugin'
+include 'annotation-processor-plugin'
+include 'artifactory-deb-publish-plugin'
+include 'auto-value-plugin'
+include 'dagger-plugin'
+include 'integration-test-plugin'
+include 'jaxb2-plugin'
+include 'querydsl-plugin'

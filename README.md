@@ -22,4 +22,4 @@ The plugins are based on Gradle ≥ 2.1.
 * [jaxb2-plugin] (https://github.com/ewerk/gradle-plugins/tree/master/plugins/jaxb2-plugin)
 * [querydsl-plugin] (https://github.com/ewerk/gradle-plugins/tree/master/plugins/querydsl-plugin)
 
-Please have a look at the [sample-applications](https://github.com/ewerk/gradle-plugins-sample-applications) providing code examples on how to use the plugins.
+Please have a look at the [Samples](https://github.com/ewerk/gradle-plugins-samples) providing code examples on how to use the plugins.
