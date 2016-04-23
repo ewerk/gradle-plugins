@@ -36,8 +36,12 @@ class InitJaxb2SourcesDir extends DefaultTask {
   }
 
   private static boolean createSourcesDirectory(generatedSourcesDir) {
-    LOG.info("Create source set ${generatedSourcesDir}.");
-    generatedSourcesDir.mkdirs()
+    def created = generatedSourcesDir.exists()
+    if (!created) {
+      LOG.info("Create source set ${generatedSourcesDir}.");
+      created = generatedSourcesDir.mkdirs()
+    }
+    return created
   }
 
   private void verifyNotWithinMainBuildSrc(generatedSourcesDir) {
