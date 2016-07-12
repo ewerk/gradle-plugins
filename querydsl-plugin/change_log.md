@@ -22,3 +22,6 @@
 ## 1.0.6
 * Querydsl 4 library dependency is now required for this plugin.
 * Querydsl 4 is required for SpringData "Hopper" JPA generation.
+
+## 1.0.7
+* Bugfix (issue #51) for compileQuerydsl task, Java compiler setting of destinationDir, must evaluate user's querydslSourcesDir preference.
