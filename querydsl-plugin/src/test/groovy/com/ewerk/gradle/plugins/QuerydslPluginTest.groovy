@@ -84,4 +84,12 @@ class QuerydslPluginTest {
     assertThat(id, equalTo(QuerydslPluginExtension.DEFAULT_LIBRARY));
     assertThat(project.tasks.compileQuerydsl, notNullValue())
   }
+
+  @Test
+  public void testSourcesDirAfterEvaluate() {
+    project.extensions.querydsl.querydslSourcesDir = "/java/other/src"
+    project.evaluate()
+    File sourcesDir = project.file(project.querydsl.querydslSourcesDir) as File
+    assertThat(sourcesDir, equalTo(project.tasks.compileQuerydsl.destinationDir as File))
+  }
 }

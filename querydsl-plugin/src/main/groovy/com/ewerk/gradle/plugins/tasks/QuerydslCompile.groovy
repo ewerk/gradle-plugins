@@ -2,7 +2,6 @@ package com.ewerk.gradle.plugins.tasks
 
 import org.gradle.api.plugins.WarPlugin
 import org.gradle.api.tasks.compile.JavaCompile
-
 /**
  * Compiles the meta model using querydsl annotation processors supplied by the querydsl extension configuration
  * @author holgerstolzenberg , griffio
@@ -23,9 +22,10 @@ class QuerydslCompile extends JavaCompile {
       }
     }
 
-    setClasspath(project.configurations.querydsl)
-
-    File file = project.file(project.querydsl.querydslSourcesDir)
-    setDestinationDir(file)
+    project.afterEvaluate {
+      setClasspath(project.configurations.querydsl)
+      File file = project.file(project.querydsl.querydslSourcesDir)
+      setDestinationDir(file)
+    }
   }
 }
