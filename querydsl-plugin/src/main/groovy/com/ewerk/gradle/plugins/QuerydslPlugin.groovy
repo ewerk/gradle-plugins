@@ -66,6 +66,7 @@ class QuerydslPlugin implements Plugin<Project> {
 
       addLibrary(project)
       addSourceSet(project, querydslSourcesDir)
+      addIdeaGeneratedSourceDir(project, querydslSourcesDir)
       registerSourceAtCompileJava(project, querydslSourcesDir)
       applyCompilerOptions(project)
     }
@@ -89,6 +90,18 @@ class QuerydslPlugin implements Plugin<Project> {
     LOG.info("Querydsl library: {}", library)
     project.dependencies {
       compile library
+    }
+  }
+  
+  private void addIdeaGeneratedSourceDir(Project project, File querydslSourceDir) {
+    LOG.info("Create a Generated SourceDir for those who use the IdeaPlugin.");
+    
+    if(project.plugins.hasPlugin(IdeaPlugin)) {
+      project.idea {
+        module {
+          generatedSourceDirs += querydslSourceDir
+        }
+      }
     }
   }
 
