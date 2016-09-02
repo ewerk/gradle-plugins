@@ -28,13 +28,13 @@ Android projects always use '${buildDir}/generated/source/dagger/<variant>' to m
 The dependency artifact for the compile/runtime usage of Dagger.
 This is added to the compile configuration for the project.
 
-Defaults to 'com.google.dagger:dagger:2.0'.
+Defaults to 'com.google.dagger:dagger:2.6.1'.
 
 ##### processorLibrary
 
 The dependency artifact for the compile/runtime usage of Dagger.
 
-Defaults to 'com.google.dagger:dagger-compiler:2.0'.
+Defaults to 'com.google.dagger:dagger-compiler:2.6.1'.
 
 #### Examples
 
@@ -42,13 +42,13 @@ __Use via Gradle plugin portal__
 
 ```groovy
 plugins {
-  id "com.ewerk.gradle.plugins.dagger" version "1.0.1"
+  id "com.ewerk.gradle.plugins.dagger" version "1.0.4"
 }
 
 // the following closure demonstrates some of the configuration defaults and is not necessary
 dagger {
-  library = "com.google.dagger:dagger:2.0"
-  processorLibrary = "com.google.dagger:dagger-compiler:2.0"
+  library = "com.google.dagger:dagger:2.6.1"
+  processorLibrary = "com.google.dagger:dagger-compiler:2.6.1"
   daggerSourcesDir = "src/dagger/java"
 }
 ```
