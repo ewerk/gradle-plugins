@@ -19,7 +19,7 @@ class QuerydslPluginExtension {
   static String SPRING_DATA_MONGO_PROC = "org.springframework.data.mongodb.repository.support.MongoAnnotationProcessor"
 
   static final String NAME = "querydsl"
-  static final String DEFAULT_QUERYDSL_SOURCES_DIR = new File("src/querydsl/java")
+  static final String DEFAULT_QUERYDSL_SOURCES_DIR = "src/querydsl/java"
   static final String DEFAULT_LIBRARY = "com.querydsl:querydsl-apt:4.0.9"
 
   String querydslSourcesDir = DEFAULT_QUERYDSL_SOURCES_DIR
