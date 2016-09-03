@@ -26,5 +26,6 @@
 ## 1.0.6
 * Prevent `src/main/java` to be deleted accidentally by mis-configuration
 
-## 1.0.7-SNAPSHOT
-* Current SNAPSHOT
+## 1.0.7
+* Updated the default AutoValue library version to 1.3
+* See changes: https://github.com/google/auto/blob/master/value/CHANGES.md

@@ -40,7 +40,7 @@ plugins {
 
 // the following closure demonstrates the extension defaults and is not necessary
 autoValue {
-  library = "com.google.auto.value:auto-value:1.1"
+  library = "com.google.auto.value:auto-value:1.3"
   autoValueSourcesDir = "src/auto-value/java"
 }
 ```
