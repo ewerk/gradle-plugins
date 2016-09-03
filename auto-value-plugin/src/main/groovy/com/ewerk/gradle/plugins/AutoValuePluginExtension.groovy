@@ -10,8 +10,7 @@ class AutoValuePluginExtension {
 
   static final String NAME = "autoValue"
 
-  static final String DEFAULT_AUTO_VALUE_SOURCES_DIR = new File("src/auto-value/java")
-  static final String DEFAULT_LIBRARY = "com.google.auto.value:auto-value:1.0"
+  static final String DEFAULT_AUTO_VALUE_SOURCES_DIR = "src/auto-value/java"
 
   String autoValueSourcesDir = DEFAULT_AUTO_VALUE_SOURCES_DIR
   String library = DEFAULT_LIBRARY
