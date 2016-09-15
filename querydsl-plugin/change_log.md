@@ -26,5 +26,5 @@
 ## 1.0.7
 * Bugfix (issue #51) for compileQuerydsl task, Java compiler setting of destinationDir, must evaluate user's querydslSourcesDir preference.
 
-## 1.0.8
+## 1.0.8-SNAPSHOT
 * Querydsl 4 library dependency updated to (4.1.3) matching Spring Data version
