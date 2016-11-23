@@ -35,6 +35,13 @@ class AnnotationProcessorCompile extends JavaCompile {
           "-s", file.absolutePath,
           "-processor", project.annotationProcessor.processor
       ]
+
+      def processorOptions = project.annotationProcessor.options
+      if(processorOptions){
+        processorOptions.each { key, value ->
+          options.compilerArgs << "-A${key}=${value}"
+        }
+      }
     }
   }
 }
