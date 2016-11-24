@@ -11,4 +11,5 @@ class AnnotationProcessorPluginExtension {
   String sourcesDir = DEFAULT_SOURCES_DIR
   Object library = ""
   String processor = ""
+  Map<String, String> options;
 }

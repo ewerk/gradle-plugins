@@ -32,6 +32,10 @@ This specifies a fully qualified annotation processor class found in the library
 
 Required value.
 
+#### options
+
+Used to pass options to the processors. Only those options registered with the SupportedOptions annotation are passed to a processor.
+
 #### Examples
 
 __Use via Gradle plugin portal__
@@ -53,6 +57,7 @@ annotationProcessor {
   library project(":myproc")
   processor "com.querydsl.apt.morphia.MorphiaAnnotationProcessor"
   sourcesDir "src/morphia/java"
+  options = ['key':'value']
 }
 
 // the following processor is also required on the compile classpath
