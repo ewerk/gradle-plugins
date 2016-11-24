@@ -12,6 +12,6 @@
 ## 1.0.3
 * Make sure clean task does not delete any main source set
 
-## 1.0.4
-* Updated Dagger2 default library to 2.6.1
+## 1.0.4-SNAPSHOT
+* Updated Dagger2 default library to 2.7
 * Check releases for changes - https://github.com/google/dagger/releases
