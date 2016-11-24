@@ -8,3 +8,6 @@
 
 ## 1.0.2
 * Support project dependency module (See issue 23)
+
+## 1.0.3
+* Add support for optional annotation processor options
