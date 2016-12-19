@@ -1,4 +1,4 @@
-### Querydsl plugin
+### JAXB2 plugin
 
 #### Description
 
