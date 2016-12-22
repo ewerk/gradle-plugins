@@ -5,6 +5,10 @@ jdk:
 
 script: ./gradlew build
 
+cache:
+  directories:
+    - "$HOME/.gradle/caches"
+
 branches:
   only:
     - master
