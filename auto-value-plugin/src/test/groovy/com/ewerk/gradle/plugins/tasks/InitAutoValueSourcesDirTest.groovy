@@ -17,12 +17,12 @@ import static org.hamcrest.MatcherAssert.assertThat
  */
 class InitAutoValueSourcesDirTest {
 
-  private Project project;
+  private Project project
 
-  private InitAutoValueSourcesDir createTask;
+  private InitAutoValueSourcesDir createTask
 
   @BeforeMethod
-  public void setup() {
+  void setup() {
     project = ProjectBuilder.builder().build()
     project.plugins.apply(AutoValuePlugin.class)
     project.evaluate()
@@ -30,7 +30,7 @@ class InitAutoValueSourcesDirTest {
     createTask = project.tasks.initAutoValueSourcesDir as InitAutoValueSourcesDir
   }
 
-  @Test(expectedExceptions = GradleException.class, expectedExceptionsMessageRegExp="The configured autoValueSourcesDir.*")
+  @Test(expectedExceptions = GradleException.class, expectedExceptionsMessageRegExp = "The configured autoValueSourcesDir.*")
   void testCreateSourceFolders() {
     project.autoValue.autoValueSourcesDir = "src/main/java"
     createTask.createSourceFolders()
@@ -47,12 +47,12 @@ class InitAutoValueSourcesDirTest {
   }
 
   @Test
-  public void testGroup() {
-    assertThat(createTask.group, equalTo(AutoValuePlugin.TASK_GROUP));
+  void testGroup() {
+    assertThat(createTask.group, equalTo(AutoValuePlugin.TASK_GROUP))
   }
 
   @Test
-  public void testDescription() {
-    assertThat(createTask.description, equalTo(InitAutoValueSourcesDir.DESCRIPTION));
+  void testDescription() {
+    assertThat(createTask.description, equalTo(InitAutoValueSourcesDir.DESCRIPTION))
   }
 }

@@ -28,23 +28,23 @@ import static org.hamcrest.MatcherAssert.assertThat
  */
 class AutoValuePluginExtensionTest {
 
-  private AutoValuePluginExtension extension;
+  private AutoValuePluginExtension extension
 
   @BeforeMethod
-  public void setup() {
+  void setup() {
     extension = new AutoValuePluginExtension()
   }
 
   @Test
-  public void testDefaultGeneratedSourcesDirIsSet() {
+  void testDefaultGeneratedSourcesDirIsSet() {
     String defaultDir = AutoValuePluginExtension.DEFAULT_AUTO_VALUE_SOURCES_DIR
-    assertThat(extension.autoValueSourcesDir as File, equalTo(new File(defaultDir)));
+    assertThat(extension.autoValueSourcesDir as File, equalTo(new File(defaultDir)))
   }
 
   @Test
-  public void testDefaultLibraryIsSet() {
+  void testDefaultLibraryIsSet() {
     def defaultLibrary = AutoValuePluginExtension.DEFAULT_LIBRARY
     assertThat(extension.library,
-        equalTo(defaultLibrary));
+        equalTo(defaultLibrary))
   }
 }

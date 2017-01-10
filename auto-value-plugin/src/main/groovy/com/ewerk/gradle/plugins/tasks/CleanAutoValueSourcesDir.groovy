@@ -25,7 +25,7 @@ class CleanAutoValueSourcesDir extends DefaultTask {
 
   @SuppressWarnings("GroovyUnusedDeclaration")
   @TaskAction
-  def cleanSourceFolders() {
+  cleanSourceFolders() {
     LOG.info("Clean Auto-Value source dir")
 
     project.sourceSets.autoValue.java.srcDirs.each { dir ->

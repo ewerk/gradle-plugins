@@ -20,54 +20,53 @@ class AutoValuePluginTest {
   private Project project
 
   @BeforeMethod
-  public void setup() {
+  void setup() {
     project = ProjectBuilder.builder().build()
     project.plugins.apply(AutoValuePlugin.class)
   }
 
   @Test
-  public void testPluginAppliesItself() {
+  void testPluginAppliesItself() {
     assertThat(project.plugins.hasPlugin(AutoValuePlugin.class), is(true))
   }
 
   @Test
-  public void testReApplyDoesNotFail() {
+  void testReApplyDoesNotFail() {
     project.plugins.apply(AutoValuePlugin.class)
   }
 
   @Test
-  public void testPluginAppliesJavaPlugin() {
+  void testPluginAppliesJavaPlugin() {
     assertThat(project.plugins.hasPlugin(JavaPlugin.class), is(true))
   }
 
   @Test
-  public void testPluginRegistersAutoValueExtensions() {
+  void testPluginRegistersAutoValueExtensions() {
     assertThat(project.extensions.autoValue, notNullValue())
   }
 
   @Test
-  public void testPluginTasksAreAvailable() {
+  void testPluginTasksAreAvailable() {
     assertThat(project.tasks.initAutoValueSourcesDir, notNullValue())
   }
 
   @Test
-  public void testTaskTypes() {
+  void testTaskTypes() {
     final Task initTask = project.tasks.initAutoValueSourcesDir
     assertThat(initTask, instanceOf(InitAutoValueSourcesDir.class))
   }
 
   @Test
-  public void testAfterEvaluate() {
+  void testAfterEvaluate() {
     project.evaluate()
 
-    DefaultExternalModuleDependency lib = project.configurations.compile.dependencies
-        .getAt(0) as DefaultExternalModuleDependency
+    DefaultExternalModuleDependency lib = project.configurations.compile.dependencies[0] as DefaultExternalModuleDependency
 
     String id = lib.group + ":" +
         lib.name +
         ":" +
         lib.version
 
-    assertThat(id, equalTo(AutoValuePluginExtension.DEFAULT_LIBRARY));
+    assertThat(id, equalTo(AutoValuePluginExtension.DEFAULT_LIBRARY))
   }
 }

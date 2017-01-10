@@ -36,7 +36,7 @@ class AutoValuePlugin implements Plugin<Project> {
 
     // do nothing if plugin is already applied
     if (project.plugins.hasPlugin(AutoValuePlugin.class)) {
-      return;
+      return
     }
 
     LOG.info("Applying auto-value plugin")
@@ -82,7 +82,7 @@ class AutoValuePlugin implements Plugin<Project> {
   }
 
   private void addSourceSet(Project project, File sourcesDir) {
-    LOG.info("Create source set 'auto-value'.");
+    LOG.info("Create source set 'auto-value'.")
 
     project.sourceSets {
       autoValue {
@@ -94,7 +94,7 @@ class AutoValuePlugin implements Plugin<Project> {
   private static File autoValueSourcesDir(Project project) {
     String path = project.extensions.autoValue.autoValueSourcesDir
     File autoValueSourcesDir = project.file(path)
-    LOG.info("Auto-value sources dir: {}", autoValueSourcesDir.absolutePath);
+    LOG.info("Auto-value sources dir: {}", autoValueSourcesDir.absolutePath)
     return autoValueSourcesDir
   }
 }

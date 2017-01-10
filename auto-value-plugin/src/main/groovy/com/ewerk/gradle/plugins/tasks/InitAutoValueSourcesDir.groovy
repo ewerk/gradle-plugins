@@ -26,14 +26,14 @@ class InitAutoValueSourcesDir extends DefaultTask {
 
   @SuppressWarnings("GroovyUnusedDeclaration")
   @TaskAction
-  def createSourceFolders() {
+  createSourceFolders() {
 
     def autoValueSourcesDir = project.file(project.autoValue.autoValueSourcesDir)
 
-    LOG.info("Create source set ${autoValueSourcesDir}.");
+    LOG.info("Create source set ${autoValueSourcesDir}.")
 
     project.sourceSets.main.java.srcDirs.each { d ->
-      if (d.absolutePath.equals(autoValueSourcesDir.absolutePath)) {
+      if (d.absolutePath == autoValueSourcesDir.absolutePath) {
         throw new GradleException("The configured autoValueSourcesDir must specify a separate location to existing source code.")
       }
     }
