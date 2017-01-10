@@ -20,58 +20,58 @@ class Jaxb2PluginTest {
   private Project project
 
   @BeforeMethod
-  public void setup() {
+  void setup() {
     project = ProjectBuilder.builder().build()
     project.plugins.apply(Jaxb2Plugin.class)
   }
 
   @Test
-  public void testPluginAppliesItself() {
+  void testPluginAppliesItself() {
     assertThat(project.plugins.hasPlugin(Jaxb2Plugin.class), is(true))
   }
 
   @Test
-  public void testReApplyDoesNotFail() {
+  void testReApplyDoesNotFail() {
     project.plugins.apply(Jaxb2Plugin.class)
   }
 
   @Test
-  public void testPluginAppliesJavaPlugin() {
+  void testPluginAppliesJavaPlugin() {
     assertThat(project.plugins.hasPlugin(JavaPlugin.class), is(true))
   }
 
   @Test
-  public void testPluginRegistersJaxb2Extensions() {
+  void testPluginRegistersJaxb2Extensions() {
     assertThat(project.extensions.jaxb2, notNullValue())
   }
 
   @Test
-  public void testInitTaskIsAvailable() {
+  void testInitTaskIsAvailable() {
     assertThat(project.tasks.initJaxb2SourcesDir, notNullValue())
   }
 
   @Test
-  public void testCleanTaskIsAvailable() {
+  void testCleanTaskIsAvailable() {
     assertThat(project.tasks.cleanJaxb2SourcesDir, notNullValue())
   }
 
   @Test
-  public void testGenerateTaskIsAvailable() {
+  void testGenerateTaskIsAvailable() {
     assertThat(project.tasks.generateJaxb2Classes, notNullValue())
   }
 
   @Test
-  public void testInitTaskType() {
+  void testInitTaskType() {
     assertThat(project.tasks.initJaxb2SourcesDir, instanceOf(InitJaxb2SourcesDir.class))
   }
 
   @Test
-  public void testCleanTaskType() {
+  void testCleanTaskType() {
     assertThat(project.tasks.cleanJaxb2SourcesDir, instanceOf(CleanJaxb2SourcesDir.class))
   }
 
   @Test
-  public void testGenerateTaskType() {
+  void testGenerateTaskType() {
     assertThat(project.tasks.generateJaxb2Classes, instanceOf(GenerateJaxb2Classes.class))
   }
 }

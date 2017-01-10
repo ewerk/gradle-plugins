@@ -31,7 +31,7 @@ class Jaxb2Plugin implements Plugin<Project> {
   void apply(final Project project) {
     // do nothing if plugin is already applied
     if (project.plugins.hasPlugin(Jaxb2Plugin.class)) {
-      return;
+      return
     }
 
     LOG.info("Applying JAXB2 plugin")

@@ -1,4 +1,5 @@
 package com.ewerk.gradle.plugins
+
 /**
  * DLS extension for the Jaxb2 plugin. Provides some convenient configuration options.
  *

@@ -25,7 +25,7 @@ class CleanJaxb2SourcesDir extends DefaultTask {
 
   @SuppressWarnings("GroovyUnusedDeclaration")
   @TaskAction
-  def cleanSourceFolders() {
+  cleanSourceFolders() {
     LOG.info("Clean Jaxb2 source dir")
 
     Set<XjcTaskConfig> xjcConfigs = project.extensions.jaxb2.xjc

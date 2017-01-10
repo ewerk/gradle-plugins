@@ -25,7 +25,7 @@ class InitJaxb2SourcesDir extends DefaultTask {
 
   @SuppressWarnings("GroovyUnusedDeclaration")
   @TaskAction
-  def createSourceFolders() {
+  createSourceFolders() {
     Set<XjcTaskConfig> xjcConfigs = project.extensions.jaxb2.xjc
 
     for (XjcTaskConfig theConfig : xjcConfigs) {
@@ -38,7 +38,7 @@ class InitJaxb2SourcesDir extends DefaultTask {
   private static boolean createSourcesDirectory(generatedSourcesDir) {
     def created = generatedSourcesDir.exists()
     if (!created) {
-      LOG.info("Create source set ${generatedSourcesDir}.");
+      LOG.info("Create source set ${generatedSourcesDir}.")
       created = generatedSourcesDir.mkdirs()
     }
     return created
@@ -46,7 +46,7 @@ class InitJaxb2SourcesDir extends DefaultTask {
 
   private void verifyNotWithinMainBuildSrc(generatedSourcesDir) {
     project.sourceSets.main.java.srcDirs.each { d ->
-      if (d.absolutePath.equals(generatedSourcesDir.absolutePath)) {
+      if (d.absolutePath == generatedSourcesDir.absolutePath) {
         throw new GradleException("The configured generatedSourcesDir must specify a separate location to existing source code.")
       }
     }

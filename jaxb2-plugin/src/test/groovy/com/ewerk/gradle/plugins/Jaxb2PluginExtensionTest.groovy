@@ -28,15 +28,15 @@ import static org.hamcrest.MatcherAssert.assertThat
  */
 class Jaxb2PluginExtensionTest {
 
-  private Jaxb2PluginExtension extension;
+  private Jaxb2PluginExtension extension
 
   @BeforeMethod
-  public void setup() {
+  void setup() {
     extension = new Jaxb2PluginExtension()
   }
 
   @Test
-  public void testTaskNameIsSet() {
-    assertThat(extension.taskName, notNullValue());
+  void testTaskNameIsSet() {
+    assertThat(extension.taskName, notNullValue())
   }
 }
