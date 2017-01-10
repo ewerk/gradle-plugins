@@ -11,3 +11,7 @@
 
 ## 1.0.8
 * Gradle 2.6 compatibility
+
+## 1.0.9-SNAPSHOT
+* Gradle 3.3 compatibility
+* Set JDK-8 as default

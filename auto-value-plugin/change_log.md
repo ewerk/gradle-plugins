@@ -29,3 +29,7 @@
 ## 1.0.7
 * Updated the default AutoValue library version to 1.3
 * See changes: https://github.com/google/auto/blob/master/value/CHANGES.md
+
+## 1.0.8-SNAPSHOT
+* Gradle 3.3 compatibility
+* Set JDK-8 as default

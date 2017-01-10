@@ -1,7 +1,6 @@
 plugins {
-  id "org.gradle.maven"
-  id "net.researchgate.release" version "2.2.1"
-  id "com.gradle.plugin-publish" version "0.9.1"
+  id 'net.researchgate.release' version '2.5.0'
+  id 'com.gradle.plugin-publish' version '0.9.7'
 }
 
 pluginBundle {
@@ -18,24 +17,13 @@ pluginBundle {
   }
 }
 
-repositories {
-  mavenCentral()
-}
-
 dependencies {
-  compile gradleApi()
-  compile localGroovy()
   compile "com.squareup.okhttp:okhttp:$okHttpVersion"
 }
 
-test {
-  useTestNG()
-  minHeapSize = '128m'
-  maxHeapSize = '512m'
-}
-
 release {
-  tagPrefix = 'artifactory-deb-publish-plugin'
+  tagTemplate = "$name-$version"
+
   git {
     requireBranch = 'release'
   }

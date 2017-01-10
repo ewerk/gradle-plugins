@@ -43,7 +43,6 @@ public class DaggerAndroidPluginTest {
     }
 
     generatedDir = new File(project.projectDir, "/build/generated/source/dagger")
-
   }
 
   @Test
@@ -69,6 +68,4 @@ public class DaggerAndroidPluginTest {
     }
 
   }
-
-
 }

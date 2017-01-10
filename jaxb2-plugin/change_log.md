@@ -11,4 +11,5 @@
 * Ant xjc task now adds depends/produces filesets for recompilation update checking
 
 ## 1.0.3-SNAPSHOT
-* Current SNAPSHOT
+* Gradle 3.3 compatibility
+* Set JDK-8 as default

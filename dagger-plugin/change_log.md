@@ -15,3 +15,7 @@
 ## 1.0.4-SNAPSHOT
 * Updated Dagger2 default library to 2.7
 * Check releases for changes - https://github.com/google/dagger/releases
+
+## 1.0.8-SNAPSHOT
+* Gradle 3.3 compatibility
+* Set JDK-8 as default
