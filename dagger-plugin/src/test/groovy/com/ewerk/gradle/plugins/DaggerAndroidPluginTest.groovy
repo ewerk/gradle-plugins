@@ -15,14 +15,15 @@ import static org.hamcrest.MatcherAssert.assertThat
  *
  * android-sdk-manager will download the specified sdk
  */
-public class DaggerAndroidPluginTest {
+class DaggerAndroidPluginTest {
 
   private Project project
   private File generatedDir
 
   @BeforeMethod
-  public void androidProject() {
-    Project root = ProjectBuilder.builder().build();
+  void androidProject() {
+    Project root = ProjectBuilder.builder().build()
+
     project = ProjectBuilder.builder().withParent(root).build()
     project.plugins.apply('android-sdk-manager')
     project.plugins.apply('android')
@@ -46,12 +47,12 @@ public class DaggerAndroidPluginTest {
   }
 
   @Test
-  public void testPlugins() {
+  void testPlugins() {
     assertThat(project.plugins.hasPlugin(AppPlugin) || project.plugins.hasPlugin(LibraryPlugin), is(true))
   }
 
   @Test
-  public void testPluginDependencies() {
+  void testPluginDependencies() {
     def lib = project.configurations.compile.dependencies.collect {
       "$it.group:$it.name:$it.version" as String
     }.toSet()
@@ -59,7 +60,7 @@ public class DaggerAndroidPluginTest {
   }
 
   @Test
-  public void testVariant() {
+  void testVariant() {
     project.evaluate()
     project.android.applicationVariants.all { variant ->
       def args = variant.javaCompile.options.compilerArgs as List

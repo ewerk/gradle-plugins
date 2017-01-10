@@ -16,13 +16,13 @@ import static org.hamcrest.MatcherAssert.assertThat
  */
 class DaggerTaskTest {
 
-  private Project project;
+  private Project project
 
-  private InitDaggerSourcesDir initTask;
-  private CleanDaggerSourcesDir cleanTask;
+  private InitDaggerSourcesDir initTask
+  private CleanDaggerSourcesDir cleanTask
 
   @BeforeMethod
-  public void setup() {
+  void setup() {
     project = ProjectBuilder.builder().build()
     project.plugins.apply(DaggerPlugin.class)
     project.evaluate()
@@ -30,13 +30,13 @@ class DaggerTaskTest {
     cleanTask = project.tasks.cleanDaggerSourcesDir as CleanDaggerSourcesDir
   }
 
-  @Test(expectedExceptions = GradleException.class, expectedExceptionsMessageRegExp="The configured daggerSourcesDir.*")
+  @Test(expectedExceptions = GradleException.class, expectedExceptionsMessageRegExp = "The configured daggerSourcesDir.*")
   void testCreateSourceFoldersException() {
     project.dagger.daggerSourcesDir = "src/main/java"
     initTask.createSourceFolders()
   }
 
-  @Test(expectedExceptions = GradleException.class, expectedExceptionsMessageRegExp="The configured daggerSourcesDir.*")
+  @Test(expectedExceptions = GradleException.class, expectedExceptionsMessageRegExp = "The configured daggerSourcesDir.*")
   void testCleanSourceFoldersException() {
     project.dagger.daggerSourcesDir = "src/main/java"
     cleanTask.cleanSourceFolders()
@@ -51,8 +51,8 @@ class DaggerTaskTest {
   }
 
   @Test
-  public void taskGroup() {
-    assertThat(cleanTask.group, equalTo(DaggerPlugin.TASK_GROUP));
-    assertThat(initTask.group, equalTo(DaggerPlugin.TASK_GROUP));
+  void taskGroup() {
+    assertThat(cleanTask.group, equalTo(DaggerPlugin.TASK_GROUP))
+    assertThat(initTask.group, equalTo(DaggerPlugin.TASK_GROUP))
   }
 }

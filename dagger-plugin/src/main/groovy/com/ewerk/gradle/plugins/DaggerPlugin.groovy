@@ -25,17 +25,17 @@ import org.gradle.api.tasks.Delete
  *   The source is ${project.buildDir}/generated/source/dagger/<variant>
  *   The variant.javaCompile compile task is executed with the annotation processor
  */
-public class DaggerPlugin implements Plugin<Project> {
+class DaggerPlugin implements Plugin<Project> {
 
   public static final String TASK_GROUP = "Dagger"
 
   private static final Logger LOG = Logging.getLogger(DaggerPlugin.class)
 
   @Override
-  public void apply(Project project) {
+  void apply(Project project) {
 
     if (project.plugins.hasPlugin(DaggerPlugin.class)) {
-      return;
+      return
     }
 
     project.extensions.create(DaggerPluginExtension.NAME, DaggerPluginExtension)
@@ -92,7 +92,7 @@ public class DaggerPlugin implements Plugin<Project> {
     }
   }
 
-  def androidApply(project) {
+  def androidApply(Project project) {
 
     LOG.info("Apply Android Dagger plugin")
 
@@ -143,11 +143,11 @@ public class DaggerPlugin implements Plugin<Project> {
     }
   }
 
-  static def hasAndroidProject(Project project) {
+  static hasAndroidProject(Project project) {
     return project.plugins.hasPlugin('com.android.application') || project.plugins.hasPlugin('com.android.library')
   }
 
-  static def projectAndroidVariants(Project project) {
+  static projectAndroidVariants(Project project) {
     if (project.android.hasProperty('applicationVariants')) {
       return project.android.applicationVariants
     } else if (project.android.hasProperty('libraryVariants')) {
@@ -157,10 +157,10 @@ public class DaggerPlugin implements Plugin<Project> {
     }
   }
 
-  static def verifyNotWithinMainBuildSrc(Project project) {
+  static verifyNotWithinMainBuildSrc(Project project) {
     def daggerSourcesDir = project.file(project.dagger.daggerSourcesDir) as File
     project.sourceSets.main.java.srcDirs.each { d ->
-      if (d.absolutePath.equals(daggerSourcesDir.absolutePath)) {
+      if (d.absolutePath == daggerSourcesDir.absolutePath) {
         throw new GradleException("The configured daggerSourcesDir must specify a separate location to existing source code.")
       }
     }

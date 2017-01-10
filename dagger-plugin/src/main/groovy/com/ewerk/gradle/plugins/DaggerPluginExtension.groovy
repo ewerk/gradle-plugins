@@ -1,11 +1,11 @@
-package com.ewerk.gradle.plugins;
+package com.ewerk.gradle.plugins
 
 /**
  * @author griffio
  *
  * Defines the default configuration parameters in the Plugin
  */
-public class DaggerPluginExtension {
+class DaggerPluginExtension {
 
   static final String NAME = "dagger"
   static final String DEFAULT_DAGGER_SOURCES_DIR = "src/dagger/java"

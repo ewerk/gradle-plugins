@@ -20,7 +20,7 @@ class CleanDaggerSourcesDir extends DefaultTask {
 
   @SuppressWarnings("GroovyUnusedDeclaration")
   @TaskAction
-  def cleanSourceFolders() {
+  cleanSourceFolders() {
     LOG.info("clean Source")
     def daggerSourcesDir = DaggerPlugin.verifyNotWithinMainBuildSrc(project)
     if (daggerSourcesDir.exists()) {

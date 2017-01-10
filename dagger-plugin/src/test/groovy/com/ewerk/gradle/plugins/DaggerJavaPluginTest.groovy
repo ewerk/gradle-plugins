@@ -14,39 +14,39 @@ import static org.hamcrest.MatcherAssert.assertThat
 /**
  * @author griffio
  */
-public class DaggerJavaPluginTest {
+class DaggerJavaPluginTest {
 
   private Project project
 
   @BeforeMethod
-  public void setup() {
+  void setup() {
     project = ProjectBuilder.builder().build()
     project.plugins.apply(DaggerPlugin.class)
     project.plugins.apply(WarPlugin.class)
   }
 
   @Test
-  public void testBasePlugin() {
+  void testBasePlugin() {
     assertThat(project.plugins.hasPlugin(BasePlugin.class), is(true))
   }
 
   @Test
-  public void testPluginAppliesItself() {
+  void testPluginAppliesItself() {
     assertThat(project.plugins.hasPlugin(DaggerPlugin.class), is(true))
   }
 
   @Test
-  public void testReApplyDoesNotFail() {
+  void testReApplyDoesNotFail() {
     project.plugins.apply(DaggerPlugin.class)
   }
 
   @Test
-  public void testPluginAppliesJavaPlugin() {
+  void testPluginAppliesJavaPlugin() {
     assertThat(project.plugins.hasPlugin(JavaPlugin.class), is(true))
   }
 
   @Test
-  public void testPluginEvaluatesDependencies() {
+  void testPluginEvaluatesDependencies() {
     project.evaluate()
     def lib = project.configurations.compile.dependencies.collect {
       "$it.group:$it.name:$it.version" as String
@@ -55,7 +55,7 @@ public class DaggerJavaPluginTest {
   }
 
   @Test
-  public void testPluginEvaluatesCompileOptions() {
+  void testPluginEvaluatesCompileOptions() {
     project.evaluate()
     def args = project.tasks.compileDagger.options.compilerArgs as List
     assertThat(args, hasItems('-proc:only', '-s', '-processor', DaggerPluginExtension.PROCESSOR,
@@ -63,19 +63,19 @@ public class DaggerJavaPluginTest {
   }
 
   @Test
-  public void testDefaultGeneratedSourcesDirIsSet() {
+  void testDefaultGeneratedSourcesDirIsSet() {
     assertThat(project.extensions.dagger.daggerSourcesDir as String,
         equalTo(DaggerPluginExtension.DEFAULT_DAGGER_SOURCES_DIR))
   }
 
   @Test
-  public void testDefaultLibraryIsSet() {
+  void testDefaultLibraryIsSet() {
     assertThat(project.extensions.dagger.library as String,
         equalTo(DaggerPluginExtension.DEFAULT_LIBRARY))
   }
 
   @Test
-  public void testDefaultProcessorIsSet() {
+  void testDefaultProcessorIsSet() {
     assertThat(project.extensions.dagger.processorLibrary as String,
         equalTo(DaggerPluginExtension.DEFAULT_PROCESSOR_LIBRARY))
   }

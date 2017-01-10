@@ -20,7 +20,7 @@ class InitDaggerSourcesDir extends DefaultTask {
 
   @SuppressWarnings("GroovyUnusedDeclaration")
   @TaskAction
-  def createSourceFolders() {
+  createSourceFolders() {
     LOG.info("create source")
     def daggerSourcesDir = DaggerPlugin.verifyNotWithinMainBuildSrc(project)
     daggerSourcesDir.mkdirs()
