@@ -21,72 +21,71 @@ class QuerydslPluginTest {
   private Project project
 
   @BeforeMethod
-  public void setup() {
+  void setup() {
     project = ProjectBuilder.builder().build()
     project.plugins.apply(QuerydslPlugin.class)
     project.plugins.apply(WarPlugin.class)
 
-    project.extensions.querydsl.jpa = true;
-    project.extensions.querydsl.jdo = true;
-    project.extensions.querydsl.roo = true;
-    project.extensions.querydsl.hibernate = true;
-    project.extensions.querydsl.morphia = true;
-    project.extensions.querydsl.springDataMongo = true;
-    project.extensions.querydsl.querydslDefault = true;
+    project.extensions.querydsl.jpa = true
+    project.extensions.querydsl.jdo = true
+    project.extensions.querydsl.roo = true
+    project.extensions.querydsl.hibernate = true
+    project.extensions.querydsl.morphia = true
+    project.extensions.querydsl.springDataMongo = true
+    project.extensions.querydsl.querydslDefault = true
   }
 
   @Test
-  public void testPluginAppliesItself() {
+  void testPluginAppliesItself() {
     assertThat(project.plugins.hasPlugin(QuerydslPlugin.class), is(true))
   }
 
   @Test
-  public void testReApplyDoesNotFail() {
+  void testReApplyDoesNotFail() {
     project.plugins.apply(QuerydslPlugin.class)
   }
 
   @Test
-  public void testPluginAppliesJavaPlugin() {
+  void testPluginAppliesJavaPlugin() {
     assertThat(project.plugins.hasPlugin(JavaPlugin.class), is(true))
   }
 
   @Test
-  public void testPluginRegistersQuerydslExtensions() {
+  void testPluginRegistersQuerydslExtensions() {
     assertThat(project.extensions.querydsl, notNullValue())
   }
 
   @Test
-  public void testPluginProcessorsFromQuerydslExtensions() {
+  void testPluginProcessorsFromQuerydslExtensions() {
     assertThat(project.extensions.querydsl.processors(), notNullValue())
   }
 
   @Test
-  public void testPluginTasksAreAvailable() {
+  void testPluginTasksAreAvailable() {
     assertThat(project.tasks.initQuerydslSourcesDir, notNullValue())
     assertThat(project.tasks.cleanQuerydslSourcesDir, notNullValue())
   }
 
   @Test
-  public void testTaskTypes() {
+  void testTaskTypes() {
     final Task initTask = project.tasks.initQuerydslSourcesDir
     assertThat(initTask, instanceOf(InitQuerydslSourcesDir.class))
   }
 
   @Test
-  public void testAfterEvaluate() {
+  void testAfterEvaluate() {
     project.evaluate()
 
-    DefaultExternalModuleDependency lib = project.configurations.compile.dependencies
-        .getAt(0) as DefaultExternalModuleDependency
+    DefaultExternalModuleDependency lib = project.configurations.compile.dependencies[0] as DefaultExternalModuleDependency
 
     String id = lib.group + ":" + lib.name + ":" + lib.version
 
-    assertThat(id, equalTo(QuerydslPluginExtension.DEFAULT_LIBRARY));
+    assertThat(id, equalTo(QuerydslPluginExtension.DEFAULT_LIBRARY))
     assertThat(project.tasks.compileQuerydsl, notNullValue())
   }
 
   @Test
-  public void testSourcesDirAfterEvaluate() {
+  void testSourcesDirAfterEvaluate() {
     project.extensions.querydsl.querydslSourcesDir = "/java/other/src"
     project.evaluate()
     File sourcesDir = project.file(project.querydsl.querydslSourcesDir) as File

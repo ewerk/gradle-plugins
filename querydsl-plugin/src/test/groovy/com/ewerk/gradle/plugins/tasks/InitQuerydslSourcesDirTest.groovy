@@ -16,12 +16,11 @@ import static org.hamcrest.MatcherAssert.assertThat
  */
 class InitQuerydslSourcesDirTest {
 
-  private Project project;
-
-  private InitQuerydslSourcesDir createTask;
+  private Project project
+  private InitQuerydslSourcesDir createTask
 
   @BeforeMethod
-  public void setup() {
+  void setup() {
     project = ProjectBuilder.builder().build()
     project.plugins.apply(QuerydslPlugin.class)
     project.evaluate()
@@ -39,12 +38,12 @@ class InitQuerydslSourcesDirTest {
   }
 
   @Test
-  public void testGroup() {
-    assertThat(createTask.group, equalTo(QuerydslPlugin.TASK_GROUP));
+  void testGroup() {
+    assertThat(createTask.group, equalTo(QuerydslPlugin.TASK_GROUP))
   }
 
   @Test
-  public void testDescription() {
-    assertThat(createTask.description, equalTo(InitQuerydslSourcesDir.DESCRIPTION));
+  void testDescription() {
+    assertThat(createTask.description, equalTo(InitQuerydslSourcesDir.DESCRIPTION))
   }
 }

@@ -25,7 +25,7 @@ class CleanQuerydslSourcesDir extends DefaultTask {
 
   @SuppressWarnings("GroovyUnusedDeclaration")
   @TaskAction
-  def cleanSourceFolders() {
+  cleanSourceFolders() {
     LOG.info("Clean Querydsl source dir")
 
     project.sourceSets.querydsl.java.srcDirs.each { dir ->

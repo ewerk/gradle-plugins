@@ -37,7 +37,7 @@ class QuerydslPlugin implements Plugin<Project> {
 
     // do nothing if plugin is already applied
     if (project.plugins.hasPlugin(QuerydslPlugin.class)) {
-      return;
+      return
     }
 
     LOG.info("Applying querydsl plugin")
@@ -71,7 +71,7 @@ class QuerydslPlugin implements Plugin<Project> {
     }
   }
 
-  private void applyCompilerOptions(Project project) {
+  private static void applyCompilerOptions(Project project) {
     project.tasks.compileQuerydsl.options.compilerArgs += [
         "-proc:only",
         "-processor", project.querydsl.processors()
@@ -93,7 +93,7 @@ class QuerydslPlugin implements Plugin<Project> {
   }
 
   private void addSourceSet(Project project, File sourcesDir) {
-    LOG.info("Create source set 'querydsl'.");
+    LOG.info("Create source set 'querydsl'.")
 
     project.sourceSets {
       querydsl {
@@ -105,7 +105,7 @@ class QuerydslPlugin implements Plugin<Project> {
   private static File querydslSourcesDir(Project project) {
     String path = project.extensions.querydsl.querydslSourcesDir
     File querydslSourcesDir = project.file(path)
-    LOG.info("Querydsl sources dir: {}", querydslSourcesDir.absolutePath);
+    LOG.info("Querydsl sources dir: {}", querydslSourcesDir.absolutePath)
     return querydslSourcesDir
   }
 }

@@ -28,23 +28,23 @@ import static org.hamcrest.MatcherAssert.assertThat
  */
 class QuerydslPluginExtensionTest {
 
-  private QuerydslPluginExtension extension;
+  private QuerydslPluginExtension extension
 
   @BeforeMethod
-  public void setup() {
+  void setup() {
     extension = new QuerydslPluginExtension()
   }
 
   @Test
-  public void testDefaultGeneratedSourcesDirIsSet() {
+  void testDefaultGeneratedSourcesDirIsSet() {
     String defaultDir = QuerydslPluginExtension.DEFAULT_QUERYDSL_SOURCES_DIR
-    assertThat(extension.querydslSourcesDir as File, equalTo(new File(defaultDir)));
+    assertThat(extension.querydslSourcesDir as File, equalTo(new File(defaultDir)))
   }
 
   @Test
-  public void testDefaultLibraryIsSet() {
+  void testDefaultLibraryIsSet() {
     def defaultLibrary = QuerydslPluginExtension.DEFAULT_LIBRARY
     assertThat(extension.library,
-        equalTo(defaultLibrary));
+        equalTo(defaultLibrary))
   }
 }
