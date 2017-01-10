@@ -17,39 +17,39 @@ class ArtifactoryDebPushDebToArtifactoryPluginTest {
   private Project project
 
   @BeforeMethod
-  public void setup() {
+  void setup() {
     project = ProjectBuilder.builder().build()
     project.plugins.apply(ArtifactoryDebPublishPlugin.class)
 
-    project.extensions.artifactoryDebPublish.baseUrl = "http://debian.any.host.com";
-    project.extensions.artifactoryDebPublish.repoKey = "debian_repo";
-    project.extensions.artifactoryDebPublish.distribution = "jessie";
-    project.extensions.artifactoryDebPublish.component = "non-free";
-    project.extensions.artifactoryDebPublish.arch = "amd64";
+    project.extensions.artifactoryDebPublish.baseUrl = "http://debian.any.host.com"
+    project.extensions.artifactoryDebPublish.repoKey = "debian_repo"
+    project.extensions.artifactoryDebPublish.distribution = "jessie"
+    project.extensions.artifactoryDebPublish.component = "non-free"
+    project.extensions.artifactoryDebPublish.arch = "amd64"
   }
 
   @Test
-  public void testPluginAppliesItself() {
+  void testPluginAppliesItself() {
     assertThat(project.plugins.hasPlugin(ArtifactoryDebPublishPlugin.class), is(true))
   }
 
   @Test
-  public void testReApplyDoesNotFail() {
+  void testReApplyDoesNotFail() {
     project.plugins.apply(ArtifactoryDebPublishPlugin.class)
   }
 
   @Test
-  public void testPluginRegistersExtensions() {
+  void testPluginRegistersExtensions() {
     assertThat(project.extensions.artifactoryDebPublish, notNullValue())
   }
 
   @Test
-  public void testPluginTasksAreAvailable() {
+  void testPluginTasksAreAvailable() {
     assertThat(project.tasks.pushDebToArtifactory, notNullValue())
   }
 
   @Test
-  public void testAfterEvaluate() {
+  void testAfterEvaluate() {
     project.evaluate()
   }
 }

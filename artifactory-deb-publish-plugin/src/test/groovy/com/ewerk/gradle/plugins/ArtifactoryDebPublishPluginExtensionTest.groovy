@@ -28,40 +28,40 @@ import static org.hamcrest.MatcherAssert.assertThat
  */
 class ArtifactoryDebPublishPluginExtensionTest {
 
-  private ArtifactoryDebPublishPluginExtension extension;
+  private ArtifactoryDebPublishPluginExtension extension
 
   @BeforeMethod
-  public void setup() {
+  void setup() {
     extension = new ArtifactoryDebPublishPluginExtension()
     extension.baseUrl = 'https://artifactory.com'
-    extension.repoKey = "debian_repo";
-    extension.distribution = "jessie";
-    extension.component = "non-free";
-    extension.arch = "amd64";
+    extension.repoKey = "debian_repo"
+    extension.distribution = "jessie"
+    extension.component = "non-free"
+    extension.arch = "amd64"
   }
 
   @Test
-  public void testBaseUrlMustNotBeNull() {
-    assertThat(extension.baseUrl, notNullValue());
+  void testBaseUrlMustNotBeNull() {
+    assertThat(extension.baseUrl, notNullValue())
   }
 
   @Test
-  public void testRepoKeyMustNotBeNull() {
-    assertThat(extension.repoKey, notNullValue());
+  void testRepoKeyMustNotBeNull() {
+    assertThat(extension.repoKey, notNullValue())
   }
 
   @Test
-  public void testDistributionMustNotBeNull() {
-    assertThat(extension.distribution, notNullValue());
+  void testDistributionMustNotBeNull() {
+    assertThat(extension.distribution, notNullValue())
   }
 
   @Test
-  public void testComponentMustNotBeNull() {
-    assertThat(extension.component, notNullValue());
+  void testComponentMustNotBeNull() {
+    assertThat(extension.component, notNullValue())
   }
 
   @Test
-  public void testArchMustNotBeNull() {
-    assertThat(extension.arch, notNullValue());
+  void testArchMustNotBeNull() {
+    assertThat(extension.arch, notNullValue())
   }
 }

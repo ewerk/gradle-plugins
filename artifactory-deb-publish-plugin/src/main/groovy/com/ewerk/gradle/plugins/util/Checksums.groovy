@@ -9,9 +9,9 @@ import java.security.MessageDigest
  * @since 1.0.0
  */
 final class Checksums {
-  public static String sha1(byte[] payload) {
+  static String sha1(byte[] payload) {
     return MessageDigest.getInstance("sha1").
         digest(payload).
-        collect { String.format("%02x", it) }.join()
+        collect { String.format("%02x", it) }.join("")
   }
 }

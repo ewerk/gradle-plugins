@@ -16,7 +16,7 @@ class ArtifactoryHttpClient {
   static final MediaType BINARY = MediaType.parse("application/octet-stream; charset=utf-8")
 
   static final String APPLICATION_VND_JFROG_ITEM_CREATED =
-      'application/vnd.org.jfrog.artifactory.storage.ItemCreated+json';
+      'application/vnd.org.jfrog.artifactory.storage.ItemCreated+json'
 
   private static final Logger LOG = Logging.getLogger(PushDebToArtifactory.class)
 
@@ -24,8 +24,8 @@ class ArtifactoryHttpClient {
 
   final String baseUrl, user, password, repoKey, name, component, distribution, arch
 
-  public ArtifactoryHttpClient(String baseUrl, String user, String password, String repoKey,
-      String name, String component, String distribution, String arch) {
+  ArtifactoryHttpClient(String baseUrl, String user, String password, String repoKey,
+                        String name, String component, String distribution, String arch) {
     this.baseUrl = baseUrl
     this.user = user
     this.password = password
@@ -38,7 +38,7 @@ class ArtifactoryHttpClient {
     client = new OkHttpClient()
   }
 
-  public void publish(File theFile) {
+  void publish(File theFile) {
 
     byte[] fileData = theFile.readBytes()
     String prefix = Urls.prefix(name)
@@ -50,7 +50,7 @@ class ArtifactoryHttpClient {
         .put(RequestBody.create(BINARY, fileData))
 
     if (user != null && !user.isEmpty()) {
-      requestBuilder.header("Authorization", Credentials.basic(user, password));
+      requestBuilder.header("Authorization", Credentials.basic(user, password))
     }
 
     Response response = client.newCall(requestBuilder.build()).execute()
@@ -68,12 +68,12 @@ class ArtifactoryHttpClient {
   }
 
   private static void dumpResponse(Response response) {
-    LOG.info("--------------------------------------------------------------------------------");
-    LOG.info("Artifactory response");
-    LOG.info("Artifactory: {}", response.code());
+    LOG.info("--------------------------------------------------------------------------------")
+    LOG.info("Artifactory response")
+    LOG.info("Artifactory: {}", response.code())
     LOG.info("Artifactory: {}", response.headers())
     LOG.info("Artifactory: {}", response.body().string())
-    LOG.info("--------------------------------------------------------------------------------");
+    LOG.info("--------------------------------------------------------------------------------")
   }
 
   private static final class HttpCode {

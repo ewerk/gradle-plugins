@@ -27,7 +27,7 @@ class PushDebToArtifactory extends DefaultTask {
 
   @SuppressWarnings("GroovyUnusedDeclaration")
   @TaskAction
-  def publishToArtifactory() {
+  publishToArtifactory() {
     LOG.info("Pushing .deb to Artifactory")
 
     ArtifactoryHttpClient client = new ArtifactoryHttpClient(extension().baseUrl(),
@@ -37,7 +37,7 @@ class PushDebToArtifactory extends DefaultTask {
         extension().archiveFile().name,
         extension().component(),
         extension().distribution(),
-        extension().arch());
+        extension().arch())
 
     client.publish(extension().archiveFile())
   }
