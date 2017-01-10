@@ -20,65 +20,65 @@ class IntegrationTestPluginTest {
   private Project project
 
   @BeforeMethod
-  public void setup() {
+  void setup() {
     project = ProjectBuilder.builder().build()
     project.plugins.apply(IntegrationTestPlugin.class)
   }
 
   @Test
-  public void testPluginAppliesJavaPlugin() {
+  void testPluginAppliesJavaPlugin() {
     assertThat(project.plugins.hasPlugin(JavaPlugin.class), is(true))
   }
 
   @Test
-  public void testPluginAppliesItself() {
+  void testPluginAppliesItself() {
     assertThat(project.plugins.hasPlugin(IntegrationTestPlugin.class), is(true))
   }
 
   @Test
-  public void testIntegrationTestTaskAvailable() {
+  void testIntegrationTestTaskAvailable() {
     assertThat(project.tasks.integrationTest, notNullValue())
   }
 
   @Test
-  public void testIntegrationTestTaskType() {
+  void testIntegrationTestTaskType() {
     final Task integrationTest = project.tasks.integrationTest
     assertThat(integrationTest, instanceOf(org.gradle.api.tasks.testing.Test.class))
   }
 
   @Test
-  public void testAllTestsTaskAvailable() {
+  void testAllTestsTaskAvailable() {
     assertThat(project.tasks.allTests, notNullValue())
   }
 
   @Test
-  public void testAllTestsTaskGroup() {
+  void testAllTestsTaskGroup() {
     assertThat(project.tasks.allTests.group, equalTo("Integration test"))
   }
 
   @Test
-  public void testAllTestsTaskType() {
+  void testAllTestsTaskType() {
     final Task integrationTest = project.tasks.allTests
     assertThat(integrationTest, instanceOf(Task.class))
   }
 
   @Test
-  public void testIntegrationSourceSetPresent() {
+  void testIntegrationSourceSetPresent() {
     SourceSet integration = project.sourceSets.integration
-    assertThat(integration, notNullValue());
+    assertThat(integration, notNullValue())
   }
 
   @Test
-  public void testIntegrationJavaDirPresent() {
+  void testIntegrationJavaDirPresent() {
     SourceSet integration = project.sourceSets.integration
     SourceDirectorySet java = integration.java
-    assertThat(java, notNullValue());
+    assertThat(java, notNullValue())
   }
 
   @Test
-  public void testIntegrationResourceDirPresent() {
+  void testIntegrationResourceDirPresent() {
     SourceSet integration = project.sourceSets.integration
     SourceDirectorySet resources = integration.resources
-    assertThat(resources, notNullValue());
+    assertThat(resources, notNullValue())
   }
 }

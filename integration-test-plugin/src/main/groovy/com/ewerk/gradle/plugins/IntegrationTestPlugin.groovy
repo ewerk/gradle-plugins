@@ -47,10 +47,10 @@ class IntegrationTestPlugin implements Plugin<Project> {
   void apply(final Project project) {
 
     if (project.plugins.hasPlugin(IntegrationTestPlugin.class)) {
-      return;
+      return
     }
 
-    LOG.info("Applying integration-test plugin");
+    LOG.info("Applying integration-test plugin")
 
     if (!project.plugins.hasPlugin(JavaPlugin.class)) {
       project.plugins.apply(JavaPlugin.class)
