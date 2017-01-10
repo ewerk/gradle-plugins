@@ -11,7 +11,17 @@ Prior to the actual publication process, the plugins where hosted at Bintray org
 account 'ewerk'. This account and all associated repositories have been deleted, as the plugins
 are now directly hosted at the plugin portal itself.
 
-The plugins are based on Gradle ≥ 2.1.
+## Gradle compatibility
+|Plugin|≥ 2.1|≥ 3.3|
+|---|---|---|
+|annotation-processor-plugin|≤1.0.3|≥1.0.4-SNAPSHOT|
+|artifactory-deb-publish-plugin|≤1.0.1|≥1.0.2-SNAPSHOT|
+|auto-value-plugin|≤1.0.7|≥1.0.8-SNAPSHOT|
+|dagger-plugin|≤1.0.7|≥1.0.8-SNAPSHOT|
+|integration-test-plugin|≤1.0.8|≥1.0.9-SNAPSHOT|
+|jaxb2-plugin|≤1.0.2|≥1.0.3-SNAPSHOT|
+|querydsl-plugin|≤1.0.7|≥1.0.8-SNAPSHOT|
+
 
 ## Plugins
 * [annotation-processor-plugin] (https://github.com/ewerk/gradle-plugins/tree/master/annotation-processor-plugin)
