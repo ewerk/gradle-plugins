@@ -12,13 +12,13 @@ import static org.hamcrest.MatcherAssert.assertThat
 
 class AnnotationProcessorTaskTest {
 
-  private Project project;
+  private Project project
 
-  private InitAnnotationProcessorGeneratedDir initTask;
-  private CleanAnnotationProcessorGeneratedDir cleanTask;
+  private InitAnnotationProcessorGeneratedDir initTask
+  private CleanAnnotationProcessorGeneratedDir cleanTask
 
   @BeforeMethod
-  public void setup() {
+  void setup() {
     project = ProjectBuilder.builder().build()
     project.plugins.apply(AnnotationProcessorPlugin.class)
     project.extensions.annotationProcessor.library = "com.querydsl:querydsl-apt:4.0.0"
@@ -37,8 +37,8 @@ class AnnotationProcessorTaskTest {
   }
 
   @Test
-  public void taskGroup() {
-    assertThat(cleanTask.group, equalTo(AnnotationProcessorPlugin.TASK_GROUP));
-    assertThat(initTask.group, equalTo(AnnotationProcessorPlugin.TASK_GROUP));
+  void taskGroup() {
+    assertThat(cleanTask.group, equalTo(AnnotationProcessorPlugin.TASK_GROUP))
+    assertThat(initTask.group, equalTo(AnnotationProcessorPlugin.TASK_GROUP))
   }
 }

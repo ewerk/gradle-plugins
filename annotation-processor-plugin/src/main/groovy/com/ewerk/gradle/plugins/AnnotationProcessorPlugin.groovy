@@ -26,10 +26,10 @@ class AnnotationProcessorPlugin implements Plugin<Project> {
   private static final Logger LOG = Logging.getLogger(AnnotationProcessorPlugin.class)
 
   @Override
-  public void apply(Project project) {
+  void apply(Project project) {
 
     if (project.plugins.hasPlugin(AnnotationProcessorPlugin.class)) {
-      return;
+      return
     }
 
     LOG.info("Applying Annotation Processor plugin")

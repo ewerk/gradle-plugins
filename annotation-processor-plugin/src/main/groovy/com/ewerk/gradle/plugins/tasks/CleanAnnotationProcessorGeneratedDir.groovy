@@ -20,7 +20,7 @@ class CleanAnnotationProcessorGeneratedDir extends DefaultTask {
 
   @SuppressWarnings("GroovyUnusedDeclaration")
   @TaskAction
-  def cleanSourceFolders() {
+  cleanSourceFolders() {
     LOG.info("clean source")
     project.sourceSets.annotationProcessor.java.srcDirs.each { dir ->
       if (dir.exists()) {

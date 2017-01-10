@@ -20,7 +20,7 @@ class InitAnnotationProcessorGeneratedDir extends DefaultTask {
 
   @SuppressWarnings("GroovyUnusedDeclaration")
   @TaskAction
-  def createSourceFolders() {
+  createSourceFolders() {
     LOG.info("create source")
     project.file(project.annotationProcessor.sourcesDir).mkdirs()
   }
