@@ -1,5 +1,5 @@
 sudo: false
-language: java
+language: android
 jdk:
   - oraclejdk8
 
