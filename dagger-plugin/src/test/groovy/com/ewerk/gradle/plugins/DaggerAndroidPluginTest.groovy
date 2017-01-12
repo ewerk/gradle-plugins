@@ -13,8 +13,7 @@ import static org.hamcrest.MatcherAssert.assertThat
 /**
  * @author griffio
  *
- * android-sdk-manager will download the specified sdk
- */
+ * */
 class DaggerAndroidPluginTest {
 
   private Project project
@@ -25,13 +24,13 @@ class DaggerAndroidPluginTest {
     Project root = ProjectBuilder.builder().build()
 
     project = ProjectBuilder.builder().withParent(root).build()
-    project.plugins.apply('android-sdk-manager')
     project.plugins.apply('android')
     project.plugins.apply(DaggerPlugin.class)
     project.android {
       compileSdkVersion "android-21"
       buildToolsVersion "21.1.2"
       defaultConfig {
+        testApplicationId "com.ewerk.gradle.plugins"
         minSdkVersion 15
         targetSdkVersion 21
         versionCode 1

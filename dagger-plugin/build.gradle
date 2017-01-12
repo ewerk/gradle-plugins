@@ -18,13 +18,11 @@ pluginBundle {
 }
 
 repositories {
-  maven { url 'https://jitpack.io' }
+  jcenter()
 }
 
 dependencies {
-  testCompile 'com.android.tools.build:gradle:2.2.0'
-//  testCompile 'com.jakewharton.sdkmanager:gradle-plugin:0.12.+'
-  testCompile 'com.github.JakeWharton:sdk-manager-plugin:220bf7a'
+  testCompile 'com.android.tools.build:gradle:2.2.0+'
 }
 
 release {
