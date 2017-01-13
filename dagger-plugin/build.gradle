@@ -17,10 +17,6 @@ pluginBundle {
   }
 }
 
-repositories {
-  jcenter()
-}
-
 dependencies {
   testCompile 'com.android.tools.build:gradle:2.2.0+'
 }
