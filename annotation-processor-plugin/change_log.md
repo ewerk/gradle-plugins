@@ -12,6 +12,9 @@
 ## 1.0.3
 * Add support for optional annotation processor options
 
-## 1.0.4-SNAPSHOT
+## 1.0.4
 * Gradle 3.3 compatibility
 * Set JDK-8 as default
+
+## 1.0.5-SNAPSHOT
+* Current snapshot
