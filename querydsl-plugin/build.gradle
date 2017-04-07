@@ -18,7 +18,7 @@ pluginBundle {
 }
 
 release {
-  tagTemplate = "$name-$version"
+  tagTemplate = '$name-$version'
 
   git {
     requireBranch = 'release'
