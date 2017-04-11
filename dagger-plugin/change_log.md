@@ -12,10 +12,10 @@
 ## 1.0.3
 * Make sure clean task does not delete any main source set
 
-## 1.0.4-SNAPSHOT
+## 1.0.4
 * Updated Dagger2 default library to 2.7
 * Check releases for changes - https://github.com/google/dagger/releases
-
-## 1.0.8-SNAPSHOT
-* Gradle 3.3 compatibility
 * Set JDK-8 as default
+
+## 1.0.5-SNAPSHOT
+* Current snapshot
