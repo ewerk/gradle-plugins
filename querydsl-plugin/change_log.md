@@ -29,7 +29,9 @@
 ## 1.0.8
 * Querydsl 4 library dependency updated to (4.1.3) matching Spring Data version
 * Gradle 3.3 compatibility
+
+## 1.0.9
 * Set JDK-8 as default
 
-## 1.0.9-SNAPSHOT
+## 1.0.10-SNAPSHOT
 * Current plugin snapshot
