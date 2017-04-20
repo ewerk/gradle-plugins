@@ -15,4 +15,5 @@
 * Set JDK-8 as default
 
 ## 1.0.4
+* Introduce `bindings` DSL parameter for adding XJC binding files to the generation process
 * Current snapshot

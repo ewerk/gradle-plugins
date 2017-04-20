@@ -40,6 +40,12 @@ xjc {
     
     // relative path the XSD file to generate the code from
     schema = 'src/main/xsd/any-file.xsd'
+    
+    // relative path to directory including binding files
+    // all files of pattern **/*.xjb will be included
+    // default to null (no binding files used)
+    // Optional, can be left away
+    bindings = 'src/main/xsb'
   }
 }
 ```
@@ -93,6 +99,7 @@ jaxb2 {
     'response-classes' {
       basePackage = 'com.any.app.model.response'
       schema = 'src/main/xsd/response.xsd'
+      bindings = 'src/main/xsb'
     }
   }
 }
