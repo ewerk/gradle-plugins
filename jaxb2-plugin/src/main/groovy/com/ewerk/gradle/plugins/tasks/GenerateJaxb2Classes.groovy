@@ -30,14 +30,15 @@ class GenerateJaxb2Classes extends DefaultTask {
     Set<XjcTaskConfig> xjcConfigs = project.extensions.jaxb2.xjc
 
     for (XjcTaskConfig theConfig : xjcConfigs) {
-
       def generatedSourcesDirParent = project.file(theConfig.generatedSourcesDir)
+
       // Transform package to directory location to specify depends/produces when multiple schema output to same generatedSourcesDir
       // Changing one schema will only cause recompilation/generation of that schema
       def generatedSourcesDirPackage = new File(generatedSourcesDirParent,
           theConfig.basePackage.replace(".", "/"))
 
       def schemaFile = project.file(theConfig.schema)
+
       // the depends and produces is compared using the time-stamp of the schema file and the destination package folder
       ant.xjc(destdir: generatedSourcesDirParent,
           package: theConfig.basePackage,

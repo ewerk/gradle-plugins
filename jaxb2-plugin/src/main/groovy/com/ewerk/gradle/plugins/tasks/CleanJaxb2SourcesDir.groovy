@@ -3,8 +3,9 @@ package com.ewerk.gradle.plugins.tasks
 import com.ewerk.gradle.plugins.Jaxb2Plugin
 import org.gradle.api.DefaultTask
 import org.gradle.api.logging.Logger
-import org.gradle.api.logging.Logging
 import org.gradle.api.tasks.TaskAction
+
+import static org.gradle.api.logging.Logging.getLogger
 
 /**
  * This task is responsible for purging the Jaxb2 sources dir.
@@ -13,8 +14,7 @@ import org.gradle.api.tasks.TaskAction
  * @since 1.0.1
  */
 class CleanJaxb2SourcesDir extends DefaultTask {
-
-  private static final Logger LOG = Logging.getLogger(CleanJaxb2SourcesDir.class)
+  private static final Logger LOG = getLogger(CleanJaxb2SourcesDir.class)
 
   static final String DESCRIPTION = "Cleans the Jaxb2 sources dir."
 
