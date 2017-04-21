@@ -13,7 +13,8 @@ class XjcTaskConfig {
   String generatedSourcesDir = 'src/generated/java'
   String basePackage
   String schema
-  String bindings
+  String bindingsDir
+  String includedBindingFiles
 
   XjcTaskConfig(String name) {
     this.name = name

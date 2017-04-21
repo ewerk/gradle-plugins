@@ -2,7 +2,10 @@ package com.ewerk.gradle.plugins.tasks
 
 import com.ewerk.gradle.plugins.Jaxb2Plugin
 import org.gradle.api.DefaultTask
+import org.gradle.api.logging.Logger
 import org.gradle.api.tasks.TaskAction
+
+import static org.gradle.api.logging.Logging.getLogger
 
 /**
  * Task that does the actual generation stuff. Declares the Ant task and then runs it for all
@@ -15,6 +18,8 @@ import org.gradle.api.tasks.TaskAction
  * @since 1.0.0
  */
 class GenerateJaxb2Classes extends DefaultTask {
+  private static final Logger LOG = getLogger(GenerateJaxb2Classes.class)
+
   GenerateJaxb2Classes() {
     this.group = Jaxb2Plugin.TASK_GROUP
   }
@@ -39,7 +44,8 @@ class GenerateJaxb2Classes extends DefaultTask {
           basePackage.replace(".", "/"))
 
       def schemaFile = project.file(theConfig.schema)
-      def bindings = theConfig.bindings
+      def bindingsDir = theConfig.bindingsDir
+      def includedBindingFiles = bindingFileIncludes(theConfig)
 
       // the depends and produces is compared using the time-stamp of the schema file and the destination package folder
       ant.xjc(destdir: generatedSourcesDirParent,
@@ -48,10 +54,22 @@ class GenerateJaxb2Classes extends DefaultTask {
         depends(file: schemaFile)
         produces(dir: generatedSourcesDirPackage, includes: "**/*.java")
 
-        if (bindings?.trim()) {
-          binding(dir: project.file(bindings), includes: '**/*.xjb')
+        if (bindingsDir?.trim()) {
+          binding(dir: project.file(bindingsDir), includes: includedBindingFiles)
         }
       }
     }
+  }
+
+  private static String bindingFileIncludes(XjcTaskConfig config) {
+    def files = config.includedBindingFiles
+
+    if (!files?.trim()) {
+      LOG.info("No binding file includes defined, falling back to '**/*.xjb' pattern.")
+      files = '**/*.xjb'
+    }
+
+    LOG.info("Binding files: {}", files)
+    return files
   }
 }

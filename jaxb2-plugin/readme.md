@@ -45,7 +45,11 @@ xjc {
     // all files of pattern **/*.xjb will be included
     // default to null (no binding files used)
     // Optional, can be left away
-    bindings = 'src/main/xsb'
+    bindingsDir = 'src/main/xsb'
+    
+    // comma separated list of binding file includes
+    // falls back to '**/*.xjb' if not specified
+    includedBindingFiles = 'any.xjb, subdir/test.xjb'
   }
 }
 ```
