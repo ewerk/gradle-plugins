@@ -19,9 +19,6 @@ pluginBundle {
 
 release {
   tagTemplate = '$name-$version'
-  git {
-    requireBranch = 'release'
-  }
 }
 
 createReleaseTag.dependsOn('check')
