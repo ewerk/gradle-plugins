@@ -33,6 +33,8 @@ class QuerydslPluginExtension {
   boolean springDataMongo = false
   boolean querydslDefault = false
 
+  String customProcessor = null;
+
   String processors() {
 
     List processors = []
@@ -63,6 +65,10 @@ class QuerydslPluginExtension {
 
     if (springDataMongo) {
       processors << SPRING_DATA_MONGO_PROC
+    }
+
+    if (customProcessor) {
+      processors << customProcessor
     }
 
     return processors.join(",")
