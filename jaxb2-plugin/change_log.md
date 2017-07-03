@@ -19,4 +19,6 @@
 
 ## 1.0.5-SNAPSHOT
 * Introduce support for encoding parameter of XJC
+
+## 1.0.6-SNAPSHOT
 * Current snapshot
