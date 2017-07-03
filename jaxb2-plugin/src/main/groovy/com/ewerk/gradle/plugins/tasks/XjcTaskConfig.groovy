@@ -15,6 +15,7 @@ class XjcTaskConfig {
   String schema
   String bindingsDir
   String includedBindingFiles
+  String encoding = 'UTF-8'
 
   XjcTaskConfig(String name) {
     this.name = name

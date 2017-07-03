@@ -50,6 +50,9 @@ xjc {
     // comma separated list of binding file includes
     // falls back to '**/*.xjb' if not specified
     includedBindingFiles = 'any.xjb, subdir/test.xjb'
+    
+    // output encoding of the generated files
+    encoding = 'UTF-8'
   }
 }
 ```
@@ -96,6 +99,7 @@ jaxb2 {
     'request-classes' {
       basePackage = 'com.any.app.model.request'
       schema = 'src/main/xsd/request.xsd'
+      encoding = 'UTF-8'
     }
   }
 

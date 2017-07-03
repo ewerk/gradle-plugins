@@ -18,4 +18,5 @@
 * Introduce DSL parameter for configuring XJC binding files within the generation process
 
 ## 1.0.5-SNAPSHOT
+* Introduce support for encoding parameter of XJC
 * Current snapshot
