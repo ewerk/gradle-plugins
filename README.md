@@ -11,6 +11,10 @@ Prior to the actual publication process, the plugins where hosted at Bintray org
 account 'ewerk'. This account and all associated repositories have been deleted, as the plugins
 are now directly hosted at the plugin portal itself.
 
+The plugins are designed around Java language support. At the time being a lot of issues are raised
+regarding Groovy language support, which is not intended. The plugins may become compatible in the future, 
+therefore help is very appreciated.
+
 ## Gradle compatibility
 |Plugin|≥ 2.1|≥ 3.3|
 |---|---|---|
