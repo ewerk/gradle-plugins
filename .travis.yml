@@ -8,7 +8,9 @@ android:
     - build-tools-27.0.1
     - android-25
   licenses:
-    - 'android-sdk-license-.*'     
+    - 'android-sdk-license-.*' 
+    - 'android-sdk-build-tools-.*'
+    - 'android-sdk-platform-.*'    
 
 jdk:
   - oraclejdk8
