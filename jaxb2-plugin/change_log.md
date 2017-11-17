@@ -20,5 +20,8 @@
 ## 1.0.5
 * Introduce support for encoding parameter of XJC
 
-## 1.0.6-SNAPSHOT
+## 1.0.6
+* Added `org.jvnet.jaxb2_commons:jaxb2-basics-tools:0.9.5` as a plugin default dependency
+
+## 1.0.7-SNAPSHOT
 * Current snapshot
