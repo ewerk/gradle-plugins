@@ -3,10 +3,12 @@ package com.ewerk.gradle.plugins
 import com.ewerk.gradle.plugins.tasks.CleanQuerydslSourcesDir
 import com.ewerk.gradle.plugins.tasks.InitQuerydslSourcesDir
 import com.ewerk.gradle.plugins.tasks.QuerydslCompile
+import com.ewerk.gradle.plugins.tasks.QuerydslCompileGroovy
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.api.logging.Logger
 import org.gradle.api.logging.Logging
+import org.gradle.api.plugins.GroovyPlugin
 import org.gradle.api.plugins.JavaPlugin
 
 /**
@@ -57,6 +59,10 @@ class QuerydslPlugin implements Plugin<Project> {
     // make 'clean' depend clean ing querydsl sources
     project.tasks.clean.dependsOn project.tasks.cleanQuerydslSourcesDir
 
+    if (project.plugins.hasPlugin(GroovyPlugin)) {
+      configureGroovy(project)
+      return
+    }
     project.task(type: QuerydslCompile, "compileQuerydsl")
     project.tasks.compileQuerydsl.dependsOn project.tasks.initQuerydslSourcesDir
     project.tasks.compileJava.dependsOn project.tasks.compileQuerydsl
@@ -71,15 +77,35 @@ class QuerydslPlugin implements Plugin<Project> {
     }
   }
 
+  private void configureGroovy(Project project) {
+    project.task(type: QuerydslCompileGroovy, "compileQuerydsl")
+    project.tasks.compileQuerydsl.dependsOn project.tasks.initQuerydslSourcesDir
+    project.tasks.compileGroovy.dependsOn project.tasks.compileQuerydsl
+
+    project.afterEvaluate {
+      File querydslSourcesDir = querydslSourcesDir(project)
+
+      addLibrary(project)
+      addSourceSet(project, querydslSourcesDir)
+      registerSourceAtCompileGroovy(project, querydslSourcesDir)
+      applyCompilerOptions(project)
+    }
+  }
+
   private static void applyCompilerOptions(Project project) {
     project.tasks.compileQuerydsl.options.compilerArgs += [
-        "-proc:only",
+//        "-proc:only",
         "-processor", project.querydsl.processors()
     ]
   }
 
   private void registerSourceAtCompileJava(Project project, File querydslSourcesDir) {
     project.compileJava {
+      source querydslSourcesDir
+    }
+  }
+  private void registerSourceAtCompileGroovy(Project project, File querydslSourcesDir) {
+    project.compileGroovy {
       source querydslSourcesDir
     }
   }
