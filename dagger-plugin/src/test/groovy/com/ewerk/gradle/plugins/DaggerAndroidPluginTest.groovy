@@ -27,12 +27,12 @@ class DaggerAndroidPluginTest {
     project.plugins.apply('android')
     project.plugins.apply(DaggerPlugin.class)
     project.android {
-      compileSdkVersion "android-21"
-      buildToolsVersion "21.1.2"
+      compileSdkVersion "android-25"
+      buildToolsVersion "25.0.2"
       defaultConfig {
         testApplicationId "com.ewerk.gradle.plugins"
         minSdkVersion 15
-        targetSdkVersion 21
+        targetSdkVersion 25
         versionCode 1
         versionName "1.0"
       }
