@@ -9,7 +9,7 @@ android:
 jdk:
   - oraclejdk8
 
-script: ./gradlew build
+script: ./gradlew build --stacktrace -i
 
 cache:
   directories:
