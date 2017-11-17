@@ -4,13 +4,9 @@ language: android
 android:
   components:
     - tools
+    - build-tools-21.1.2
+    - android-21
     - platform-tools  
-    - build-tools-27.0.1
-    - android-25
-  licenses:
-    - 'android-sdk-license-.*' 
-    - 'android-sdk-build-tools-.*'
-    - 'android-sdk-platform-.*'    
 
 jdk:
   - oraclejdk8
