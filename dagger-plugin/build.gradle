@@ -18,7 +18,7 @@ pluginBundle {
 }
 
 dependencies {
-  testCompile 'com.android.tools.build:gradle:2.2.0+'
+  testCompile 'com.android.tools.build:gradle:2.3.3'
 }
 
 release {
