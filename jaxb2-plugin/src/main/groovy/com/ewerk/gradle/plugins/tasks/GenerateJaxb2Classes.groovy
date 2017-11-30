@@ -47,12 +47,14 @@ class GenerateJaxb2Classes extends DefaultTask {
       def schemaFile = project.file(theConfig.schema)
       def bindingsDir = theConfig.bindingsDir
       def includedBindingFiles = bindingFileIncludes(theConfig)
+      def extension = theConfig.extension
 
       // the depends and produces is compared using the time-stamp of the schema file and the destination package folder
       ant.xjc(destdir: generatedSourcesDirParent,
           package: basePackage,
           schema: schemaFile,
-          encoding: encoding) {
+          encoding: encoding,
+          extension: extension) {
         depends(file: schemaFile)
         produces(dir: generatedSourcesDirPackage, includes: "**/*.java")
 

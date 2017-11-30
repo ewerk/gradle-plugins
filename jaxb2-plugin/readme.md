@@ -100,6 +100,7 @@ jaxb2 {
       basePackage = 'com.any.app.model.request'
       schema = 'src/main/xsd/request.xsd'
       encoding = 'UTF-8'
+      extension = true 
     }
   }
 

@@ -16,6 +16,7 @@ class XjcTaskConfig {
   String bindingsDir
   String includedBindingFiles
   String encoding = 'UTF-8'
+  boolean extension = false
 
   XjcTaskConfig(String name) {
     this.name = name
