@@ -34,4 +34,5 @@
 * Set JDK-8 as default
 
 ## 1.0.10-SNAPSHOT
+* Querydsl 4 library dependency updated to (4.1.4)
 * Current plugin snapshot

@@ -7,7 +7,7 @@ capabilities for publishing open source Gradle plugins and using them with the n
 declaration syntax introduced in Gradle 2.1.
 
 The plugins are released using the [plugin-publish](https://plugins.gradle.org/plugin/com.gradle.plugin-publish) plugin.
-Prior to the actual publication process, the plugins where hosted at Bintray organizational
+Prior to the actual publication process, the plugins were hosted at Bintray organizational
 account 'ewerk'. This account and all associated repositories have been deleted, as the plugins
 are now directly hosted at the plugin portal itself.
 
