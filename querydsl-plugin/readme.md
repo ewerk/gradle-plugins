@@ -16,7 +16,7 @@ Please have a look at the plugins [change log](change_log.md).
 ##### library
 The artifact coordinates of the Querydsl annotation processor library.
 
-Defaults to `com.querydsl:querydsl-apt:4.1.3`.
+Defaults to `com.querydsl:querydsl-apt:4.1.4`.
 
 Note: this can only be a version supported by the current [Spring Data](http://projects.spring.io/spring-data/) project.
 
@@ -89,7 +89,7 @@ __Mongo example__
 
 ```groovy
 plugins {
-  id "com.ewerk.gradle.plugins.querydsl" version "1.0.8"
+  id "com.ewerk.gradle.plugins.querydsl" version "1.0.9"
 }
 
 repositories {
@@ -102,7 +102,7 @@ dependencies {
   compile "org.springframework.data:spring-data-mongodb:1.9.1.RELEASE"
 
   // use Querydsl against MongoDB
-  compile "com.querydsl.apt:querydsl-mongodb:4.1.3"
+  compile "com.querydsl.apt:querydsl-mongodb:4.1.4"
   […]
 }
 
