@@ -4,7 +4,7 @@ plugins {
 }
 
 pluginBundle {
-  website = 'http://www.ewerk.com'
+  website = 'https://github.com/ewerk/gradle-plugins'
   vcsUrl = 'https://github.com/ewerk/gradle-plugins'
   description = 'Plugin for generating QueryDSL model files.'
   tags = ['querydsl']
