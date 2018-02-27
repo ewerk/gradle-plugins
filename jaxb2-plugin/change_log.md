@@ -23,6 +23,8 @@
 ## 1.0.6
 * Added `org.jvnet.jaxb2_commons:jaxb2-basics-tools:0.9.5` as a plugin default dependency
 
-## 1.0.7-SNAPSHOT
+## 1.0.7
 * Add `strictMode` configuration option
+
+## 1.0.8-SNAPSHOT
 * Current snapshot
