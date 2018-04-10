@@ -27,4 +27,5 @@
 * Add `strictMode` configuration option
 
 ## 1.0.8-SNAPSHOT
+* Add `additionalArgs` configuration option
 * Current snapshot
