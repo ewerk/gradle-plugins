@@ -28,4 +28,6 @@
 
 ## 1.0.8-SNAPSHOT
 * Add `additionalArgs` configuration option
+
+## 1.0.9-SNAPSHOT
 * Current snapshot
