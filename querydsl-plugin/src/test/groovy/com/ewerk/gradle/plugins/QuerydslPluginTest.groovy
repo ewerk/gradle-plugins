@@ -33,6 +33,8 @@ class QuerydslPluginTest {
     project.extensions.querydsl.morphia = true
     project.extensions.querydsl.springDataMongo = true
     project.extensions.querydsl.querydslDefault = true
+    
+    project.extensions.querydsl.aptOptions = ['querydsl.entityAccessors=true','querydsl.useFields=false']
   }
 
   @Test

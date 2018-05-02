@@ -32,6 +32,8 @@ class QuerydslPluginExtension {
   boolean roo = false
   boolean springDataMongo = false
   boolean querydslDefault = false
+  
+  List aptOptions = []
 
   String processors() {
 

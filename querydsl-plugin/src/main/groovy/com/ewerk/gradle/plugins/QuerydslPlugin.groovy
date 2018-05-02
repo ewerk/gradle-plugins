@@ -76,6 +76,12 @@ class QuerydslPlugin implements Plugin<Project> {
         "-proc:only",
         "-processor", project.querydsl.processors()
     ]
+    
+    if(project.querydsl.aptOptions.size() > 0){
+    	for(aptOption in project.querydsl.aptOptions) {
+    		project.tasks.compileQuerydsl.options.compilerArgs << "-A" + aptOption
+    	}
+    }
   }
 
   private void registerSourceAtCompileJava(Project project, File querydslSourcesDir) {
