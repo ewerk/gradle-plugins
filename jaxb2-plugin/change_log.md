@@ -29,5 +29,8 @@
 ## 1.0.8
 * Add `additionalArgs` configuration option
 
-## 1.0.9-SNAPSHOT
+## 1.0.9
+* Bugfix with `additionalArgs` configuration option, now working properly
+
+## 1.0.10-SNAPSHOT
 * Current snapshot
