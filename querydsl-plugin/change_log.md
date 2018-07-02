@@ -36,3 +36,4 @@
 ## 1.0.10-SNAPSHOT
 * Querydsl 4 library dependency updated to (4.1.4)
 * Current plugin snapshot
+* Add support for custom `aptOptions` parameter
