@@ -83,6 +83,21 @@ be added and used within the project.
 
 Defaults to `false`.
 
+##### aptOptions
+List of APT options to customize QueryDSL generation
+
+___Example___
+```groovy
+querydsl {
+  aptOptions = ['querydsl.entityAccessors=true','querydsl.useFields=false']
+}
+```
+
+Default to empty
+
+[Check all available options from the QueryDSL documentation](http://www.querydsl.com/static/querydsl/4.1.4/reference/html/ch03s03.html)
+ 
+
 #### Examples
 
 __Mongo example__
