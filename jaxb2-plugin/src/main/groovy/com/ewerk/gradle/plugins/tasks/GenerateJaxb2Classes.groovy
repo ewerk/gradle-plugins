@@ -59,7 +59,7 @@ class GenerateJaxb2Classes extends DefaultTask {
           ) {
         depends(file: schemaFile)
         produces(dir: generatedSourcesDirPackage, includes: "**/*.java")
-        arg = additionalArgs
+        arg(line: additionalArgs)
 
         if (bindingsDir?.trim()) {
           binding(dir: project.file(bindingsDir), includes: includedBindingFiles)

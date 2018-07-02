@@ -26,7 +26,7 @@
 ## 1.0.7
 * Add `strictMode` configuration option
 
-## 1.0.8-SNAPSHOT
+## 1.0.8
 * Add `additionalArgs` configuration option
 
 ## 1.0.9-SNAPSHOT

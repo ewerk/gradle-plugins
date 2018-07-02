@@ -51,7 +51,6 @@ xjc {
     // falls back to '**/*.xjb' if not specified
     includedBindingFiles = 'any.xjb, subdir/test.xjb'
     
-    additionalArgs
     additionalArgs = '-nv -dtd'
 
     // output encoding of the generated files
