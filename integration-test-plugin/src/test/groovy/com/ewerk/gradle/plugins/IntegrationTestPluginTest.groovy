@@ -2,6 +2,7 @@ package com.ewerk.gradle.plugins
 
 import org.gradle.api.Project
 import org.gradle.api.Task
+import org.gradle.api.file.FileCollection
 import org.gradle.api.file.SourceDirectorySet
 import org.gradle.api.plugins.JavaPlugin
 import org.gradle.api.tasks.SourceSet
@@ -80,5 +81,12 @@ class IntegrationTestPluginTest {
     SourceSet integration = project.sourceSets.integration
     SourceDirectorySet resources = integration.resources
     assertThat(resources, notNullValue())
+  }
+
+  @Test
+  void testIntegrationTestClassesDirDeprecated() {
+    org.gradle.api.tasks.testing.Test integrationTest = project.tasks.integrationTest as org.gradle.api.tasks.testing.Test
+    FileCollection tree = integrationTest.getTestClassesDirs()
+    assertThat(tree.getFiles().first(), equalTo(integrationTest.getTestClassesDir()))
   }
 }
