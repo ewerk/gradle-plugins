@@ -13,6 +13,7 @@ class XjcTaskConfig {
   String generatedSourcesDir = 'src/generated/java'
   String basePackage
   String schema
+  String catalog
   String bindingsDir
   String includedBindingFiles
   String encoding = 'UTF-8'

@@ -34,3 +34,4 @@
 
 ## 1.0.10-SNAPSHOT
 * Current snapshot
+* Add `catalog` configuration option
