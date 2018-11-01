@@ -45,6 +45,7 @@ class GenerateJaxb2Classes extends DefaultTask {
           basePackage.replace(".", "/"))
 
       def schemaFile = project.file(theConfig.schema)
+      def catalogFile = project.file(theConfig.catalog)
       def bindingsDir = theConfig.bindingsDir
       def includedBindingFiles = bindingFileIncludes(theConfig)
       def extension = theConfig.extension
@@ -55,9 +56,11 @@ class GenerateJaxb2Classes extends DefaultTask {
           package: basePackage,
           schema: schemaFile,
           encoding: encoding,
+          catalog: catalogFile,
           extension: extension,
           ) {
         depends(file: schemaFile)
+        depends(file: catalogFile)
         produces(dir: generatedSourcesDirPackage, includes: "**/*.java")
         arg(line: additionalArgs)
 
