@@ -73,7 +73,7 @@ class IntegrationTestPlugin implements Plugin<Project> {
 
     project.task("integrationTest", type: Test, description: "Runs the integration tests.",
         group: GROUP) {
-      testClassesDir = project.sourceSets.integration.output.classesDir
+      testClassesDirs = project.sourceSets.integration.output
       classpath = project.sourceSets.integration.runtimeClasspath
     }
 
