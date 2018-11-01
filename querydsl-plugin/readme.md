@@ -104,7 +104,7 @@ __Mongo example__
 
 ```groovy
 plugins {
-  id "com.ewerk.gradle.plugins.querydsl" version "1.0.9"
+  id "com.ewerk.gradle.plugins.querydsl" version "1.0.10"
 }
 
 repositories {
