@@ -1,6 +1,13 @@
 [![License](http://img.shields.io/badge/license-Apache%202.0-brightgreen.svg?style=flat)](http://www.apache.org/licenses/LICENSE-2.0) [![Build Status](http://img.shields.io/travis/ewerk/gradle-plugins.svg?style=flat)](https://travis-ci.org/ewerk/gradle-plugins)
 
 # EWERK Gradle Plugins
+
+> **_NOTE:_**  The plugins are currently *not compatible to Gradle 5+* and have not been tested with a JDK higher 
+               than 1.8. Currently a lot of issues arise related to using the plugins with Gradle 5+. There are 
+               plans to adopt the plugins to the newest Gradle API but time is lacking. Help is pretty much 
+               appreciated.
+
+
 ## Introduction
 This repository was introduced in order to use the Github/Gradle Plugin Portal
 capabilities for publishing open source Gradle plugins and using them with the new plugin
