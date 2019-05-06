@@ -5,7 +5,7 @@
 > **_NOTE:_**  The plugins are currently *not compatible to Gradle 5+* and have not been tested with a JDK higher 
                than 1.8. Currently a lot of issues arise related to using the plugins with Gradle 5+. There are 
                plans to adopt the plugins to the newest Gradle API but time is lacking. Help is pretty much 
-               appreciated.
+               appreciated. Please see https://github.com/ewerk/gradle-plugins/milestone/1.
 
 
 ## Introduction
