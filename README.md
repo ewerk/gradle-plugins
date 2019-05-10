@@ -23,15 +23,15 @@ regarding Groovy language support, which is not intended. The plugins may become
 therefore help is very appreciated.
 
 ## Gradle compatibility
-|Plugin|≥ 2.1|≥ 3.3|
-|---|---|---|
-|annotation-processor-plugin|≤1.0.3|≥1.0.4-SNAPSHOT|
-|artifactory-deb-publish-plugin|≤1.0.1|≥1.0.2-SNAPSHOT|
-|auto-value-plugin|≤1.0.7|≥1.0.8-SNAPSHOT|
-|dagger-plugin|≤1.0.7|≥1.0.8-SNAPSHOT|
-|integration-test-plugin|≤1.0.8|≥1.0.9-SNAPSHOT|
-|jaxb2-plugin|≤1.0.2|≥1.0.3-SNAPSHOT|
-|querydsl-plugin|≤1.0.7|≥1.0.8-SNAPSHOT|
+|Plugin|≥ 2.1|≥ 3.3|≥ 5.0| 
+|---|---|---|---|
+|annotation-processor-plugin|≤1.0.3|≥1.0.4|ø|
+|artifactory-deb-publish-plugin|≤1.0.1|≥1.0.2|ø|
+|auto-value-plugin|≤1.0.7|≥1.0.8|ø|
+|dagger-plugin|≤1.0.7|≥1.0.8|ø|
+|integration-test-plugin|≤1.0.8|≥1.0.9|ø|
+|jaxb2-plugin|≤1.0.2|≥1.0.3|ø|
+|querydsl-plugin|≤1.0.7|≥1.0.8|`INCUBATING`
 
 
 ## Plugins
