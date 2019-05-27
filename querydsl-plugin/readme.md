@@ -70,8 +70,7 @@ Defaults to `false`.
 ##### springDataMongo
 Boolean flag to indicate if creation of meta model from Spring Data Mongo annotated sources
 should be enabled.
-If so, a java compile task that enables the `com.querydsl.apt.roo.RooAnnotationProcessor` will
-be added and used within the project.
+If so, a java compile task that enables the `org.springframework.data.mongodb.repository.support.MongoAnnotationProcessor` will be added and used within the project.
 
 Defaults to `false`.
 
