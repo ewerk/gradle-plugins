@@ -32,6 +32,8 @@
 ## 1.0.9
 * Bugfix with `additionalArgs` configuration option, now working properly
 
+## 1.0.10
+* Add optional `catalog` configuration option
+
 ## 1.0.10-SNAPSHOT
 * Current snapshot
-* Add optional `catalog` configuration option
