@@ -45,24 +45,33 @@ class GenerateJaxb2Classes extends DefaultTask {
           basePackage.replace(".", "/"))
 
       def schemaFile = project.file(theConfig.schema)
-      def catalogFile = project.file(theConfig.catalog)
+      def catalogFile = (theConfig.catalog != null) ? project.file(theConfig.catalog) : null
       def bindingsDir = theConfig.bindingsDir
       def includedBindingFiles = bindingFileIncludes(theConfig)
       def extension = theConfig.extension
       def additionalArgs = theConfig.additionalArgs
 
-      // the depends and produces is compared using the time-stamp of the schema file and the destination package folder
-      ant.xjc(destdir: generatedSourcesDirParent,
-          package: basePackage,
-          schema: schemaFile,
-          encoding: encoding,
-          catalog: catalogFile,
+      def arguments = [
+          destdir  : generatedSourcesDirParent,
+          package  : basePackage,
+          schema   : schemaFile,
+          encoding : encoding,
           extension: extension,
-          ) {
+      ]
+
+      if (catalogFile) {
+        arguments.catalog = catalogFile
+      }
+
+      // the depends and produces is compared using the time-stamp of the schema file and the destination package folder
+      ant.xjc(arguments) {
         depends(file: schemaFile)
-        depends(file: catalogFile)
         produces(dir: generatedSourcesDirPackage, includes: "**/*.java")
         arg(line: additionalArgs)
+
+        if (catalogFile) {
+          depends(file: catalogFile)
+        }
 
         if (bindingsDir?.trim()) {
           binding(dir: project.file(bindingsDir), includes: includedBindingFiles)
