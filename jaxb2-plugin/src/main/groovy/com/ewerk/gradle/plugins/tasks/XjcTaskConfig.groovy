@@ -18,6 +18,7 @@ class XjcTaskConfig {
   String includedBindingFiles
   String encoding = 'UTF-8'
   String additionalArgs = ''
+  boolean createSourceSet = true
   boolean extension = false
 
   XjcTaskConfig(String name) {

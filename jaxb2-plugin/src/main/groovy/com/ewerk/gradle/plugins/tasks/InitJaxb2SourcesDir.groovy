@@ -31,7 +31,9 @@ class InitJaxb2SourcesDir extends DefaultTask {
 
     for (XjcTaskConfig theConfig : xjcConfigs) {
       File generatedSourcesDir = project.file(theConfig.generatedSourcesDir)
-      verifyNotWithinMainBuildSrc(generatedSourcesDir)
+      if (theConfig.createSourceSet) {
+        verifyNotWithinMainBuildSrc(generatedSourcesDir)
+      }
       createSourcesDirectory(generatedSourcesDir)
     }
   }

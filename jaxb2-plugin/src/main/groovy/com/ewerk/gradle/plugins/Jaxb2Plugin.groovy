@@ -99,17 +99,19 @@ class Jaxb2Plugin implements Plugin<Project> {
     Set<XjcTaskConfig> xjcConfigs = project.extensions.jaxb2.xjc
 
     for (XjcTaskConfig theConfig : xjcConfigs) {
-      File sourcesDir = project.file(theConfig.generatedSourcesDir)
-      LOG.info("Create source set 'jaxb2': {}", sourcesDir.absolutePath)
+      if (theConfig.createSourceSet) {
+        File sourcesDir = project.file(theConfig.generatedSourcesDir)
+        LOG.info("Create source set 'jaxb2': {}", sourcesDir.absolutePath)
 
-      project.sourceSets {
-        jaxb2 {
-          java.srcDirs += [sourcesDir]
+        project.sourceSets {
+          jaxb2 {
+            java.srcDirs += [sourcesDir]
+          }
         }
-      }
 
-      project.compileJava {
-        source += project.files(sourcesDir)
+        project.compileJava {
+          source += project.files(sourcesDir)
+        }
       }
     }
   }
