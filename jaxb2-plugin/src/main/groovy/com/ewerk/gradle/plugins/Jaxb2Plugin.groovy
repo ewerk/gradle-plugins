@@ -50,7 +50,7 @@ class Jaxb2Plugin implements Plugin<Project> {
   }
 
   private static Configuration addJaxb2Configuration(Project project) {
-    project.configurations.create('jaxb2')
+    project.configurations.maybeCreate('jaxb2')
   }
 
   private static void addJaxb2Extension(Project project) {
